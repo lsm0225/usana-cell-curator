@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#FBF7EE">
+<title>USANA 브랜드파트너 | 진정한 건강을 전하는</title>
+<meta name="description" content="세포과학에서 시작되는 진짜 영양, 유사나와 함께 건강한 일상을 시작하세요." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="USANA 브랜드파트너 | 진정한 건강을 전하는" />
+<meta property="og:description" content="세포과학에서 시작되는 진짜 영양, 유사나와 함께." />
+<meta property="og:image" content="assets/portrait.jpg" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="apple-touch-icon" href="assets/portrait.jpg" />
+<link rel="icon" type="image/jpeg" href="assets/portrait.jpg" />
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  :root {
+    /* === HARUHONEY-INSPIRED PALETTE === */
+    --honey: #C8941E;          /* 약간 차분한 골드 (유사나는 의약/건강 톤이라 살짝 톤다운) */
+    --honey-light: #E0B85A;
+    --honey-soft: #F5E5B8;
+    --honey-deep: #A67919;
+    --cream: #FBF7EE;
+    --cream-warm: #F4ECD8;
+    --beige: #E8DDC4;
+    --wood: #8B6F47;
+    --wood-deep: #5C4423;
+    --ink: #2A1F12;
+    --gray: #8A8174;
+    --line: #E5DCC8;
+    --white: #FFFFFF;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    background: var(--ink);
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+
+  body {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.04);
+  }
+
+  /* ==================== SECTION COMMON ==================== */
+  section {
+    position: relative;
+    padding: 36px 24px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--honey);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.35;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+
+  .section-title em {
+    color: var(--honey);
+    font-style: normal;
+    font-weight: 800;
+  }
+
+  .section-desc {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  /* ==================== HERO ==================== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: calc(env(safe-area-inset-top, 0px) + 64px) 24px calc(env(safe-area-inset-bottom, 0px) + 100px);
+    display: flex;
+    flex-direction: column;
+    background: var(--cream);
+    overflow: hidden;
+  }
+
+  /* hero에 인물 사진을 배경 비주얼로 */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/portrait.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    opacity: 0.35;
+    filter: saturate(0.85);
+    z-index: 0;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--cream) 0%, rgba(251, 247, 238, 0.3) 35%, rgba(251, 247, 238, 0.85) 80%, var(--cream) 100%);
+  }
+
+  .hero-top {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-mark {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--honey);
+    margin-bottom: 24px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 100px;
+    border: 1px solid rgba(200, 148, 30, 0.18);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+  }
+  .hero-title-line { display: block; }
+
+  .hero-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--honey);
+    margin: 0 auto 18px;
+  }
+
+  .hero-slogan {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--wood-deep);
+    line-height: 1.7;
+    letter-spacing: -0.2px;
+  }
+  .hero-slogan strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .hero-scroll {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-top: auto;
+    padding: 12px 20px 10px;
+    background: rgba(251, 247, 238, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 28px;
+    border: 1px solid rgba(139, 111, 71, 0.12);
+    align-self: center;
+  }
+  .hero-scroll-text {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: var(--wood-deep);
+  }
+  .hero-scroll-icon {
+    width: 18px;
+    height: 26px;
+    border: 1.5px solid var(--wood-deep);
+    border-radius: 10px;
+    position: relative;
+    opacity: 0.6;
+    background: rgba(255, 252, 245, 0.4);
+  }
+  .hero-scroll-icon::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5px;
+    height: 5px;
+    background: var(--honey);
+    border-radius: 3px;
+    animation: scrollDot 1.8s ease-in-out infinite;
+  }
+  @keyframes scrollDot {
+    0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    50% { transform: translateX(-50%) translateY(8px); opacity: 0.3; }
+    100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  }
+
+  /* ==================== ABOUT ==================== */
+  .about {
+    background: var(--white);
+  }
+
+  /* 스토리 카드 - 하루허니 동일 패턴 */
+  .story-card {
+    margin-top: 24px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--cream);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  }
+
+  .story-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: var(--cream-warm);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .story-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+  }
+
+  .story-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.45) 100%);
+  }
+
+  .story-photo-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--honey);
+    letter-spacing: 1.5px;
+    z-index: 2;
+  }
+
+  .story-photo-caption {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+    color: var(--white);
+    z-index: 2;
+  }
+  .story-photo-caption-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+  }
+  .story-photo-caption-sub {
+    font-size: 12px;
+    opacity: 0.9;
+    font-weight: 400;
+  }
+
+  .story-text {
+    padding: 20px 20px 22px;
+  }
+  .story-quote {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.6;
+    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+  }
+  .story-author {
+    font-size: 12px;
+    color: var(--gray);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .story-author::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--honey);
+  }
+
+  /* ==================== CONNECT (SNS) ==================== */
+  .connect {
+    background: var(--cream);
+  }
+
+  .channel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 22px;
+  }
+
+  .channel-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    background: var(--white);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.2s ease;
+  }
+  .channel-item:active { transform: scale(0.98); }
+
+  .channel-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--white);
+  }
+  .channel-icon.kakao { background: #FEE500; color: #3C1E1E; }
+  .channel-icon.phone { background: var(--ink); color: var(--cream); }
+  .channel-icon.instagram { 
+    background: linear-gradient(135deg, #FEDA77 0%, #F58529 25%, #DD2A7B 50%, #8134AF 75%, #515BD4 100%);
+  }
+  .channel-icon.youtube { background: #FF0000; }
+  .channel-icon.usana { background: var(--honey); color: var(--white); font-weight: 800; font-size: 11px; letter-spacing: 0.5px; }
+  .channel-icon svg { width: 22px; height: 22px; }
+
+  .channel-content { flex: 1; min-width: 0; }
+  .channel-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 2px;
+    letter-spacing: -0.2px;
+  }
+  .channel-handle {
+    font-size: 12px;
+    color: var(--gray);
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .channel-arrow {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  /* ==================== WHY USANA ==================== */
+  .why {
+    background: var(--cream-warm);
+    color: var(--ink);
+    padding: 44px 24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .why .section-label {
+    color: var(--honey-deep);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .why .section-title {
+    color: var(--ink);
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .why .section-title strong {
+    color: var(--honey-deep);
+    font-weight: 800;
+  }
+  .why-sub {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* 핵심 통계 */
+  .why-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .why-stat {
+    background: var(--white);
+    padding: 22px 6px 20px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(139, 111, 71, 0.07);
+  }
+  .why-stat-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--honey-deep);
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .why-stat-num small {
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: 3px;
+  }
+  .why-stat-label {
+    font-size: 10px;
+    color: var(--gray);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+  }
+
+  /* 인증 마크 */
+  .why-cert {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 18px 8px;
+    margin-bottom: 24px;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(139, 111, 71, 0.07);
+  }
+  .why-cert-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gray);
+    letter-spacing: 2.5px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .why-cert-list {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+    align-items: center;
+    gap: 0;
+  }
+  .why-cert-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .why-cert-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--cream-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--honey-deep);
+  }
+  .why-cert-mark svg { width: 20px; height: 20px; }
+  .why-cert-name {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--wood-deep);
+    letter-spacing: 0.3px;
+  }
+  .why-cert-divider {
+    width: 1px;
+    height: 32px;
+    background: var(--line);
+    align-self: center;
+  }
+
+  /* DIFFERENCE 리스트 */
+  .why-diff-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gray);
+    letter-spacing: 2.5px;
+    text-align: center;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+  }
+  .why-diff-label::before, .why-diff-label::after {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .why-diff-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(139, 111, 71, 0.07);
+  }
+  .why-diff-item {
+    display: flex;
+    gap: 14px;
+    padding: 18px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .why-diff-item:last-child { border-bottom: none; }
+  .why-diff-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--cream-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--honey-deep);
+  }
+  .why-diff-icon svg { width: 18px; height: 18px; }
+  .why-diff-content { flex: 1; }
+  .why-diff-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+  }
+  .why-diff-title em {
+    color: var(--honey-deep);
+    font-style: normal;
+    font-weight: 800;
+  }
+  .why-diff-desc {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.55;
+  }
+
+  /* ==================== ATHLETES (USANA 차별) ==================== */
+  .athletes {
+    background: var(--white);
+  }
+
+  .athletes-card {
+    margin-top: 22px;
+    background: linear-gradient(135deg, var(--ink) 0%, #3a2a1a 100%);
+    border-radius: 18px;
+    padding: 26px 150px 26px 22px;
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+  }
+
+  .athletes-portrait {
+    position: absolute;
+    right: -10px;
+    bottom: -6px;
+    width: 178px;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.5));
+    z-index: 1;
+  }
+
+  .athletes-card > *:not(.athletes-portrait) {
+    position: relative;
+    z-index: 2;
+  }
+  .athletes-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 148, 30, 0.18) 0%, transparent 70%);
+  }
+  .athletes-card-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--honey-light);
+    padding: 5px 10px;
+    background: rgba(200, 148, 30, 0.15);
+    border-radius: 100px;
+    margin-bottom: 14px;
+  }
+  .athletes-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    color: var(--cream);
+  }
+  .athletes-card-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+  .athletes-card-desc {
+    font-size: 13px;
+    color: rgba(251, 247, 238, 0.8);
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+  .athletes-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(245, 229, 184, 0.15);
+  }
+  .athletes-tags li {
+    list-style: none;
+    font-size: 11px;
+    padding: 5px 10px;
+    background: rgba(245, 229, 184, 0.08);
+    border-radius: 100px;
+    color: rgba(251, 247, 238, 0.85);
+    letter-spacing: 0.02em;
+    font-weight: 500;
+  }
+
+  /* ==================== AUDIENCE (이런 분께) ==================== */
+  .audience {
+    background: var(--cream);
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .audience-card {
+    padding: 22px 16px;
+    background: var(--white);
+    border-radius: 14px;
+    text-align: left;
+  }
+  .audience-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--cream-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: var(--honey-deep);
+  }
+  .audience-icon svg { width: 18px; height: 18px; }
+  .audience-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+    line-height: 1.35;
+  }
+  .audience-desc {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  /* ==================== ORDER (CTA) ==================== */
+  .order {
+    background: var(--cream-warm);
+    text-align: center;
+  }
+  .order-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.35;
+    margin-bottom: 10px;
+    letter-spacing: -0.8px;
+  }
+  .order-sub {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+  .order-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px 20px;
+    background: var(--ink);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    transition: transform 0.2s ease;
+    margin-bottom: 10px;
+  }
+  .order-btn:active { transform: scale(0.98); }
+  .order-btn-icon {
+    width: 22px;
+    height: 22px;
+    background: #FEE500;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3C1E1E;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .order-btn-arrow { margin-left: 4px; font-size: 16px; }
+
+  .order-btn.alt {
+    background: var(--white);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .order-btn.alt .order-btn-icon { background: var(--honey); color: var(--white); }
+
+  .order-note {
+    margin-top: 18px;
+    font-size: 11.5px;
+    color: var(--wood-deep);
+    line-height: 1.65;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    border: 1px dashed rgba(139, 111, 71, 0.25);
+  }
+  .order-note strong { color: var(--honey-deep); font-weight: 700; }
+
+  /* ==================== CONTACT ==================== */
+  .contact {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 36px 24px 24px;
+  }
+  .contact .section-label { color: var(--honey-light); }
+  .contact .section-title { color: var(--cream); }
+
+  .contact-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(245, 229, 184, 0.1);
+    text-decoration: none;
+    color: var(--cream);
+  }
+  .contact-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(245, 229, 184, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--honey-light);
+  }
+  .contact-icon svg { width: 18px; height: 18px; }
+  .contact-content { flex: 1; }
+  .contact-label {
+    font-size: 11px;
+    color: var(--gray);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+  .contact-value {
+    font-size: 14px;
+    color: var(--cream);
+    font-weight: 500;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(245, 229, 184, 0.1);
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--honey-light);
+    margin-bottom: 4px;
+    letter-spacing: 0.04em;
+  }
+  .footer-en {
+    font-size: 10.5px;
+    color: var(--gray);
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .footer-copy {
+    font-size: 10px;
+    color: rgba(251, 247, 238, 0.3);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  /* 부드러운 등장 효과 */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-top">
+      <div class="hero-mark">USANA · BRAND PARTNER</div>
+
+      <h1 class="hero-title">
+        <span class="hero-title-line">TRUE HEALTH</span>
+        <span class="hero-title-line">EVERY DAY</span>
+      </h1>
+
+      <div class="hero-divider"></div>
+
+      <p class="hero-slogan">
+        세포에서 시작되는 진짜 영양,<br/>
+        <strong>당신의 하루</strong>를 새롭게 합니다
+      </p>
+    </div>
+
+    <a href="#about" class="hero-scroll" aria-label="아래로 스크롤">
+      <span class="hero-scroll-text">SCROLL</span>
+      <span class="hero-scroll-icon"></span>
+    </a>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="about" id="about">
+    <div class="reveal">
+      <div class="section-label">ABOUT</div>
+      <h2 class="section-title">매일의 한 알이,<br/>인생의 방향을 바꿉니다</h2>
+      <p class="section-desc">
+        저는 매일의 작은 영양 한 알이 결국 한 사람의 인생을 바꾼다고 믿습니다.
+        세포에서 시작되는 진짜 영양, 그것을 과학적으로 입증해온 회사를 만나
+        삶의 결이 달라졌습니다. 지금은 그 변화를 더 많은 분들과 나누고 있습니다.
+      </p>
+
+      <div class="story-card">
+        <div class="story-photo">
+          <span class="story-photo-badge">YOUR PARTNER</span>
+          <img src="assets/portrait.jpg" alt="대표 프로필" />
+          <div class="story-photo-caption">
+            <div class="story-photo-caption-title">건강 동반자, 함께 걷습니다</div>
+            <div class="story-photo-caption-sub">USANA Brand Partner</div>
+          </div>
+        </div>
+        <div class="story-text">
+          <p class="story-quote">"건강은 약속이고, 그 약속을 매일 지킬 수 있도록 곁에서 함께하겠습니다."</p>
+          <div class="story-author">대표님 성함 드림</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONNECT ==================== -->
+  <section class="connect">
+    <div class="reveal">
+      <div class="section-label">CONNECT</div>
+      <h2 class="section-title">대표님과 <em>가까이</em> 만나기</h2>
+
+      <div class="channel-list">
+        <a href="#" class="channel-item">
+          <div class="channel-icon kakao">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4C6.5 4 2 7.6 2 12c0 2.8 1.9 5.3 4.7 6.7l-1 3.6 4-2.6c.8.1 1.5.2 2.3.2 5.5 0 10-3.6 10-8s-4.5-7.9-10-7.9z"/></svg>
+          </div>
+          <div class="channel-content">
+            <div class="channel-name">카카오톡 1:1 상담</div>
+            <div class="channel-handle">바로 메시지 보내기</div>
+          </div>
+          <div class="channel-arrow">→</div>
+        </a>
+
+        <a href="tel:01000000000" class="channel-item">
+          <div class="channel-icon phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.86 19.86 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="channel-content">
+            <div class="channel-name">전화 상담</div>
+            <div class="channel-handle">010-0000-0000</div>
+          </div>
+          <div class="channel-arrow">→</div>
+        </a>
+
+        <a href="#" class="channel-item">
+          <div class="channel-icon instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58 0 4.85.07 1.17.06 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.06 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.06-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85c.06-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.39C1.34 2.69.93 3.36.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.13.67.67 1.34 1.09 2.13 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.39.67-.67 1.09-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 105.84 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zM18.41 4.15a1.44 1.44 0 11-1.44 1.44 1.44 1.44 0 011.44-1.44z"/></svg>
+          </div>
+          <div class="channel-content">
+            <div class="channel-name">인스타그램</div>
+            <div class="channel-handle">@your_handle</div>
+          </div>
+          <div class="channel-arrow">→</div>
+        </a>
+
+        <a href="#" class="channel-item">
+          <div class="channel-icon youtube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+          </div>
+          <div class="channel-content">
+            <div class="channel-name">유사나 이야기 영상</div>
+            <div class="channel-handle">유튜브 채널</div>
+          </div>
+          <div class="channel-arrow">→</div>
+        </a>
+
+        <a href="#" class="channel-item">
+          <div class="channel-icon usana">U</div>
+          <div class="channel-content">
+            <div class="channel-name">유사나 공식 사이트</div>
+            <div class="channel-handle">제품 둘러보기 (자동 로그인)</div>
+          </div>
+          <div class="channel-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY USANA ==================== -->
+  <section class="why">
+    <div class="reveal">
+      <div class="why-header">
+        <div class="section-label">WHY USANA</div>
+        <h2 class="section-title">왜 <strong>유사나</strong>일까요?</h2>
+        <p class="why-sub">일반 영양제와는 다른, 검증된 6가지 이유</p>
+      </div>
+
+      <div class="why-stats">
+        <div class="why-stat">
+          <div class="why-stat-num">30<small>+</small></div>
+          <div class="why-stat-label">설립 후<br/>운영 연수</div>
+        </div>
+        <div class="why-stat">
+          <div class="why-stat-num">25<small>국</small></div>
+          <div class="why-stat-label">글로벌<br/>비즈니스</div>
+        </div>
+        <div class="why-stat">
+          <div class="why-stat-num">150<small>+</small></div>
+          <div class="why-stat-label">전담<br/>과학자</div>
+        </div>
+      </div>
+
+      <div class="why-cert">
+        <div class="why-cert-label">CERTIFIED BY</div>
+        <div class="why-cert-list">
+          <div class="why-cert-item">
+            <div class="why-cert-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="why-cert-name">FDA</div>
+          </div>
+          <div class="why-cert-divider"></div>
+          <div class="why-cert-item">
+            <div class="why-cert-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke-linecap="round"/></svg>
+            </div>
+            <div class="why-cert-name">NSF</div>
+          </div>
+          <div class="why-cert-divider"></div>
+          <div class="why-cert-item">
+            <div class="why-cert-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="why-cert-name">USP</div>
+          </div>
+          <div class="why-cert-divider"></div>
+          <div class="why-cert-item">
+            <div class="why-cert-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="why-cert-name">PDR</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-diff-label">DIFFERENCE</div>
+
+      <div class="why-diff-list">
+        <div class="why-diff-item">
+          <div class="why-diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3" stroke-linecap="round"/></svg>
+          </div>
+          <div class="why-diff-content">
+            <div class="why-diff-title"><em>세포과학</em>에서 시작합니다</div>
+            <div class="why-diff-desc">미국 특허 인셀리전스 테크놀로지로 세포 본연의 건강 메커니즘을 깨웁니다</div>
+          </div>
+        </div>
+        <div class="why-diff-item">
+          <div class="why-diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="why-diff-content">
+            <div class="why-diff-title"><em>NYSE 상장</em> 글로벌 기업</div>
+            <div class="why-diff-desc">1992년 설립, 뉴욕증권거래소(USNA) 상장. 미국 유타 자체 시설에서 직접 연구·생산</div>
+          </div>
+        </div>
+        <div class="why-diff-item">
+          <div class="why-diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="why-diff-content">
+            <div class="why-diff-title">제3 기관 <em>다중 검증</em></div>
+            <div class="why-diff-desc">FDA·NSF·USP·PDR 등 까다로운 국제 인증을 통과한 검증된 품질</div>
+          </div>
+        </div>
+        <div class="why-diff-item">
+          <div class="why-diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <div class="why-diff-content">
+            <div class="why-diff-title"><em>25개국</em> 글로벌 비즈니스</div>
+            <div class="why-diff-desc">전 세계가 신뢰하는 브랜드. 어디에서나 같은 품질, 같은 성분으로 만나는 영양</div>
+          </div>
+        </div>
+        <div class="why-diff-item">
+          <div class="why-diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 6 8 10 12 14c4-4 4-8 0-12zM12 14v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="why-diff-content">
+            <div class="why-diff-title"><em>150여 명</em> 전담 과학자</div>
+            <div class="why-diff-desc">영양 생화학자, 분자·세포 생물학자, 약사로 구성된 R&D 팀이 지속 연구</div>
+          </div>
+        </div>
+        <div class="why-diff-item">
+          <div class="why-diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="why-diff-content">
+            <div class="why-diff-title">한 알 그 이상의 <em>약속</em></div>
+            <div class="why-diff-desc">유사나 파운데이션을 통해 도움이 필요한 곳에 영양을 전합니다</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ATHLETES ==================== -->
+  <section class="athletes">
+    <div class="reveal">
+      <div class="section-label">USANA ATHLETES</div>
+      <h2 class="section-title">세계가 선택한 <em>브랜드</em></h2>
+      <p class="section-desc">
+        몸이 곧 자산인 프로 선수들이 가장 까다롭게 고르는 영양제.
+        병원이 아닌 일상에서 건강을 만드는 사람들이 유사나를 선택합니다.
+      </p>
+
+      <div class="athletes-card">
+        <img class="athletes-portrait" src="assets/lee-jung-hoo.png" alt="이정후 선수" />
+        <span class="athletes-card-label">SAN FRANCISCO GIANTS · MLB</span>
+        <h3 class="athletes-card-title">"이정후 선수가<br/>선택한 비타민"</h3>
+        <p class="athletes-card-desc">
+          약 대신 영양으로 몸을 지키는 사람들이 가장 먼저 찾는 이름.
+          그들의 매일을 완성하는 한 알이 유사나입니다.
+        </p>
+        <ul class="athletes-tags">
+          <li>샌프란시스코 자이언츠</li>
+          <li>수원 KT 소닉붐</li>
+          <li>WTA 테니스</li>
+          <li>美 스키 & 스노보드</li>
+          <li>USA 레슬링</li>
+          <li>AFC 본머스</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== AUDIENCE ==================== -->
+  <section class="audience">
+    <div class="reveal">
+      <div class="section-label">FOR YOU</div>
+      <h2 class="section-title">이런 분들께 <em>추천</em>드려요</h2>
+
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="audience-title">건강 루틴이<br/>필요한 분</div>
+          <div class="audience-desc">매일의 한 알로 흐트러진 일상을 다시 잡고 싶은 분</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="audience-title">활력·에너지가<br/>필요한 분</div>
+          <div class="audience-desc">오후만 되면 늘어지는 컨디션을 회복하고 싶은 분</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+          </div>
+          <div class="audience-title">영양 밸런스가<br/>필요한 분</div>
+          <div class="audience-desc">식사로 채워지지 않는 영양을 균형 있게 챙기고 싶은 분</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18" stroke-linecap="round"/></svg>
+          </div>
+          <div class="audience-title">새로운 기회를<br/>찾는 분</div>
+          <div class="audience-desc">건강과 함께 의미 있는 사업을 시작하고 싶은 분 (10% 멤버 혜택)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ORDER (CTA) ==================== -->
+  <section class="order">
+    <div class="reveal">
+      <div class="section-label">START NOW</div>
+      <h2 class="order-title">먼저 편하게,<br/>이야기 나눠요</h2>
+      <p class="order-sub">
+        제품을 권하기 전에 먼저 듣고 싶습니다.<br/>
+        어떤 일상을 보내시는지, 무엇이 필요하신지.
+      </p>
+
+      <a href="#" class="order-btn">
+        <span class="order-btn-icon">K</span>
+        카카오톡으로 1:1 상담하기
+        <span class="order-btn-arrow">→</span>
+      </a>
+
+      <a href="#" class="order-btn alt">
+        <span class="order-btn-icon">U</span>
+        유사나 공식 사이트 둘러보기
+        <span class="order-btn-arrow">→</span>
+      </a>
+
+      <p class="order-note">
+        <strong>잠깐!</strong> 유사나 제품은 오픈마켓·중고거래에서 구매하지 마세요.
+        유통기한·보관 상태를 보증할 수 없습니다. 정식 채널로 안내해 드릴게요.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact">
+    <div class="reveal">
+      <div class="section-label">CONTACT</div>
+      <h2 class="section-title">언제든 편하게<br/>연락주세요</h2>
+
+      <div class="contact-list">
+        <a href="tel:01000000000" class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.86 19.86 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-content">
+            <div class="contact-label">PHONE</div>
+            <div class="contact-value">010-0000-0000</div>
+          </div>
+        </a>
+        <a href="mailto:partner@usana.example" class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+          </div>
+          <div class="contact-content">
+            <div class="contact-label">EMAIL</div>
+            <div class="contact-value">partner@usana.example</div>
+          </div>
+        </a>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-content">
+            <div class="contact-label">LOCATION</div>
+            <div class="contact-value">서울특별시 (지역 입력)</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="contact-content">
+            <div class="contact-label">HOURS</div>
+            <div class="contact-value">평일 10:00 - 18:00 (주말 상담 가능)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-logo">USANA</div>
+        <div class="footer-en">BRAND PARTNER · SINCE 1992</div>
+        <div class="footer-copy">© USANA Brand Partner. ALL RIGHTS RESERVED.</div>
+      </div>
+    </div>
+  </section>
+
+<script>
+  // 부드러운 등장 효과
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('show');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

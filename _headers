@@ -1,0 +1,17 @@
+# Cloudflare Pages 헤더 설정
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+# 모든 페이지: 보안 헤더
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# HTML: 짧은 캐싱 (수정사항 빠르게 반영)
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+# 이미지/CSS/JS: 1년 장기 캐싱
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
