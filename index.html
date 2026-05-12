@@ -312,7 +312,7 @@
 
   /* ==================== CONNECT (featured + 2x2 grid) ==================== */
   .connect {
-    background: var(--white);
+    background: var(--usana-blue-light);
   }
   .connect .section-label { color: var(--usana-blue); }
   .connect .section-title em { color: var(--usana-blue); }
@@ -871,12 +871,12 @@
   .athletes-out-desc {
     margin-top: 24px;
     font-size: 13.5px;
-    color: rgba(255,255,255,0.75);
+    color: var(--gray);
     line-height: 1.75;
     letter-spacing: -0.2px;
   }
   .athletes-out-desc strong {
-    color: var(--usana-cyan);
+    color: var(--usana-blue);
     font-weight: 700;
   }
   .athletes-tags {
@@ -1134,66 +1134,52 @@
     margin-left: 4px;
   }
 
-  /* 창립자 카드 — 네이비 인버티드 (중앙 임팩트) */
-  .usana-quote-card {
+  /* 창립자 인용 — 오픈 에디토리얼 */
+  .usana-quote-wrap {
     position: relative;
-    background: var(--usana-blue);
-    color: var(--white);
-    border-radius: 18px;
-    padding: 36px 24px 24px;
+    min-height: 150px;
     margin-bottom: 36px;
-    overflow: hidden;
-    box-shadow: 0 16px 36px rgba(31, 63, 140, 0.20);
+    padding-right: 120px;
   }
-  .usana-quote-card::after {
-    content: '';
+  .usana-quote-photo {
     position: absolute;
-    top: -60px;
-    right: -60px;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(79, 163, 217, 0.22) 0%, transparent 70%);
+    right: -8px;
+    bottom: 0;
+    width: 128px;
+    object-fit: contain;
+    object-position: bottom;
   }
   .usana-quote-mark {
-    position: absolute;
-    top: 8px;
-    left: 18px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 88px;
-    line-height: 1;
-    color: var(--usana-cyan);
-    opacity: 0.55;
+    font-size: 72px;
+    line-height: 0.75;
+    color: var(--usana-blue);
+    opacity: 0.18;
     font-weight: 500;
-    z-index: 1;
+    margin-bottom: 6px;
   }
   .usana-quote-text {
-    position: relative;
-    z-index: 2;
-    font-size: 16.5px;
-    color: var(--white);
+    font-size: 16px;
+    color: var(--ink);
     line-height: 1.65;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.4px;
-    margin: 8px 0 22px;
-    padding-left: 2px;
+    margin-bottom: 20px;
   }
   .usana-quote-byline {
-    position: relative;
-    z-index: 2;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
   }
   .usana-quote-name {
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 700;
-    color: var(--white);
+    color: var(--ink);
     margin-bottom: 3px;
     letter-spacing: -0.2px;
   }
   .usana-quote-title {
-    font-size: 10.5px;
-    color: var(--usana-cyan);
+    font-size: 10px;
+    color: var(--usana-blue);
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -1383,7 +1369,8 @@
         <span class="usana-note-mark">*</span> NYSE 등재 · 종목코드 <strong>USNA</strong>
       </p>
 
-      <div class="usana-quote-card">
+      <div class="usana-quote-wrap">
+        <img class="usana-quote-photo" src="assets/wentz.png" alt="마이런 웬츠 박사" />
         <div class="usana-quote-mark">&ldquo;</div>
         <p class="usana-quote-text">
           모든 사람이 평생 지속되는<br/>
