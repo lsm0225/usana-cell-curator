@@ -323,28 +323,23 @@
     text-align: center;
   }
   .story-author {
-    margin-top: 18px;
+    margin-top: 16px;
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: -0.2px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
-  .story-author-name {
-    position: relative;
-    display: inline-block;
-    padding: 2px 28px 26px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--ink);
-    letter-spacing: -0.2px;
-  }
-  .story-author-brush {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 2px;
-    height: 22px;
-    pointer-events: none;
-    display: block;
-    overflow: visible;
+  .story-author::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--honey);
+    flex-shrink: 0;
   }
 
   /* ==================== CONNECT (SNS) ==================== */
@@ -959,19 +954,7 @@
         </div>
         <div class="story-text">
           <p class="story-quote">건강은 약속이고, 그 약속을 매일 지킬 수 있도록<br/>곁에서 함께하겠습니다.</p>
-          <div class="story-author">
-            <span class="story-author-name">
-              <svg class="story-author-brush" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 4 12 C 28 2, 56 22, 82 10 S 130 2, 156 12 S 192 22, 196 10"
-                      stroke="#C8941E" stroke-width="11" stroke-linecap="round"
-                      stroke-opacity="0.42" fill="none" vector-effect="non-scaling-stroke"/>
-                <path d="M 4 10 C 28 0, 56 20, 82 8 S 130 0, 156 10 S 192 20, 196 8"
-                      stroke="#C8941E" stroke-width="5" stroke-linecap="round"
-                      stroke-opacity="0.78" fill="none" vector-effect="non-scaling-stroke"/>
-              </svg>
-              서혜미 드림
-            </span>
-          </div>
+          <div class="story-author">서혜미 드림</div>
         </div>
       </div>
     </div>
