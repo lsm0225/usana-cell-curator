@@ -527,7 +527,7 @@
     letter-spacing: -1px;
   }
   .why .section-title strong {
-    color: var(--usana-cyan);
+    color: #FFD166;
     font-weight: 800;
   }
 
@@ -562,23 +562,23 @@
     letter-spacing: -3px;
     line-height: 1;
     margin-bottom: 22px;
-    display: inline-block;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  /* +/국을 숫자 박스의 오른쪽 하단에 고정 — 모든 stat에서 동일한 위치 */
   .why-stat-num small {
-    position: absolute;
-    left: 100%;
-    bottom: 8px;
-    font-size: 22px;
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 20px;
     font-weight: 800;
     color: var(--usana-cyan);
     letter-spacing: 0;
-    margin-left: 2px;
     line-height: 1;
-    white-space: nowrap;
+    margin-left: 5px;
+    margin-top: 5px;
   }
-  /* 라벨 — 고정 폭 시안 라인이 모든 stat에서 동일 */
+  .why-stat-num[data-suffix="국"] small {
+    margin-top: 7px;
+  }
   .why-stat-label {
     display: inline-block;
     position: relative;
@@ -643,7 +643,7 @@
     margin-bottom: 3px;
   }
   .why-point-title em {
-    color: var(--usana-cyan);
+    color: #FFD166;
     font-style: normal;
     font-weight: 800;
   }
@@ -657,15 +657,16 @@
   .why-cert {
     position: relative;
     z-index: 1;
+    text-align: center;
   }
   .why-cert-label {
     font-size: 10.5px;
     font-weight: 800;
     color: var(--usana-cyan);
     letter-spacing: 1.5px;
-    text-align: center;
     margin-bottom: 22px;
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -679,15 +680,15 @@
   }
   .why-cert-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 8px;
   }
   .why-cert-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
+    text-align: center;
+    gap: 8px;
   }
   .why-cert-mark {
     width: 46px;
@@ -703,7 +704,8 @@
   }
   .why-cert-mark svg { width: 22px; height: 22px; }
   .why-cert-text {
-    min-width: 0;
+    width: 88px;
+    flex-shrink: 0;
   }
   .why-cert-name {
     font-size: 15px;
@@ -714,7 +716,7 @@
     line-height: 1.1;
   }
   .why-cert-desc {
-    font-size: 11.5px;
+    font-size: 13px;
     color: rgba(255, 255, 255, 0.70);
     font-weight: 500;
     line-height: 1.3;
@@ -866,6 +868,17 @@
     color: var(--usana-cyan);
     font-weight: 700;
   }
+  .athletes-out-desc {
+    margin-top: 24px;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    letter-spacing: -0.2px;
+  }
+  .athletes-out-desc strong {
+    color: var(--usana-cyan);
+    font-weight: 700;
+  }
   .athletes-tags {
     display: flex;
     flex-wrap: wrap;
@@ -886,43 +899,45 @@
 
   /* ==================== AUDIENCE (USANA brand) ==================== */
   .audience {
-    background: var(--white);
+    background: var(--cream);
+    padding: 48px 24px 56px;
   }
   .audience .section-label { color: var(--usana-blue); }
-  .audience .section-title em { color: var(--usana-blue); }
-
+  .audience .section-title { margin-bottom: 6px; }
+  .audience .section-title em { color: var(--usana-blue); font-style: normal; }
+  .audience-sub {
+    font-size: 13.5px;
+    color: var(--gray);
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
   .audience-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 22px;
-  }
-  .audience-card {
-    padding: 22px 16px;
-    background: var(--white);
-    border: 1px solid var(--usana-blue-light);
-    border-radius: 14px;
-    text-align: left;
-    box-shadow: 0 4px 14px rgba(31, 63, 140, 0.04);
-  }
-  .audience-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: var(--usana-blue-light);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-    color: var(--usana-blue);
+    flex-direction: column;
+    gap: 12px;
   }
-  .audience-icon svg { width: 18px; height: 18px; }
-  .audience-title {
-    font-size: 14px;
-    font-weight: 700;
+  .audience-bubble {
+    max-width: 82%;
+    padding: 14px 18px;
+    border-radius: 20px;
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+    word-break: keep-all;
+  }
+  .audience-bubble.left {
+    background: var(--usana-blue);
+    color: var(--white);
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+  }
+  .audience-bubble.right {
+    background: var(--white);
     color: var(--ink);
-    letter-spacing: -0.3px;
-    line-height: 1.35;
+    border-bottom-right-radius: 4px;
+    align-self: flex-end;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   }
 
   /* ==================== ORDER (USANA brand) ==================== */
@@ -1513,10 +1528,6 @@
         <img class="athletes-portrait" src="assets/lee-jung-hoo.png" alt="이정후 선수" />
         <span class="athletes-card-label">MLB · SF GIANTS</span>
         <h3 class="athletes-card-title">"이정후 선수가<br/>선택한 비타민"</h3>
-        <p class="athletes-card-desc">
-          몸이 곧 자산인 프로 선수에게 필요한 건 <strong>약이 아닌 영양</strong>.
-          매일의 컨디션을 만드는 영양을 세계 정상급 선수들이 USANA에서 찾습니다.
-        </p>
         <ul class="athletes-tags">
           <li>샌프란시스코 자이언츠</li>
           <li>수원 KT 소닉붐</li>
@@ -1526,6 +1537,11 @@
           <li>AFC 본머스</li>
         </ul>
       </div>
+
+      <p class="athletes-out-desc">
+        몸이 곧 자산인 프로 선수에게 필요한 건 <strong>약이 아닌 영양</strong>.<br/>
+        매일의 컨디션을 만드는 영양을 세계 정상급 선수들이 USANA에서 찾습니다.
+      </p>
     </div>
   </section>
 
@@ -1534,32 +1550,17 @@
     <div class="reveal">
       <div class="section-label">FOR YOU</div>
       <h2 class="section-title">이런 분들께 <em>추천</em></h2>
+      <p class="audience-sub">혹시 이런 생각 해보신 적 있으신가요?</p>
 
       <div class="audience-grid">
-        <div class="audience-card">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round"/></svg>
-          </div>
-          <div class="audience-title">건강 루틴이<br/>필요한 분</div>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="audience-title">활력·에너지가<br/>필요한 분</div>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
-          </div>
-          <div class="audience-title">영양 밸런스가<br/>필요한 분</div>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18" stroke-linecap="round"/></svg>
-          </div>
-          <div class="audience-title">새로운 기회를<br/>찾는 분</div>
-        </div>
+        <div class="audience-bubble left">운동 또 작심삼일 됐어.. 건강 루틴 어떻게 만들어? 😮‍💨</div>
+        <div class="audience-bubble right">의지 문제 아니야, 몸에 에너지가 없는 거지 😊</div>
+        <div class="audience-bubble left">맞아 요즘 너무 피곤하고 활력이 하나도 없어</div>
+        <div class="audience-bubble right">영양이 제대로 안 채워지면 딱 그래</div>
+        <div class="audience-bubble left">뭘 먹어야 영양 밸런스가 맞는 건지도 모르겠고 ㅠ</div>
+        <div class="audience-bubble right">그것도 알려줄 수 있어! 혹시 부업도 찾고 있어?</div>
+        <div class="audience-bubble left">어 사실 새로운 기회 찾고 있긴 한데 🤔</div>
+        <div class="audience-bubble right">그럼 진짜 한번 얘기해보자 🙌</div>
       </div>
     </div>
   </section>
