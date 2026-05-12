@@ -562,18 +562,6 @@
     letter-spacing: -3px;
     line-height: 1;
     margin-bottom: 14px;
-    display: inline-flex;
-    align-items: baseline;
-    justify-content: center;
-  }
-  /* 보이지 않는 좌측 스페이서 — 진짜 숫자가 시각적 중앙에 오도록 균형 */
-  .why-stat-num::before {
-    content: attr(data-suffix);
-    visibility: hidden;
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 0;
-    margin-right: 2px;
   }
   .why-stat-num small {
     font-size: 22px;
@@ -581,7 +569,7 @@
     color: var(--usana-cyan);
     letter-spacing: 0;
     margin-left: 2px;
-    line-height: 1;
+    vertical-align: baseline;
   }
   .why-stat-label {
     display: inline-block;
@@ -697,7 +685,6 @@
   }
   .why-cert-mark svg { width: 22px; height: 22px; }
   .why-cert-text {
-    flex: 1;
     min-width: 0;
   }
   .why-cert-name {
