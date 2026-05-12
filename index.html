@@ -38,6 +38,11 @@
     --gray: #8A8174;
     --line: #E5DCC8;
     --white: #FFFFFF;
+    /* === USANA BRAND (rebrand) === */
+    --usana-blue: #1F3F8C;
+    --usana-blue-deep: #142E66;
+    --usana-blue-light: #E8EEF8;
+    --usana-cyan: #4FA3D9;
   }
 
   html, body {
@@ -94,121 +99,125 @@
     line-height: 1.7;
   }
 
-  /* ==================== HERO ==================== */
+  /* ==================== HERO (USANA brand) ==================== */
   .hero {
     position: relative;
     min-height: 100vh;
-    padding: calc(env(safe-area-inset-top, 0px) + 64px) 24px calc(env(safe-area-inset-bottom, 0px) + 100px);
+    padding: 0;
     display: flex;
     flex-direction: column;
-    background: var(--cream);
+    background: var(--white);
     overflow: hidden;
   }
 
-  /* hero에 인물 사진을 배경 비주얼로 */
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('assets/portrait.jpg');
-    background-size: cover;
-    background-position: center 30%;
-    opacity: 0.35;
-    filter: saturate(0.85);
-    z-index: 0;
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: var(--cream-warm);
+    overflow: hidden;
   }
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, var(--cream) 0%, rgba(251, 247, 238, 0.3) 35%, rgba(251, 247, 238, 0.85) 80%, var(--cream) 100%);
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+    display: block;
   }
 
-  .hero-top {
+  /* 사진과 블루 패널 사이 웨이브 디바이더 */
+  .hero-wave {
+    display: block;
+    width: 100%;
+    height: 64px;
+    margin-top: -56px;
     position: relative;
     z-index: 2;
-    text-align: center;
+    fill: var(--usana-blue);
+  }
+
+  .hero-panel {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background: var(--usana-blue);
+    color: var(--white);
+    padding: 14px 28px calc(env(safe-area-inset-bottom, 0px) + 90px);
+    position: relative;
+    margin-top: -2px;
+    z-index: 1;
   }
 
-  .hero-mark {
-    font-size: 11px;
+  .hero-tag {
+    display: inline-block;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    color: var(--honey);
-    margin-bottom: 24px;
-    padding: 6px 14px;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    letter-spacing: 1.2px;
+    color: rgba(255, 255, 255, 0.88);
+    padding: 6px 13px;
+    background: rgba(255, 255, 255, 0.10);
     border-radius: 100px;
-    border: 1px solid rgba(200, 148, 30, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    margin-bottom: 22px;
   }
 
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 44px;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.05;
-    letter-spacing: 0.02em;
-    margin-bottom: 18px;
+  .hero-headline {
+    font-family: 'Pretendard Variable', Pretendard, sans-serif;
+    font-size: 46px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 0.96;
+    letter-spacing: -0.8px;
+    margin-bottom: 22px;
   }
-  .hero-title-line { display: block; }
-
-  .hero-divider {
-    width: 40px;
-    height: 1px;
-    background: var(--honey);
-    margin: 0 auto 18px;
-  }
-
-  .hero-slogan {
+  .hero-headline-line { display: block; }
+  .hero-headline sup {
     font-size: 15px;
-    font-weight: 500;
-    color: var(--wood-deep);
-    line-height: 1.7;
+    vertical-align: super;
+    margin-left: 3px;
+    opacity: 0.55;
+    font-weight: 600;
+  }
+
+  .hero-sub {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.75;
     letter-spacing: -0.2px;
   }
-  .hero-slogan strong {
-    color: var(--ink);
+  .hero-sub strong {
+    color: var(--white);
     font-weight: 700;
   }
 
   .hero-scroll {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 22px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    margin-top: auto;
-    padding: 12px 20px 10px;
-    background: rgba(251, 247, 238, 0.7);
+    padding: 12px 18px 10px;
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 28px;
-    border: 1px solid rgba(139, 111, 71, 0.12);
-    align-self: center;
+    border: 1px solid rgba(255, 255, 255, 0.20);
   }
   .hero-scroll-text {
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 1px;
-    color: var(--wood-deep);
+    color: rgba(255, 255, 255, 0.7);
   }
   .hero-scroll-icon {
     width: 18px;
     height: 26px;
-    border: 1.5px solid var(--wood-deep);
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
     border-radius: 10px;
     position: relative;
-    opacity: 0.6;
-    background: rgba(255, 252, 245, 0.4);
+    background: transparent;
   }
   .hero-scroll-icon::before {
     content: '';
@@ -218,7 +227,7 @@
     transform: translateX(-50%);
     width: 2.5px;
     height: 5px;
-    background: var(--honey);
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 3px;
     animation: scrollDot 1.8s ease-in-out infinite;
   }
@@ -1042,23 +1051,26 @@
 </head>
 <body>
 
-  <!-- ==================== HERO ==================== -->
+  <!-- ==================== HERO (USANA brand) ==================== -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-photo">
+      <img src="assets/portrait.jpg" alt="서혜미 USANA 브랜드파트너" />
+    </div>
 
-    <div class="hero-top">
-      <div class="hero-mark">USANA · BRAND PARTNER</div>
+    <svg class="hero-wave" viewBox="0 0 480 64" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,28 C140,70 340,0 480,40 L480,64 L0,64 Z"/>
+    </svg>
 
-      <h1 class="hero-title">
-        <span class="hero-title-line">TRUE HEALTH</span>
-        <span class="hero-title-line">EVERY DAY</span>
+    <div class="hero-panel">
+      <div class="hero-tag">USANA · BRAND PARTNER</div>
+      <h1 class="hero-headline">
+        <span class="hero-headline-line">TRUE</span>
+        <span class="hero-headline-line">HEALTH</span>
+        <span class="hero-headline-line">EVERY DAY<sup>®</sup></span>
       </h1>
-
-      <div class="hero-divider"></div>
-
-      <p class="hero-slogan">
+      <p class="hero-sub">
         세포에서 시작되는 진짜 영양,<br/>
-        <strong>당신의 하루</strong>를 새롭게 합니다
+        <strong>당신의 하루</strong>를 새롭게 합니다.
       </p>
     </div>
 
