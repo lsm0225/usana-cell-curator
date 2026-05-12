@@ -562,14 +562,20 @@
     letter-spacing: -3px;
     line-height: 1;
     margin-bottom: 14px;
+    display: inline-block;
+    position: relative;
   }
+  /* +/국은 숫자 박스의 오른쪽에 absolute로 매달려서 — 진짜 숫자만 중앙 정렬됨 */
   .why-stat-num small {
-    font-size: 26px;
+    position: absolute;
+    left: 100%;
+    top: 4px;
+    font-size: 22px;
     font-weight: 800;
-    margin-left: 3px;
     color: var(--usana-cyan);
-    vertical-align: baseline;
     letter-spacing: 0;
+    margin-left: 2px;
+    line-height: 1;
   }
   .why-stat-label {
     display: inline-block;
@@ -635,22 +641,22 @@
     line-height: 1.5;
   }
 
-  /* 인증 카드 — 큰 흰 카드 (떠있는 느낌) */
+  /* 인증 카드 — 2x2 그리드, 가로형 셀 (큰 글자) */
   .why-cert {
     background: var(--white);
     border-radius: 18px;
-    padding: 24px 16px 22px;
+    padding: 22px 18px;
     position: relative;
     z-index: 1;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
   }
   .why-cert-label {
-    font-size: 10px;
+    font-size: 10.5px;
     font-weight: 800;
     color: var(--usana-blue);
     letter-spacing: 1.5px;
     text-align: center;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -665,40 +671,49 @@
   }
   .why-cert-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    gap: 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
   .why-cert-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+    padding: 12px 10px;
+    background: var(--usana-blue-light);
+    border-radius: 12px;
   }
   .why-cert-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--usana-blue-light);
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--usana-blue);
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(31, 63, 140, 0.10);
   }
   .why-cert-mark svg { width: 22px; height: 22px; }
+  .why-cert-text {
+    flex: 1;
+    min-width: 0;
+  }
   .why-cert-name {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 800;
     color: var(--usana-blue);
     letter-spacing: 0.5px;
+    margin-bottom: 2px;
+    line-height: 1.1;
   }
   .why-cert-desc {
-    font-size: 9.5px;
-    color: var(--gray);
+    font-size: 11.5px;
+    color: var(--ink);
     font-weight: 500;
-    text-align: center;
     line-height: 1.3;
-    margin-top: -3px;
+    opacity: 0.75;
   }
   .why-cert-divider { display: none; }
 
@@ -831,9 +846,21 @@
     font-size: 21px;
     font-weight: 800;
     line-height: 1.35;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     color: var(--white);
     letter-spacing: -0.4px;
+  }
+  .athletes-card-desc {
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.7;
+    letter-spacing: -0.2px;
+    margin-bottom: 16px;
+    max-width: 84%;
+  }
+  .athletes-card-desc strong {
+    color: var(--usana-cyan);
+    font-weight: 700;
   }
   .athletes-tags {
     display: flex;
@@ -1435,32 +1462,37 @@
             <div class="why-cert-mark">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" stroke-linejoin="round"/></svg>
             </div>
-            <div class="why-cert-name">FDA</div>
-            <div class="why-cert-desc">美 식품의약청</div>
+            <div class="why-cert-text">
+              <div class="why-cert-name">FDA</div>
+              <div class="why-cert-desc">美 식품의약청</div>
+            </div>
           </div>
-          <div class="why-cert-divider"></div>
           <div class="why-cert-item">
             <div class="why-cert-mark">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke-linecap="round"/></svg>
             </div>
-            <div class="why-cert-name">NSF</div>
-            <div class="why-cert-desc">美 위생협회</div>
+            <div class="why-cert-text">
+              <div class="why-cert-name">NSF</div>
+              <div class="why-cert-desc">美 위생협회</div>
+            </div>
           </div>
-          <div class="why-cert-divider"></div>
           <div class="why-cert-item">
             <div class="why-cert-mark">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
             </div>
-            <div class="why-cert-name">USP</div>
-            <div class="why-cert-desc">美 약전</div>
+            <div class="why-cert-text">
+              <div class="why-cert-name">USP</div>
+              <div class="why-cert-desc">美 약전</div>
+            </div>
           </div>
-          <div class="why-cert-divider"></div>
           <div class="why-cert-item">
             <div class="why-cert-mark">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke-linecap="round"/></svg>
             </div>
-            <div class="why-cert-name">PDR</div>
-            <div class="why-cert-desc">의사 처방서</div>
+            <div class="why-cert-text">
+              <div class="why-cert-name">PDR</div>
+              <div class="why-cert-desc">의사 처방서</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1477,6 +1509,10 @@
         <img class="athletes-portrait" src="assets/lee-jung-hoo.png" alt="이정후 선수" />
         <span class="athletes-card-label">MLB · SF GIANTS</span>
         <h3 class="athletes-card-title">"이정후 선수가<br/>선택한 비타민"</h3>
+        <p class="athletes-card-desc">
+          몸이 곧 자산인 프로 선수에게 필요한 건 <strong>약이 아닌 영양</strong>.
+          매일의 컨디션을 만드는 영양을 세계 정상급 선수들이 USANA에서 찾습니다.
+        </p>
         <ul class="athletes-tags">
           <li>샌프란시스코 자이언츠</li>
           <li>수원 KT 소닉붐</li>
