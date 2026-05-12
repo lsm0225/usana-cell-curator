@@ -310,34 +310,43 @@
     opacity: 0.5;
   }
 
-  /* ==================== CONNECT (SNS) ==================== */
+  /* ==================== CONNECT (USANA brand) ==================== */
   .connect {
-    background: var(--cream);
+    background: var(--white);
   }
+  /* 섹션 로컬 오버라이드 — USANA 블루로 */
+  .connect .section-label { color: var(--usana-blue); }
+  .connect .section-title em { color: var(--usana-blue); }
 
   .channel-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     margin-top: 22px;
   }
 
   .channel-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 13px 16px;
+    gap: 14px;
+    padding: 14px 16px;
     background: var(--white);
-    border-radius: 12px;
+    border: 1px solid var(--usana-blue-light);
+    border-radius: 14px;
     text-decoration: none;
     color: var(--ink);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 4px 14px rgba(31, 63, 140, 0.04);
   }
-  .channel-item:active { transform: scale(0.98); }
+  .channel-item:active {
+    transform: scale(0.98);
+    border-color: var(--usana-blue);
+    box-shadow: 0 2px 8px rgba(31, 63, 140, 0.10);
+  }
 
   .channel-icon {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -346,24 +355,24 @@
     color: var(--white);
   }
   .channel-icon.kakao { background: #FEE500; color: #3C1E1E; }
-  .channel-icon.phone { background: var(--ink); color: var(--cream); }
-  .channel-icon.instagram { 
+  .channel-icon.phone { background: var(--usana-blue); color: var(--white); }
+  .channel-icon.instagram {
     background: linear-gradient(135deg, #FEDA77 0%, #F58529 25%, #DD2A7B 50%, #8134AF 75%, #515BD4 100%);
   }
   .channel-icon.youtube { background: #FF0000; }
-  .channel-icon.usana { background: var(--honey); color: var(--white); font-weight: 800; font-size: 11px; letter-spacing: 0.5px; }
+  .channel-icon.usana { background: var(--usana-blue); color: var(--white); font-weight: 800; font-size: 11px; letter-spacing: 0.5px; }
   .channel-icon svg { width: 22px; height: 22px; }
 
   .channel-content { flex: 1; min-width: 0; }
   .channel-name {
-    font-size: 14px;
+    font-size: 14.5px;
     font-weight: 700;
     color: var(--ink);
     margin-bottom: 2px;
     letter-spacing: -0.2px;
   }
   .channel-handle {
-    font-size: 12px;
+    font-size: 12.5px;
     color: var(--gray);
     font-weight: 500;
     overflow: hidden;
@@ -371,15 +380,16 @@
     white-space: nowrap;
   }
   .channel-arrow {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: var(--cream);
+    background: var(--usana-blue-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--gray);
-    font-size: 12px;
+    color: var(--usana-blue);
+    font-size: 13px;
+    font-weight: 700;
     flex-shrink: 0;
   }
 
