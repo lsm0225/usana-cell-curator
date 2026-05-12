@@ -891,6 +891,143 @@
     font-weight: 500;
   }
 
+  /* ==================== ABOUT USANA ==================== */
+  .about-usana {
+    background: var(--cream);
+  }
+  .usana-intro {
+    font-size: 14.5px;
+    color: var(--wood-deep);
+    line-height: 1.75;
+    letter-spacing: -0.2px;
+    margin-bottom: 10px;
+  }
+  .usana-note {
+    font-size: 11.5px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .usana-note-mark {
+    color: var(--honey);
+    font-weight: 700;
+    margin-right: 2px;
+  }
+  .usana-note strong {
+    color: var(--honey-deep);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* 창립자 인용 카드 */
+  .usana-quote-card {
+    position: relative;
+    background: var(--white);
+    border: 1px solid rgba(200, 148, 30, 0.20);
+    border-radius: 16px;
+    padding: 30px 22px 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 26px rgba(42, 31, 18, 0.06);
+  }
+  .usana-quote-mark {
+    position: absolute;
+    top: -2px;
+    left: 16px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 76px;
+    line-height: 1;
+    color: var(--honey);
+    opacity: 0.42;
+    font-weight: 500;
+  }
+  .usana-quote-text {
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.75;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    margin-bottom: 16px;
+  }
+  .usana-quote-byline {
+    padding-top: 14px;
+    border-top: 1px solid rgba(200, 148, 30, 0.18);
+  }
+  .usana-quote-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 3px;
+    letter-spacing: -0.2px;
+  }
+  .usana-quote-name span {
+    font-weight: 500;
+    color: var(--gray);
+    font-size: 11px;
+    margin-left: 4px;
+    letter-spacing: 0.2px;
+  }
+  .usana-quote-title {
+    font-size: 11px;
+    color: var(--gray);
+  }
+
+  /* 3 필러 카드 */
+  .usana-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .usana-pillar {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--white);
+    border-radius: 14px;
+    padding: 18px;
+    border: 1px solid rgba(139, 111, 71, 0.08);
+  }
+  .usana-pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: var(--honey);
+    font-weight: 500;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .usana-pillar-body { flex: 1; }
+  .usana-pillar-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--honey);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .usana-pillar-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+  }
+  .usana-pillar-desc {
+    font-size: 12.5px;
+    color: var(--wood-deep);
+    line-height: 1.65;
+    letter-spacing: -0.2px;
+  }
+
+  /* 독립 푸터 바 (다크) */
+  .footer-bar {
+    background: var(--ink);
+    padding: 26px 24px 24px;
+  }
+  .footer-bar .footer {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
   /* 부드러운 등장 효과 */
   .reveal {
     opacity: 0;
@@ -1284,11 +1421,71 @@
         </div>
       </div>
 
-      <div class="footer">
-        <div class="footer-logo">USANA</div>
-        <div class="footer-en">BRAND PARTNER · SINCE 1992</div>
-        <div class="footer-copy">© USANA Brand Partner. ALL RIGHTS RESERVED.</div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT USANA ==================== -->
+  <section class="about-usana">
+    <div class="reveal">
+      <div class="section-label">ABOUT USANA</div>
+      <h2 class="section-title">세포과학 뉴트리션,<br/><em>유사나</em>를 소개합니다</h2>
+
+      <p class="usana-intro">
+        유사나헬스사이언스는 세포 건강에 필요한 영양을 충족하는 과학을 바탕으로
+        프리미엄 뉴트리션 제품을 만듭니다. 영양 과학을 끊임없이 혁신해
+        모든 사람이 건강하고 행복한 삶을 누리도록 합니다.
+      </p>
+      <p class="usana-note">
+        <span class="usana-note-mark">*</span> 뉴욕증권거래소(NYSE) 등재 · 종목코드 <strong>USNA</strong>
+      </p>
+
+      <div class="usana-quote-card">
+        <div class="usana-quote-mark">&ldquo;</div>
+        <p class="usana-quote-text">
+          모든 사람들이 고통과 질병없이 평생 동안<br/>
+          지속되는 건강을 유지할 수 있기를 바랍니다.
+        </p>
+        <div class="usana-quote-byline">
+          <div class="usana-quote-name">마이런 웬츠 박사 <span>Dr. Myron Wentz</span></div>
+          <div class="usana-quote-title">유사나헬스사이언스 창립자 · 명예회장 · 미생물학 및 면역학 박사</div>
+        </div>
       </div>
+
+      <div class="usana-pillars">
+        <div class="usana-pillar">
+          <div class="usana-pillar-num">01</div>
+          <div class="usana-pillar-body">
+            <div class="usana-pillar-label">FOUNDED · 1992</div>
+            <div class="usana-pillar-title">미생물학자가 세운 회사</div>
+            <p class="usana-pillar-desc">국제적으로 인정받는 미생물학자 마이런 웬츠 박사가 1992년 설립. 1974년 걸 연구소(Gull Labs)를 세워 엡스타인-바 바이러스 최초 상업 진단법을 개발한 과학자입니다.</p>
+          </div>
+        </div>
+        <div class="usana-pillar">
+          <div class="usana-pillar-num">02</div>
+          <div class="usana-pillar-body">
+            <div class="usana-pillar-label">QUALITY · GMP</div>
+            <div class="usana-pillar-title">우수제조관리기준 준수</div>
+            <p class="usana-pillar-desc">미국 유타 솔트레이크시티 자체 시설에서 직접 개발·테스트·생산합니다. 건강기능식품 GMP 기준을 따르며, 비교할 수 없을 만큼 엄격한 절차로 모든 제품을 검증합니다.</p>
+          </div>
+        </div>
+        <div class="usana-pillar">
+          <div class="usana-pillar-num">03</div>
+          <div class="usana-pillar-body">
+            <div class="usana-pillar-label">GUARANTEED</div>
+            <div class="usana-pillar-title">기술력으로 보장하는 효과</div>
+            <p class="usana-pillar-desc">최고 수준의 제품 설계와 제조 기준으로, 판매하는 모든 뉴트리션 제품의 효과를 유사나의 기술력으로 보장합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <section class="footer-bar">
+    <div class="footer">
+      <div class="footer-logo">USANA</div>
+      <div class="footer-en">BRAND PARTNER · SINCE 1992</div>
+      <div class="footer-copy">© USANA Brand Partner. ALL RIGHTS RESERVED.</div>
     </div>
   </section>
 
