@@ -38,11 +38,11 @@
     --gray: #8A8174;
     --line: #E5DCC8;
     --white: #FFFFFF;
-    /* === USANA BRAND (rebrand) === */
-    --usana-blue: #1F3F8C;
-    --usana-blue-deep: #142E66;
-    --usana-blue-light: #E8EEF8;
-    --usana-cyan: #4FA3D9;
+    /* === USANA BRAND (파스텔 톤다운) === */
+    --usana-blue: #3D5C9E;
+    --usana-blue-deep: #2C4781;
+    --usana-blue-light: #EBF0F8;
+    --usana-cyan: #7EB4D8;
   }
 
   html, body {
@@ -641,22 +641,18 @@
     line-height: 1.5;
   }
 
-  /* 인증 카드 — 2x2 그리드, 가로형 셀 (큰 글자) */
+  /* 인증 — 외부 박스 제거, 블루 배경 위에 직접 */
   .why-cert {
-    background: var(--white);
-    border-radius: 18px;
-    padding: 22px 18px;
     position: relative;
     z-index: 1;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
   }
   .why-cert-label {
     font-size: 10.5px;
     font-weight: 800;
-    color: var(--usana-blue);
+    color: var(--usana-cyan);
     letter-spacing: 1.5px;
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -664,15 +660,15 @@
   }
   .why-cert-label::before, .why-cert-label::after {
     content: '';
-    width: 18px;
+    width: 22px;
     height: 1px;
-    background: var(--usana-blue);
-    opacity: 0.5;
+    background: var(--usana-cyan);
+    opacity: 0.55;
   }
   .why-cert-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 18px 14px;
+    gap: 20px 16px;
   }
   .why-cert-item {
     display: flex;
@@ -681,14 +677,15 @@
     gap: 12px;
   }
   .why-cert-mark {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    background: var(--usana-blue-light);
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(126, 180, 216, 0.35);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--usana-blue);
+    color: var(--usana-cyan);
     flex-shrink: 0;
   }
   .why-cert-mark svg { width: 22px; height: 22px; }
@@ -699,17 +696,16 @@
   .why-cert-name {
     font-size: 15px;
     font-weight: 800;
-    color: var(--usana-blue);
+    color: var(--white);
     letter-spacing: 0.5px;
     margin-bottom: 2px;
     line-height: 1.1;
   }
   .why-cert-desc {
     font-size: 11.5px;
-    color: var(--ink);
+    color: rgba(255, 255, 255, 0.70);
     font-weight: 500;
     line-height: 1.3;
-    opacity: 0.75;
   }
   .why-cert-divider { display: none; }
 
