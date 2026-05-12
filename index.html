@@ -556,7 +556,7 @@
   }
   .why-stat-num {
     font-family: 'Pretendard Variable', sans-serif;
-    font-size: 56px;
+    font-size: 54px;
     font-weight: 900;
     color: var(--white);
     letter-spacing: -3px;
@@ -564,22 +564,23 @@
     margin-bottom: 14px;
   }
   .why-stat-num small {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 800;
-    margin-left: 1px;
+    margin-left: 3px;
     color: var(--usana-cyan);
-    vertical-align: 22px;
+    vertical-align: baseline;
     letter-spacing: 0;
   }
   .why-stat-label {
     display: inline-block;
-    font-size: 10.5px;
-    color: rgba(255, 255, 255, 0.82);
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.88);
     font-weight: 600;
-    letter-spacing: 0.5px;
-    line-height: 1.5;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
     padding-top: 12px;
     border-top: 2px solid var(--usana-cyan);
+    white-space: nowrap;
   }
 
   /* 차별점 리스트 — 통계 아래 깔끔한 라인 */
@@ -690,6 +691,14 @@
     font-weight: 800;
     color: var(--usana-blue);
     letter-spacing: 0.5px;
+  }
+  .why-cert-desc {
+    font-size: 9.5px;
+    color: var(--gray);
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.3;
+    margin-top: -3px;
   }
   .why-cert-divider { display: none; }
 
@@ -1377,15 +1386,15 @@
       <div class="why-stats">
         <div class="why-stat">
           <div class="why-stat-num">30<small>+</small></div>
-          <div class="why-stat-label">운영<br/>연수</div>
+          <div class="why-stat-label">운영연수</div>
         </div>
         <div class="why-stat">
           <div class="why-stat-num">25<small>국</small></div>
-          <div class="why-stat-label">글로벌<br/>비즈니스</div>
+          <div class="why-stat-label">진출국가</div>
         </div>
         <div class="why-stat">
           <div class="why-stat-num">150<small>+</small></div>
-          <div class="why-stat-label">전담<br/>과학자</div>
+          <div class="why-stat-label">전담과학자</div>
         </div>
       </div>
 
@@ -1427,6 +1436,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" stroke-linejoin="round"/></svg>
             </div>
             <div class="why-cert-name">FDA</div>
+            <div class="why-cert-desc">美 식품의약청</div>
           </div>
           <div class="why-cert-divider"></div>
           <div class="why-cert-item">
@@ -1434,6 +1444,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke-linecap="round"/></svg>
             </div>
             <div class="why-cert-name">NSF</div>
+            <div class="why-cert-desc">美 위생협회</div>
           </div>
           <div class="why-cert-divider"></div>
           <div class="why-cert-item">
@@ -1441,6 +1452,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
             </div>
             <div class="why-cert-name">USP</div>
+            <div class="why-cert-desc">美 약전</div>
           </div>
           <div class="why-cert-divider"></div>
           <div class="why-cert-item">
@@ -1448,6 +1460,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke-linecap="round"/></svg>
             </div>
             <div class="why-cert-name">PDR</div>
+            <div class="why-cert-desc">의사 처방서</div>
           </div>
         </div>
       </div>
