@@ -582,6 +582,58 @@
     border-top: 2px solid var(--usana-cyan);
   }
 
+  /* 차별점 리스트 — 통계 아래 깔끔한 라인 */
+  .why-points {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 1;
+  }
+  .why-point {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 16px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .why-point:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .why-point-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(79, 163, 217, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--usana-cyan);
+  }
+  .why-point-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .why-point-body { flex: 1; }
+  .why-point-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.2px;
+    margin-bottom: 3px;
+  }
+  .why-point-title em {
+    color: var(--usana-cyan);
+    font-style: normal;
+    font-weight: 800;
+  }
+  .why-point-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.5;
+  }
+
   /* 인증 카드 — 큰 흰 카드 (떠있는 느낌) */
   .why-cert {
     background: var(--white);
@@ -1334,6 +1386,36 @@
         <div class="why-stat">
           <div class="why-stat-num">150<small>+</small></div>
           <div class="why-stat-label">전담<br/>과학자</div>
+        </div>
+      </div>
+
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-point-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3" stroke-linecap="round"/></svg>
+          </div>
+          <div class="why-point-body">
+            <div class="why-point-title"><em>세포과학</em>에서 시작합니다</div>
+            <div class="why-point-desc">미국 특허 인셀리전스 테크놀로지</div>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="why-point-body">
+            <div class="why-point-title"><em>NYSE 상장</em> 글로벌 기업</div>
+            <div class="why-point-desc">1992년 설립 · 미국 유타 자체 시설 운영</div>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="why-point-body">
+            <div class="why-point-title">한 알 그 이상의 <em>약속</em></div>
+            <div class="why-point-desc">USANA 재단을 통한 사회 환원 활동</div>
+          </div>
         </div>
       </div>
 
