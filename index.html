@@ -187,6 +187,25 @@
     font-weight: 700;
   }
 
+  /* 슬로건과 본인 인사 사이 디바이더 + 인사말 */
+  .hero-greeting {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.75;
+    letter-spacing: -0.2px;
+  }
+  .hero-greeting-hi {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+
   .hero-scroll {
     position: absolute;
     bottom: calc(env(safe-area-inset-bottom, 0px) + 22px);
@@ -1071,6 +1090,10 @@
       <p class="hero-sub">
         세포에서 시작되는 진짜 영양,<br/>
         <strong>당신의 하루</strong>를 새롭게 합니다.
+      </p>
+      <p class="hero-greeting">
+        <span class="hero-greeting-hi">안녕하세요, 서혜미입니다.</span>
+        진짜 영양을 당신의 일상 가까이에서 안내해드립니다.
       </p>
     </div>
 
