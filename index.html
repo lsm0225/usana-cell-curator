@@ -107,13 +107,14 @@
     display: flex;
     flex-direction: column;
     background: var(--white);
-    overflow: hidden;
   }
   .hero-photo {
     width: 100%;
     aspect-ratio: 4 / 5;
+    max-height: 50vh;
     background: var(--ink);
     overflow: hidden;
+    flex-shrink: 0;
   }
   .hero-photo img {
     width: 100%;
@@ -128,7 +129,7 @@
     display: block;
     width: 100%;
     height: 64px;
-    margin-top: -56px;
+    margin-top: -80px;
     position: relative;
     z-index: 2;
     fill: var(--usana-blue);
