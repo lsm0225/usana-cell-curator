@@ -237,32 +237,24 @@
   .story-card {
     margin-top: 36px;
     position: relative;
-    padding-bottom: 8px;
   }
 
-  /* 뒤쪽에 살짝 어긋난 크림 백플레이트 (입체감) */
-  .story-card::before {
-    content: '';
-    position: absolute;
-    top: 18px;
-    right: -6px;
-    bottom: -2px;
-    left: 14px;
-    background: var(--cream-warm);
-    border-radius: 160px 160px 18px 18px;
-    z-index: 0;
-  }
-
+  /* 사진 영역: 종횡비 컨테이너 (overflow 없음 — 뱃지가 빠져나옴) */
   .story-photo {
     width: 100%;
     aspect-ratio: 4 / 5;
-    background: var(--cream-warm);
-    overflow: hidden;
     position: relative;
+  }
+
+  /* 안쪽 프레임: 아치 + 골드 보더 + 그림자 + 클리핑 */
+  .story-photo-inner {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
     border-radius: 180px 180px 18px 18px;
     border: 1px solid rgba(200, 148, 30, 0.40);
     box-shadow: 0 20px 40px rgba(42, 31, 18, 0.13);
-    z-index: 1;
+    background: var(--cream-warm);
   }
 
   .story-photo img {
@@ -966,7 +958,9 @@
 
       <div class="story-card">
         <div class="story-photo">
-          <img src="assets/portrait.jpg" alt="대표 프로필" />
+          <div class="story-photo-inner">
+            <img src="assets/portrait.jpg" alt="대표 프로필" />
+          </div>
           <span class="story-photo-badge">YOUR PARTNER</span>
         </div>
         <div class="story-photo-caption">
