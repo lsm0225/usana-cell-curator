@@ -1220,24 +1220,26 @@
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
   }
   .usana-pillar-play {
     flex-shrink: 0;
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
-    border: 1.5px solid var(--usana-blue-light);
-    display: flex;
+    background: var(--usana-blue);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--usana-blue);
-    opacity: 0.7;
-    transition: opacity 0.15s ease;
+    color: #fff;
+    transition: transform 0.15s ease;
   }
-  .usana-pillar-play:active { opacity: 1; }
+  .usana-pillar-play:active { transform: scale(0.9); }
   .usana-pillar-play svg {
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
     fill: currentColor;
     margin-left: 1px;
   }
@@ -1418,11 +1420,13 @@
           <div class="usana-pillar-num">01</div>
           <div class="usana-pillar-body">
             <div class="usana-pillar-label">FOUNDED · 1992</div>
-            <div class="usana-pillar-title">미생물학자가 세운 회사</div>
+            <div class="usana-pillar-title">
+              미생물학자가 세운 회사
+              <a href="https://youtu.be/LhEdT_-j1qQ?si=lqS4lJSg_67S-M2A" target="_blank" rel="noopener" class="usana-pillar-play" aria-label="유튜브 영상 재생">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </a>
+            </div>
           </div>
-          <a href="https://youtu.be/LhEdT_-j1qQ?si=lqS4lJSg_67S-M2A" target="_blank" rel="noopener" class="usana-pillar-play" aria-label="유튜브 영상 재생">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </a>
         </div>
         <div class="usana-pillar">
           <div class="usana-pillar-num">02</div>
