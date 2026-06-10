@@ -140,7 +140,7 @@
     flex: 1;
     background: var(--usana-blue);
     color: var(--white);
-    padding: 14px 28px calc(env(safe-area-inset-bottom, 0px) + 90px);
+    padding: 14px 28px calc(env(safe-area-inset-bottom, 0px) + 40px);
     position: relative;
     margin-top: -2px;
     z-index: 1;
@@ -205,56 +205,6 @@
     color: var(--white);
     margin-bottom: 6px;
     letter-spacing: -0.3px;
-  }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 22px);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    padding: 12px 18px 10px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.20);
-  }
-  .hero-scroll-text {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.7);
-  }
-  .hero-scroll-icon {
-    width: 18px;
-    height: 26px;
-    border: 1.5px solid rgba(255, 255, 255, 0.55);
-    border-radius: 10px;
-    position: relative;
-    background: transparent;
-  }
-  .hero-scroll-icon::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2.5px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 3px;
-    animation: scrollDot 1.8s ease-in-out infinite;
-  }
-  @keyframes scrollDot {
-    0% { transform: translateX(-50%) translateY(0); opacity: 1; }
-    50% { transform: translateX(-50%) translateY(8px); opacity: 0.3; }
-    100% { transform: translateX(-50%) translateY(0); opacity: 1; }
   }
 
   /* ==================== ABOUT ==================== */
@@ -1514,11 +1464,6 @@
         진짜 영양을 당신의 일상 가까이에서 안내해드립니다.
       </p>
     </div>
-
-    <a href="#about" class="hero-scroll" aria-label="아래로 스크롤">
-      <span class="hero-scroll-text">SCROLL</span>
-      <span class="hero-scroll-icon"></span>
-    </a>
   </section>
 
   <!-- ==================== ABOUT ==================== -->
