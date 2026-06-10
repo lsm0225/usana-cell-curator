@@ -653,6 +653,80 @@
     color: rgba(255, 255, 255, 0.65);
     line-height: 1.5;
   }
+  .why-point-view {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(126, 180, 216, 0.55);
+    background: rgba(79, 163, 217, 0.14);
+    color: var(--usana-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .why-point-view svg { width: 15px; height: 15px; }
+  .why-point-view:active { transform: scale(0.9); background: rgba(79, 163, 217, 0.28); }
+
+  /* 이미지 팝업 모달 */
+  .img-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 24, 48, 0.82);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  .img-modal.open { display: flex; }
+  .img-modal-inner {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    animation: imgModalIn 0.25s ease;
+  }
+  @keyframes imgModalIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .img-modal-img {
+    display: block;
+    max-width: 100%;
+    max-height: 84vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  .img-modal-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: var(--white);
+    color: var(--ink);
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  }
+  .img-modal-close:active { transform: scale(0.92); }
+  .img-modal-cap {
+    margin-top: 12px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 12.5px;
+    letter-spacing: -0.2px;
+  }
 
   /* 인증 — 외부 박스 제거, 블루 배경 위에 직접 */
   .why-cert {
@@ -1469,6 +1543,9 @@
             <div class="why-point-title"><em>NYSE 상장</em> 글로벌 기업</div>
             <div class="why-point-desc">1992년 설립 · 미국 유타 자체 시설 운영</div>
           </div>
+          <button type="button" class="why-point-view" aria-label="NYSE 상장 자료 보기" onclick="openImgModal('assets/nyse-listed.jpg', 'USANA NYSE 상장 — 종목코드 USNA')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+          </button>
         </div>
         <div class="why-point">
           <div class="why-point-icon">
@@ -1669,6 +1746,15 @@
     </div>
   </section>
 
+  <!-- ==================== 이미지 팝업 모달 ==================== -->
+  <div class="img-modal" id="imgModal" onclick="if(event.target===this)closeImgModal()">
+    <div class="img-modal-inner">
+      <button type="button" class="img-modal-close" aria-label="닫기" onclick="closeImgModal()">×</button>
+      <img class="img-modal-img" id="imgModalImg" src="" alt="" />
+      <div class="img-modal-cap" id="imgModalCap"></div>
+    </div>
+  </div>
+
 <script>
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1679,6 +1765,23 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
   document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
+
+  // 이미지 팝업 모달
+  const imgModal = document.getElementById('imgModal');
+  function openImgModal(src, caption) {
+    document.getElementById('imgModalImg').src = src;
+    document.getElementById('imgModalImg').alt = caption || '';
+    document.getElementById('imgModalCap').textContent = caption || '';
+    imgModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeImgModal() {
+    imgModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && imgModal.classList.contains('open')) closeImgModal();
+  });
 </script>
 
 </body>
