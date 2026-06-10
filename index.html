@@ -1223,22 +1223,23 @@
   }
   .usana-pillar-play {
     flex-shrink: 0;
-    width: 38px;
-    height: 38px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background: #FF0000;
+    border: 1.5px solid var(--usana-blue-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(255,0,0,0.28);
-    transition: transform 0.15s ease;
+    color: var(--usana-blue);
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
   }
-  .usana-pillar-play:active { transform: scale(0.92); }
+  .usana-pillar-play:active { opacity: 1; }
   .usana-pillar-play svg {
-    width: 16px;
-    height: 16px;
-    fill: #fff;
-    margin-left: 2px;
+    width: 11px;
+    height: 11px;
+    fill: currentColor;
+    margin-left: 1px;
   }
 
   /* 독립 푸터 바 (USANA 네이비) */
