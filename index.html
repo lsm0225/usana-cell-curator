@@ -752,6 +752,132 @@
     letter-spacing: -0.2px;
   }
 
+  /* WHY USANA — 유사나 알아보기 CTA */
+  .why-verify {
+    position: relative;
+    z-index: 1;
+    margin: 4px 0 30px;
+    text-align: center;
+  }
+  .why-verify-text {
+    font-size: 12.5px;
+    color: var(--usana-cyan);
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    margin-bottom: 12px;
+  }
+  .why-verify-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 100px;
+    background: #fff;
+    color: var(--usana-blue);
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .why-verify-btn svg { width: 17px; height: 17px; color: #FFD166; fill: #FFD166; }
+  .why-verify-btn .why-verify-arrow { font-size: 15px; margin-left: 2px; }
+  .why-verify-btn:active { transform: scale(0.97); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22); }
+
+  /* 유사나 알아보기 갤러리 모달 */
+  .verify-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: none;
+    justify-content: center;
+    background: rgba(15, 24, 48, 0.55);
+  }
+  .verify-modal.open { display: flex; }
+  .verify-sheet {
+    width: 100%;
+    max-width: 480px;
+    height: 100%;
+    background: var(--cream);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    animation: sheetUp 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  @keyframes sheetUp {
+    from { transform: translateY(26px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .verify-head {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--usana-blue-deep);
+    color: #fff;
+  }
+  .verify-head-title {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+  }
+  .verify-close {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .verify-close:active { transform: scale(0.92); }
+  .verify-body { padding: 24px 20px 44px; }
+  .verify-group { margin-bottom: 34px; }
+  .verify-group:last-child { margin-bottom: 0; }
+  .verify-group-label {
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: var(--usana-blue);
+    margin-bottom: 4px;
+  }
+  .verify-group-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.4px;
+    line-height: 1.35;
+    margin-bottom: 14px;
+  }
+  .verify-fig { margin: 0 0 14px; }
+  .verify-fig:last-child { margin-bottom: 0; }
+  .verify-fig img,
+  .verify-video {
+    display: block;
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(31, 63, 140, 0.12);
+  }
+  .verify-fig figcaption {
+    margin-top: 9px;
+    font-size: 12.5px;
+    color: var(--gray);
+    line-height: 1.55;
+    letter-spacing: -0.2px;
+    word-break: keep-all;
+  }
+  .verify-video { background: #000; }
+
   /* 인증 — 외부 박스 제거, 블루 배경 위에 직접 */
   .why-cert {
     position: relative;
@@ -1588,6 +1714,15 @@
         </div>
       </div>
 
+      <div class="why-verify reveal">
+        <p class="why-verify-text">세계가 평가하고, 대한민국이 인정한 유사나</p>
+        <button type="button" class="why-verify-btn" onclick="openVerifyModal()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          유사나 알아보기
+          <span class="why-verify-arrow">→</span>
+        </button>
+      </div>
+
       <div class="why-cert">
         <div class="why-cert-label">CERTIFIED BY</div>
         <div class="why-cert-list stagger">
@@ -1789,6 +1924,59 @@
     </div>
   </div>
 
+  <!-- ==================== 유사나 알아보기 갤러리 모달 ==================== -->
+  <div class="verify-modal" id="verifyModal" onclick="if(event.target===this)closeVerifyModal()">
+    <div class="verify-sheet">
+      <div class="verify-head">
+        <span class="verify-head-title">유사나 알아보기</span>
+        <button type="button" class="verify-close" aria-label="닫기" onclick="closeVerifyModal()">×</button>
+      </div>
+      <div class="verify-body">
+
+        <div class="verify-group">
+          <div class="verify-group-label">GLOBAL EVALUATION</div>
+          <div class="verify-group-title">세계가 평가한 영양제 1위</div>
+          <figure class="verify-fig">
+            <img src="assets/verify-nutrisearch-best.jpg" alt="가장 사랑받는 최고의 뉴트리션 종합영양제" loading="lazy" />
+            <figcaption>가장 사랑받는 최고의 뉴트리션 종합영양제 — 독성 없이 효능 높은 제품 <strong>1위</strong> (NutriSearch Platinum+)</figcaption>
+          </figure>
+          <figure class="verify-fig">
+            <img src="assets/verify-nutrisearch-books.jpg" alt="20년간 전 세계 영양제를 평가해 온 전문 서적" loading="lazy" />
+            <figcaption>20년간 전 세계 영양제를 평가해 온 전문 서적 — NutriSearch 종합 비교 가이드</figcaption>
+          </figure>
+        </div>
+
+        <div class="verify-group">
+          <div class="verify-group-label">KOREA AWARDS · 2026</div>
+          <div class="verify-group-title">대한민국 메디컬 헬스케어 대상 2관왕</div>
+          <figure class="verify-fig">
+            <img src="assets/verify-award-double.jpg" alt="2026 대한민국 메디컬 헬스케어 대상 유사나 2관왕 수상" loading="lazy" />
+            <figcaption>2026 대한민국 메디컬 헬스케어 대상 — 유사나 <strong>2관왕</strong> 수상 (주최 조선미디어)</figcaption>
+          </figure>
+          <figure class="verify-fig">
+            <img src="assets/verify-award-healthpak.jpg" alt="헬스팩 8년 연속 수상" loading="lazy" />
+            <figcaption>헬스팩 — 종합비타민 부문 <strong>8년 연속</strong> 수상 (2019~2026)</figcaption>
+          </figure>
+          <figure class="verify-fig">
+            <img src="assets/verify-award-nutrimeal.jpg" alt="뉴트리밀 액티브 6년 연속 수상" loading="lazy" />
+            <figcaption>뉴트리밀 액티브 — 조제식품 부문 <strong>6년 연속</strong> 수상 (2021~2026)</figcaption>
+          </figure>
+        </div>
+
+        <div class="verify-group">
+          <div class="verify-group-label">VIDEO</div>
+          <div class="verify-group-title">영상으로 보는 유사나</div>
+          <figure class="verify-fig">
+            <video class="verify-video" controls preload="none" playsinline>
+              <source src="assets/usana-intro.mp4" type="video/mp4" />
+            </video>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 <script>
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1819,6 +2007,21 @@
   }
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && imgModal.classList.contains('open')) closeImgModal();
+  });
+
+  // 유사나 알아보기 갤러리 모달
+  const verifyModal = document.getElementById('verifyModal');
+  function openVerifyModal() {
+    verifyModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVerifyModal() {
+    verifyModal.classList.remove('open');
+    document.body.style.overflow = '';
+    verifyModal.querySelectorAll('video').forEach(v => v.pause());
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && verifyModal.classList.contains('open')) closeVerifyModal();
   });
 </script>
 
