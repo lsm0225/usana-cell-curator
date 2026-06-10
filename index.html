@@ -684,6 +684,27 @@
     backdrop-filter: blur(4px);
   }
   .img-modal.open { display: flex; }
+  /* 로딩 상태 */
+  .img-modal-loading {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    letter-spacing: -0.2px;
+  }
+  .img-modal.loading .img-modal-loading { display: flex; }
+  .img-modal.loading .img-modal-inner { display: none; }
+  .img-modal-spinner {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #fff;
+    animation: imgSpin 0.8s linear infinite;
+  }
+  @keyframes imgSpin { to { transform: rotate(360deg); } }
   .img-modal-inner {
     position: relative;
     max-width: 100%;
@@ -703,21 +724,24 @@
   }
   .img-modal-close {
     position: absolute;
-    top: -14px;
-    right: -14px;
-    width: 38px;
-    height: 38px;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: none;
-    background: var(--white);
-    color: var(--ink);
-    font-size: 20px;
+    background: rgba(20, 28, 48, 0.55);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 19px;
     line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
   }
   .img-modal-close:active { transform: scale(0.92); }
   .img-modal-cap {
@@ -1754,6 +1778,10 @@
 
   <!-- ==================== 이미지 팝업 모달 ==================== -->
   <div class="img-modal" id="imgModal" onclick="if(event.target===this)closeImgModal()">
+    <div class="img-modal-loading">
+      <span class="img-modal-spinner"></span>
+      불러오는 중…
+    </div>
     <div class="img-modal-inner">
       <button type="button" class="img-modal-close" aria-label="닫기" onclick="closeImgModal()">×</button>
       <img class="img-modal-img" id="imgModalImg" src="" alt="" />
@@ -1774,12 +1802,16 @@
 
   // 이미지 팝업 모달
   const imgModal = document.getElementById('imgModal');
+  const imgModalImg = document.getElementById('imgModalImg');
   function openImgModal(src, caption) {
-    document.getElementById('imgModalImg').src = src;
-    document.getElementById('imgModalImg').alt = caption || '';
     document.getElementById('imgModalCap').textContent = caption || '';
-    imgModal.classList.add('open');
+    imgModalImg.alt = caption || '';
+    // 로딩 상태로 열기 — 이미지가 완전히 뜨면 inner(닫기 버튼 포함) 노출
+    imgModal.classList.add('open', 'loading');
     document.body.style.overflow = 'hidden';
+    imgModalImg.onload = () => imgModal.classList.remove('loading');
+    imgModalImg.src = src;
+    if (imgModalImg.complete) imgModal.classList.remove('loading');
   }
   function closeImgModal() {
     imgModal.classList.remove('open');
