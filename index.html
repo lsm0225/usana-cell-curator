@@ -1017,6 +1017,26 @@
     color: var(--white);
     font-weight: 500;
   }
+  .contact-item-top { align-items: flex-start; }
+  .contact-item-top .contact-icon { margin-top: 2px; }
+  .contact-addr {
+    line-height: 1.55;
+    word-break: keep-all;
+  }
+  .contact-addr .addr-tag {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--usana-cyan);
+    letter-spacing: 0.3px;
+    margin-top: 8px;
+  }
+  .contact-addr .addr-tag:first-child { margin-top: 0; }
+  .hours-sub {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 12.5px;
+    font-weight: 400;
+  }
 
   /* Footer */
   .footer {
@@ -1603,22 +1623,27 @@
             <div class="contact-value">010-2015-1265</div>
           </div>
         </a>
-        <a href="mailto:partner@usana.example" class="contact-item">
+        <a href="mailto:sham0324@naver.com" class="contact-item">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
           </div>
           <div class="contact-content">
             <div class="contact-label">EMAIL</div>
-            <div class="contact-value">partner@usana.example</div>
+            <div class="contact-value">sham0324@naver.com</div>
           </div>
         </a>
-        <div class="contact-item">
+        <div class="contact-item contact-item-top">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div class="contact-content">
             <div class="contact-label">LOCATION</div>
-            <div class="contact-value">서울특별시 (지역 입력)</div>
+            <div class="contact-value contact-addr">
+              <span class="addr-tag">유사나코리아 본사</span>
+              서울특별시 강남구 테헤란로 203 인터내셔널 타워 5층
+              <span class="addr-tag">개인 사무실</span>
+              경기도 부천시 원미구 중동로254번길 90, 6층
+            </div>
           </div>
         </div>
         <div class="contact-item">
@@ -1627,7 +1652,7 @@
           </div>
           <div class="contact-content">
             <div class="contact-label">HOURS</div>
-            <div class="contact-value">평일 10:00 - 18:00 (주말 상담 가능)</div>
+            <div class="contact-value">평일 09:00 - 18:00 <span class="hours-sub">(주말 상담 가능)</span></div>
           </div>
         </div>
       </div>
