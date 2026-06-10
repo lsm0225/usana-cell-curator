@@ -1221,6 +1221,25 @@
     color: var(--ink);
     letter-spacing: -0.3px;
   }
+  .usana-pillar-play {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #FF0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(255,0,0,0.28);
+    transition: transform 0.15s ease;
+  }
+  .usana-pillar-play:active { transform: scale(0.92); }
+  .usana-pillar-play svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+    margin-left: 2px;
+  }
 
   /* 독립 푸터 바 (USANA 네이비) */
   .footer-bar {
@@ -1400,6 +1419,9 @@
             <div class="usana-pillar-label">FOUNDED · 1992</div>
             <div class="usana-pillar-title">미생물학자가 세운 회사</div>
           </div>
+          <a href="https://youtu.be/LhEdT_-j1qQ?si=lqS4lJSg_67S-M2A" target="_blank" rel="noopener" class="usana-pillar-play" aria-label="유튜브 영상 재생">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </a>
         </div>
         <div class="usana-pillar">
           <div class="usana-pillar-num">02</div>
