@@ -402,10 +402,13 @@
   }
   .channel-tile-icon.youtube { background: #FF0000; }
   .channel-tile-icon.usana {
-    background: var(--usana-blue);
-    font-weight: 800;
-    font-size: 15px;
-    letter-spacing: 0.5px;
+    background: #fff;
+    border: 1px solid var(--usana-blue-light);
+  }
+  .channel-tile-icon.usana img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
   }
   .channel-tile-name {
     font-size: 13.5px;
@@ -1565,7 +1568,7 @@
             <div class="channel-tile-sub">리본맘 유튜브 채널</div>
           </a>
           <a href="https://9148574.usana.com" target="_blank" rel="noopener" class="channel-tile">
-            <div class="channel-tile-icon usana">U</div>
+            <div class="channel-tile-icon usana"><img src="assets/usana-symbol.png" alt="USANA" /></div>
             <div class="channel-tile-name">공식 사이트</div>
             <div class="channel-tile-sub">제품 둘러보기</div>
           </a>
