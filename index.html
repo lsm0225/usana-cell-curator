@@ -799,75 +799,17 @@
   .athletes .section-label { color: var(--usana-blue); }
   .athletes .section-title em { color: var(--usana-blue); }
 
-  .athletes-card {
+  .athletes-poster-wrap {
     margin-top: 22px;
-    background: linear-gradient(135deg, var(--usana-blue-deep) 0%, var(--usana-blue) 100%);
     border-radius: 18px;
-    padding: 26px 150px 26px 22px;
-    color: var(--white);
-    position: relative;
     overflow: hidden;
-    min-height: 320px;
+    box-shadow: 0 14px 32px rgba(31, 63, 140, 0.20);
+    line-height: 0;
   }
-
-  .athletes-portrait {
-    position: absolute;
-    right: -10px;
-    bottom: -6px;
-    width: 178px;
+  .athletes-poster {
+    display: block;
+    width: 100%;
     height: auto;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-select: none;
-    filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.5));
-    z-index: 1;
-  }
-
-  .athletes-card > *:not(.athletes-portrait) {
-    position: relative;
-    z-index: 2;
-  }
-  .athletes-card::before {
-    content: '';
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(79, 163, 217, 0.28) 0%, transparent 70%);
-  }
-  .athletes-card-label {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: var(--usana-cyan);
-    padding: 5px 10px;
-    background: rgba(79, 163, 217, 0.18);
-    border-radius: 100px;
-    margin-bottom: 14px;
-  }
-  .athletes-card-title {
-    font-family: 'Pretendard Variable', sans-serif;
-    font-size: 21px;
-    font-weight: 800;
-    line-height: 1.35;
-    margin-bottom: 10px;
-    color: var(--white);
-    letter-spacing: -0.4px;
-  }
-  .athletes-card-desc {
-    font-size: 12.5px;
-    color: rgba(255, 255, 255, 0.78);
-    line-height: 1.7;
-    letter-spacing: -0.2px;
-    margin-bottom: 16px;
-    max-width: 84%;
-  }
-  .athletes-card-desc strong {
-    color: var(--usana-cyan);
-    font-weight: 700;
   }
   .athletes-out-desc {
     margin-top: 24px;
@@ -884,18 +826,17 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 16px;
   }
   .athletes-tags li {
     list-style: none;
     font-size: 11px;
-    padding: 5px 10px;
-    background: rgba(255, 255, 255, 0.10);
+    padding: 5px 11px;
+    background: var(--usana-blue-light);
     border-radius: 100px;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--usana-blue);
     letter-spacing: 0.02em;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   /* ==================== AUDIENCE (USANA brand) ==================== */
@@ -1559,19 +1500,17 @@
       <div class="section-label">USANA ATHLETES</div>
       <h2 class="section-title">세계가 선택한 <em>브랜드</em></h2>
 
-      <div class="athletes-card">
-        <img class="athletes-portrait" src="assets/lee-jung-hoo.png" alt="이정후 선수" />
-        <span class="athletes-card-label">MLB · SF GIANTS</span>
-        <h3 class="athletes-card-title">"이정후 선수가<br/>선택한 비타민"</h3>
-        <ul class="athletes-tags">
-          <li>샌프란시스코 자이언츠</li>
-          <li>수원 KT 소닉붐</li>
-          <li>WTA 테니스</li>
-          <li>美 스키 & 스노보드</li>
-          <li>USA 레슬링</li>
-          <li>AFC 본머스</li>
-        </ul>
+      <div class="athletes-poster-wrap">
+        <img class="athletes-poster" src="assets/athletes-trust.jpg" alt="ATHLETES TRUST USANA — 세계 정상급 선수들이 선택한 유사나" />
       </div>
+      <ul class="athletes-tags">
+        <li>샌프란시스코 자이언츠</li>
+        <li>수원 KT 소닉붐</li>
+        <li>WTA 테니스</li>
+        <li>美 스키 & 스노보드</li>
+        <li>USA 레슬링</li>
+        <li>AFC 본머스</li>
+      </ul>
 
       <p class="athletes-out-desc">
         몸이 곧 자산인 프로 선수에게 필요한 건 <strong>약이 아닌 영양</strong>.<br/>
