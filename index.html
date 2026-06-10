@@ -859,7 +859,7 @@
     line-height: 1.35;
     margin-bottom: 14px;
   }
-  .verify-fig { margin: 0 0 14px; }
+  .verify-fig { margin: 0 0 26px; }
   .verify-fig:last-child { margin-bottom: 0; }
   .verify-fig img,
   .verify-video {
@@ -877,6 +877,12 @@
     word-break: keep-all;
   }
   .verify-fig figcaption strong { color: var(--usana-blue); font-weight: 700; }
+  .verify-fig figcaption .verify-cap-sub {
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 11.5px;
+    color: rgba(138, 129, 116, 0.85);
+  }
   .verify-video { background: #000; }
 
   /* 인증 — 외부 박스 제거, 블루 배경 위에 직접 */
@@ -1939,11 +1945,11 @@
           <div class="verify-group-title">세계가 평가한 영양제 1위</div>
           <figure class="verify-fig">
             <img src="assets/verify-nutrisearch-best.jpg" alt="가장 사랑받는 최고의 뉴트리션 종합영양제" loading="lazy" />
-            <figcaption>가장 사랑받는 최고의 뉴트리션 종합영양제 — 독성 없이 효능 높은 제품 <strong>1위</strong> (NutriSearch Platinum+)</figcaption>
+            <figcaption>가장 사랑받는 최고의 뉴트리션 종합영양제 — 독성 없이 효능 높은 제품 <strong>1위</strong><br/><span class="verify-cap-sub">NutriSearch Platinum+</span></figcaption>
           </figure>
           <figure class="verify-fig">
             <img src="assets/verify-nutrisearch-books.jpg" alt="20년간 전 세계 영양제를 평가해 온 전문 서적" loading="lazy" />
-            <figcaption>20년간 전 세계 영양제를 평가해 온 전문 서적 — NutriSearch 종합 비교 가이드</figcaption>
+            <figcaption>20년간 전 세계 영양제를 평가해 온 전문 서적<br/><span class="verify-cap-sub">NutriSearch 종합 비교 가이드</span></figcaption>
           </figure>
         </div>
 
