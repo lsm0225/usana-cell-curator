@@ -1918,6 +1918,26 @@
     .contact > .reveal { max-width: 920px; margin: 0 auto; }
     .contact-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .contact-item-top { grid-column: 1 / -1; }
+
+    /* ---------- 유사나 알아보기 갤러리 — 넓은 중앙 다이얼로그 + 자료 2열 ---------- */
+    .verify-modal { align-items: center; padding: 44px; }
+    .verify-sheet {
+      max-width: 1000px;
+      height: auto;
+      max-height: 88vh;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .verify-body { flex: 1; min-height: 0; overflow-y: auto; padding: 36px 44px 46px; }
+    .verify-group { margin-bottom: 48px; }
+    .verify-group-label { font-size: 11.5px; }
+    .verify-group-title { font-size: 22px; margin-bottom: 22px; }
+    .verify-figs { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+    .verify-figs-full { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
+    .verify-fig { margin: 0; }
+    .verify-fig figcaption { font-size: 13px; }
   }
 </style>
 </head>
@@ -2439,6 +2459,7 @@
         <div class="verify-group">
           <div class="verify-group-label">GLOBAL EVALUATION</div>
           <div class="verify-group-title">세계가 평가한 영양제 1위</div>
+          <div class="verify-figs">
           <figure class="verify-fig">
             <img src="assets/verify-nutrisearch-best.jpg" alt="가장 사랑받는 최고의 뉴트리션 종합영양제" loading="lazy" />
             <figcaption>가장 사랑받는 최고의 뉴트리션 종합영양제 — 독성 없이 효능 높은 제품 <strong>1위</strong><br/><span class="verify-cap-sub">NutriSearch Platinum+</span></figcaption>
@@ -2447,11 +2468,13 @@
             <img src="assets/verify-nutrisearch-books.jpg" alt="20년간 전 세계 영양제를 평가해 온 전문 서적" loading="lazy" />
             <figcaption>20년간 전 세계 영양제를 평가해 온 전문 서적<br/><span class="verify-cap-sub">NutriSearch 종합 비교 가이드</span></figcaption>
           </figure>
+          </div>
         </div>
 
         <div class="verify-group">
           <div class="verify-group-label">KOREA AWARDS · 2026</div>
           <div class="verify-group-title">대한민국 메디컬 헬스케어 대상 2관왕</div>
+          <div class="verify-figs">
           <figure class="verify-fig">
             <img src="assets/verify-award-double.jpg" alt="2026 대한민국 메디컬 헬스케어 대상 유사나 2관왕 수상" loading="lazy" />
             <figcaption>2026 대한민국 메디컬 헬스케어 대상 유사나 <strong>2관왕</strong> 수상<br/><span class="verify-cap-sub">주최 조선미디어</span></figcaption>
@@ -2464,16 +2487,19 @@
             <img src="assets/verify-award-nutrimeal.jpg" alt="뉴트리밀 액티브 6년 연속 수상" loading="lazy" />
             <figcaption>뉴트리밀 액티브 · 조제식품 부문 <strong>6년 연속</strong> 수상<br/><span class="verify-cap-sub">2021~2026</span></figcaption>
           </figure>
+          </div>
         </div>
 
         <div class="verify-group">
           <div class="verify-group-label">VIDEO</div>
           <div class="verify-group-title">영상으로 보는 유사나</div>
+          <div class="verify-figs verify-figs-full">
           <figure class="verify-fig">
             <video class="verify-video" controls preload="none" playsinline>
               <source src="assets/usana-intro.mp4" type="video/mp4" />
             </video>
           </figure>
+          </div>
         </div>
 
       </div>
