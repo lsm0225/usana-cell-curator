@@ -1241,8 +1241,8 @@
   }
   .video-modal-close:active { transform: scale(0.92); }
 
-  /* ==================== QR 명함 팝업 (인물사진 롱프레스) ==================== */
-  .hero-photo img { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  /* ==================== QR 명함 팝업 (히어로 롱프레스) ==================== */
+  .hero, .hero-photo img { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
   .qr-modal {
     position: fixed;
     inset: 0;
@@ -2829,20 +2829,23 @@
     if (e.key === 'Escape' && qrModal.classList.contains('open')) closeQrModal();
   });
   (function () {
-    const heroImg = document.querySelector('.hero-photo img');
-    if (!heroImg) return;
+    // 모바일(<600px)에서만 — 히어로 영역(특히 블루 패널) 3초 롱프레스 → QR 팝업
+    const heroEl = document.querySelector('.hero');
+    if (!heroEl) return;
     let timer = null;
-    const start = () => { clearTimeout(timer); timer = setTimeout(openQrModal, 3000); };
+    const isMobile = () => window.matchMedia('(max-width: 599px)').matches;
+    const start = () => {
+      if (!isMobile()) return;
+      clearTimeout(timer);
+      timer = setTimeout(openQrModal, 3000);
+    };
     const cancel = () => { clearTimeout(timer); };
-    heroImg.addEventListener('touchstart', start, { passive: true });
-    heroImg.addEventListener('touchend', cancel);
-    heroImg.addEventListener('touchmove', cancel, { passive: true });
-    heroImg.addEventListener('touchcancel', cancel);
-    heroImg.addEventListener('mousedown', start);
-    heroImg.addEventListener('mouseup', cancel);
-    heroImg.addEventListener('mouseleave', cancel);
-    // 롱프레스 시 OS 이미지 저장 메뉴 차단
-    heroImg.addEventListener('contextmenu', e => e.preventDefault());
+    heroEl.addEventListener('touchstart', start, { passive: true });
+    heroEl.addEventListener('touchend', cancel);
+    heroEl.addEventListener('touchmove', cancel, { passive: true });
+    heroEl.addEventListener('touchcancel', cancel);
+    // 롱프레스 시 OS 컨텍스트 메뉴(이미지 저장 등) 차단 (모바일 한정)
+    heroEl.addEventListener('contextmenu', e => { if (isMobile()) e.preventDefault(); });
   })();
 
   // 제작 문의 팝업
