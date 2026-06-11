@@ -1133,6 +1133,127 @@
   }
   .video-modal-close:active { transform: scale(0.92); }
 
+  /* ==================== QR 명함 팝업 (인물사진 롱프레스) ==================== */
+  .hero-photo img { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  .qr-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 24, 48, 0.85);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+  .qr-modal.open { display: flex; }
+  .qr-sheet {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    background: var(--cream);
+    border-radius: 22px;
+    overflow: hidden;
+    text-align: center;
+    animation: imgModalIn 0.28s ease;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+  }
+  .qr-head {
+    background: var(--usana-blue);
+    color: #fff;
+    padding: 26px 24px 22px;
+    position: relative;
+  }
+  .qr-head::after {
+    content: '';
+    position: absolute;
+    left: 50%; bottom: 13px;
+    transform: translateX(-50%);
+    width: 34px; height: 2px;
+    background: var(--honey);
+  }
+  .qr-eyebrow {
+    font-size: 9.5px;
+    letter-spacing: 0.28em;
+    font-weight: 800;
+    color: var(--usana-cyan);
+    margin-bottom: 9px;
+  }
+  .qr-name {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .qr-name span {
+    font-size: 12.5px;
+    font-weight: 600;
+    opacity: 0.85;
+    margin-left: 5px;
+  }
+  .qr-close {
+    position: absolute;
+    top: 11px; right: 11px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .qr-close:active { transform: scale(0.92); }
+  .qr-body { padding: 22px 26px 26px; }
+  .qr-imgwrap {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 12px 26px rgba(34, 58, 107, 0.16);
+  }
+  .qr-imgwrap img { display: block; width: 200px; height: 200px; }
+  .qr-imgwrap .qtick {
+    position: absolute;
+    width: 20px; height: 20px;
+    border: 2.5px solid var(--honey);
+  }
+  .qr-imgwrap .tl { top: 9px; left: 9px; border-right: none; border-bottom: none; border-radius: 6px 0 0 0; }
+  .qr-imgwrap .tr { top: 9px; right: 9px; border-left: none; border-bottom: none; border-radius: 0 6px 0 0; }
+  .qr-imgwrap .bl { bottom: 9px; left: 9px; border-right: none; border-top: none; border-radius: 0 0 0 6px; }
+  .qr-imgwrap .br { bottom: 9px; right: 9px; border-left: none; border-top: none; border-radius: 0 0 6px 0; }
+  .qr-scan {
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .qr-scan span { color: var(--usana-blue); }
+  .qr-sub {
+    margin-top: 5px;
+    font-size: 11.5px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+  .qr-url {
+    margin-top: 14px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--usana-blue);
+    letter-spacing: 0.02em;
+    padding: 6px 16px;
+    border: 1.4px solid rgba(61, 92, 158, 0.35);
+    border-radius: 100px;
+  }
+
   /* ==================== AUDIENCE (USANA brand) ==================== */
   .audience {
     background: var(--cream);
@@ -2280,6 +2401,27 @@
     </div>
   </div>
 
+  <!-- ==================== QR 명함 팝업 (인물사진 롱프레스) ==================== -->
+  <div class="qr-modal" id="qrModal" onclick="if(event.target===this)closeQrModal()">
+    <div class="qr-sheet">
+      <button type="button" class="qr-close" aria-label="닫기" onclick="closeQrModal()">×</button>
+      <div class="qr-head">
+        <div class="qr-eyebrow">USANA · BRAND PARTNER</div>
+        <div class="qr-name">서혜미<span>건강코치</span></div>
+      </div>
+      <div class="qr-body">
+        <div class="qr-imgwrap">
+          <span class="qtick tl"></span><span class="qtick tr"></span>
+          <span class="qtick bl"></span><span class="qtick br"></span>
+          <img src="assets/qr-code.png" alt="서혜미 모바일 명함 QR코드" />
+        </div>
+        <div class="qr-scan">휴대폰 카메라로 <span>QR을 스캔</span>하세요</div>
+        <div class="qr-sub">스캔하면 이 모바일 명함이 바로 열립니다</div>
+        <div class="qr-url">usana-hyemi.kr</div>
+      </div>
+    </div>
+  </div>
+
   <!-- ==================== 유사나 알아보기 갤러리 모달 ==================== -->
   <div class="verify-modal" id="verifyModal" onclick="if(event.target===this)closeVerifyModal()">
     <div class="verify-sheet">
@@ -2422,6 +2564,39 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && videoModal.classList.contains('open')) closeVideoModal();
   });
+
+  // QR 명함 팝업 — 인물사진 3초 롱프레스 시 등장
+  const qrModal = document.getElementById('qrModal');
+  function openQrModal() {
+    if (qrModal.classList.contains('open')) return;
+    qrModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    modalPushState(closeQrModal);
+  }
+  function closeQrModal(viaBack) {
+    qrModal.classList.remove('open');
+    document.body.style.overflow = '';
+    modalPopCleanup(viaBack);
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && qrModal.classList.contains('open')) closeQrModal();
+  });
+  (function () {
+    const heroImg = document.querySelector('.hero-photo img');
+    if (!heroImg) return;
+    let timer = null;
+    const start = () => { clearTimeout(timer); timer = setTimeout(openQrModal, 3000); };
+    const cancel = () => { clearTimeout(timer); };
+    heroImg.addEventListener('touchstart', start, { passive: true });
+    heroImg.addEventListener('touchend', cancel);
+    heroImg.addEventListener('touchmove', cancel, { passive: true });
+    heroImg.addEventListener('touchcancel', cancel);
+    heroImg.addEventListener('mousedown', start);
+    heroImg.addEventListener('mouseup', cancel);
+    heroImg.addEventListener('mouseleave', cancel);
+    // 롱프레스 시 OS 이미지 저장 메뉴 차단
+    heroImg.addEventListener('contextmenu', e => e.preventDefault());
+  })();
 
   // 제작 문의 팝업
   const makerModal = document.getElementById('makerModal');
