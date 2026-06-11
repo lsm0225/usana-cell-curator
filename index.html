@@ -64,6 +64,21 @@
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.04);
   }
 
+  /* ===== 데스크톱(PC) 반응형 — 480px 카드를 배경 위에 띄움 ===== */
+  @media (min-width: 600px) {
+    html {
+      background: linear-gradient(165deg, #3a342c 0%, #221c15 100%);
+      background-attachment: fixed;
+    }
+    body {
+      margin: 40px auto;
+      min-height: auto;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38), 0 8px 22px rgba(0, 0, 0, 0.18);
+    }
+  }
+
   /* ==================== SECTION COMMON ==================== */
   section {
     position: relative;
