@@ -1830,6 +1830,7 @@
       justify-content: center;
       padding: 60px 56px;
     }
+    .hero-tag { align-self: flex-start; }
     .hero-headline-line { font-size: 58px; }
     .hero-sub { font-size: 17px; }
     .hero-greeting { font-size: 14.5px; }
@@ -1946,7 +1947,17 @@
     /* ---------- CONTACT : 2열 (주소는 풀폭) ---------- */
     .contact > .reveal { max-width: 920px; margin: 0 auto; }
     .contact-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .contact-item-top { grid-column: 1 / -1; }
+    .contact-item {
+      border-bottom: none;
+      padding: 22px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+    a.contact-item:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.22); }
+    .contact-item-top { grid-column: 1 / -1; }      /* LOCATION 풀폭 */
+    .contact-list .contact-item:last-child { grid-column: 1 / -1; }   /* HOURS 풀폭 */
 
     /* ---------- 유사나 알아보기 갤러리 — 넓은 중앙 다이얼로그 + 자료 2열 ---------- */
     .verify-modal { align-items: center; padding: 44px; }
