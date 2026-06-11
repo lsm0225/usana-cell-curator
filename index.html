@@ -64,18 +64,15 @@
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.04);
   }
 
-  /* ===== 데스크톱(PC) 반응형 — 480px 카드를 배경 위에 띄움 ===== */
-  @media (min-width: 600px) {
-    html {
-      background: linear-gradient(165deg, #3a342c 0%, #221c15 100%);
-      background-attachment: fixed;
-    }
-    body {
-      margin: 40px auto;
-      min-height: auto;
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38), 0 8px 22px rgba(0, 0, 0, 0.18);
+  /* ===== 태블릿(600~1023px) — 풀블리드 단일 컬럼, 콘텐츠만 가독폭 중앙정렬 ===== */
+  @media (min-width: 600px) and (max-width: 1023px) {
+    html, body { background: var(--white); }
+    body { max-width: 100%; margin: 0; box-shadow: none; }
+    section > .reveal { max-width: 600px; margin-left: auto; margin-right: auto; }
+    /* 히어로 패널은 블루 풀블리드 유지, 콘텐츠만 600px 중앙정렬 (specificity ↑) */
+    .hero .hero-panel {
+      padding-left: max(28px, calc((100% - 600px) / 2));
+      padding-right: max(28px, calc((100% - 600px) / 2));
     }
   }
 
@@ -1683,10 +1680,13 @@
      (모바일/태블릿 좁은 화면은 기존 그대로 유지)
      ============================================================ */
   @media (min-width: 1024px) {
-    body { max-width: 1120px; }
+    /* 풀블리드 — 가로 꽉 채우고 여백 제거 */
+    html, body { background: var(--white); }
+    body { max-width: 100%; margin: 0; box-shadow: none; border-radius: 0; }
 
-    /* 섹션 공통 — 여백·타이포 확대 */
+    /* 섹션은 가로 풀폭, 내부 콘텐츠만 최대폭 제한·중앙정렬 */
     section { padding: 86px 72px; }
+    section > .reveal { max-width: 1200px; margin-left: auto; margin-right: auto; }
     .why { padding: 88px 72px; }
     .audience { padding: 88px 72px; }
     .contact { padding: 86px 72px 64px; }
