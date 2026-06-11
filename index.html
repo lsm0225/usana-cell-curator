@@ -636,6 +636,7 @@
   }
   .why-point-view svg { width: 15px; height: 15px; }
   .why-point-view:active { transform: scale(0.9); background: rgba(79, 163, 217, 0.28); }
+  .why-view-label { display: none; }   /* 모바일: 동그라미 돋보기만 */
 
   /* 이미지 팝업 모달 */
   .img-modal {
@@ -1877,8 +1878,36 @@
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.05);
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
     }
-    .why-point-view { position: absolute; top: 31px; right: 22px; }
+    .why-point:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(126, 180, 216, 0.55);
+      transform: translateY(-3px);
+    }
+    .why-point-body { flex: 1 0 auto; }
+    /* 돋보기 → '자료 보기' 알약 버튼 (카드 하단, 클릭 유도) */
+    .why-point-view {
+      position: static;
+      align-self: flex-start;
+      width: auto;
+      height: auto;
+      margin-top: 4px;
+      padding: 9px 16px;
+      border-radius: 100px;
+      gap: 7px;
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+    .why-point-view svg { width: 14px; height: 14px; }
+    .why-view-label { display: inline; }
+    .why-point:hover .why-point-view {
+      background: var(--usana-cyan);
+      border-color: var(--usana-cyan);
+      color: var(--usana-blue-deep);
+    }
 
     /* ---------- ATHLETES : 포스터 | 태그·문구·영상 2단 ---------- */
     .athletes > .reveal {
@@ -2144,7 +2173,7 @@
             <div class="why-point-desc">미국 특허 인셀리전스 테크놀로지</div>
           </div>
           <button type="button" class="why-point-view" aria-label="인셀리전스 테크놀로지 자료 보기" onclick="openImgModal('assets/incelligence-tech.jpg', '인셀리전스 테크놀로지 — 미국 특허 US10632101B2')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg><span class="why-view-label">자료 보기</span>
           </button>
         </div>
         <div class="why-point">
@@ -2156,7 +2185,7 @@
             <div class="why-point-desc">1992년 설립 · 미국 유타 자체 시설 운영</div>
           </div>
           <button type="button" class="why-point-view" aria-label="NYSE 상장 자료 보기" onclick="openImgModal('assets/nyse-listed.jpg', 'USANA NYSE 상장 — 종목코드 USNA')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg><span class="why-view-label">자료 보기</span>
           </button>
         </div>
         <div class="why-point">
@@ -2168,7 +2197,7 @@
             <div class="why-point-desc">USANA 재단을 통한 사회 환원 활동</div>
           </div>
           <button type="button" class="why-point-view" aria-label="USANA 재단 자료 보기" onclick="openImgModal('assets/usana-foundation.jpg', '유사나 파운데이션 — 44개국 170만 명에게 전한 도움의 손길')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg><span class="why-view-label">자료 보기</span>
           </button>
         </div>
       </div>
