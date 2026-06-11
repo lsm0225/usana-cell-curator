@@ -224,6 +224,9 @@
     border-radius: 100px;
     border: 1px solid rgba(255, 255, 255, 0.22);
     margin-bottom: 22px;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
   }
 
   .hero-headline {
@@ -1242,8 +1245,8 @@
   }
   .video-modal-close:active { transform: scale(0.92); }
 
-  /* ==================== QR 명함 팝업 (히어로 롱프레스) ==================== */
-  .hero, .hero-photo img { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  /* ==================== QR 명함 팝업 (알약 롱프레스) ==================== */
+  .hero-photo img { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
   .qr-modal {
     position: fixed;
     inset: 0;
@@ -2830,23 +2833,20 @@
     if (e.key === 'Escape' && qrModal.classList.contains('open')) closeQrModal();
   });
   (function () {
-    // 모바일(<600px)에서만 — 히어로 영역(특히 블루 패널) 3초 롱프레스 → QR 팝업
-    const heroEl = document.querySelector('.hero');
-    if (!heroEl) return;
+    // 'USANA · BRAND PARTNER' 알약을 2초 이상 길게 누르면 QR 팝업
+    const tag = document.querySelector('.hero-tag');
+    if (!tag) return;
     let timer = null;
-    const isMobile = () => window.matchMedia('(max-width: 599px)').matches;
-    const start = () => {
-      if (!isMobile()) return;
-      clearTimeout(timer);
-      timer = setTimeout(openQrModal, 3000);
-    };
+    const start = () => { clearTimeout(timer); timer = setTimeout(openQrModal, 2000); };
     const cancel = () => { clearTimeout(timer); };
-    heroEl.addEventListener('touchstart', start, { passive: true });
-    heroEl.addEventListener('touchend', cancel);
-    heroEl.addEventListener('touchmove', cancel, { passive: true });
-    heroEl.addEventListener('touchcancel', cancel);
-    // 롱프레스 시 OS 컨텍스트 메뉴(이미지 저장 등) 차단 (모바일 한정)
-    heroEl.addEventListener('contextmenu', e => { if (isMobile()) e.preventDefault(); });
+    tag.addEventListener('touchstart', start, { passive: true });
+    tag.addEventListener('touchend', cancel);
+    tag.addEventListener('touchmove', cancel, { passive: true });
+    tag.addEventListener('touchcancel', cancel);
+    tag.addEventListener('mousedown', start);
+    tag.addEventListener('mouseup', cancel);
+    tag.addEventListener('mouseleave', cancel);
+    tag.addEventListener('contextmenu', e => e.preventDefault());
   })();
 
   // 제작 문의 팝업
