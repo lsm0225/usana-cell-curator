@@ -2026,12 +2026,28 @@
     }
     .athletes .section-label { grid-column: 1 / -1; grid-row: 1; }
     .athletes .section-title { grid-column: 1 / -1; grid-row: 2; margin-bottom: 8px; }
-    .athletes-poster-wrap { grid-column: 1; grid-row: 3; margin-top: 8px; align-self: start; box-shadow: none; }
+    .athletes-poster-wrap {
+      grid-column: 1; grid-row: 3;
+      margin-top: 8px;
+      align-self: stretch;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 46px rgba(31, 63, 140, 0.16);
+    }
+    .athletes-poster-wrap .athletes-poster {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
     .athletes-right {
       grid-column: 2; grid-row: 3;
-      align-self: center;
+      align-self: stretch;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 20px;
       margin-top: 8px;
     }
@@ -2406,7 +2422,7 @@
       <h2 class="section-title">세계가 선택한 <em>브랜드</em></h2>
 
       <div class="athletes-poster-wrap">
-        <img class="athletes-poster" src="assets/athletes-trust.jpg?v=2" alt="ATHLETES TRUST USANA — 세계 정상급 선수들이 선택한 유사나" />
+        <img class="athletes-poster" src="assets/athletes-trust.jpg?v=3" alt="ATHLETES TRUST USANA — 세계 정상급 선수들이 선택한 유사나" />
       </div>
       <div class="athletes-right">
         <p class="athletes-lead">전 세계 정상급 선수단이<br/><strong>유사나를 신뢰합니다.</strong></p>
