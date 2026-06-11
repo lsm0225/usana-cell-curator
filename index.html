@@ -1044,64 +1044,38 @@
     font-weight: 600;
   }
 
-  /* 브랜드 영상 카드 (클릭 → 라이트박스) */
-  .athletes-video {
-    display: block;
-    position: relative;
-    width: 100%;
-    margin-top: 24px;
-    padding: 0;
+  /* 브랜드 영상 재생 버튼 (클릭 → 팝업 자동재생) */
+  .athletes-video-cta { text-align: center; margin-top: 26px; }
+  .athletes-video-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 14px 26px 14px 16px;
     border: none;
-    border-radius: 18px;
-    overflow: hidden;
+    border-radius: 100px;
+    background: var(--usana-blue);
+    color: #fff;
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
     cursor: pointer;
-    line-height: 0;
-    background: #0d1730;
-    box-shadow: 0 14px 32px rgba(31, 63, 140, 0.22);
-    aspect-ratio: 16 / 9;
-    -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 10px 26px rgba(31, 63, 140, 0.30);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
-  .athletes-video-thumb {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-  .athletes-video:hover .athletes-video-thumb { transform: scale(1.04); }
-  .athletes-video-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(13, 23, 48, 0.05) 0%, rgba(13, 23, 48, 0.58) 100%);
-  }
-  .athletes-video-play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
+  .athletes-video-btn:hover { background: var(--usana-blue-deep); }
+  .athletes-video-btn:active { transform: scale(0.97); box-shadow: 0 5px 14px rgba(31, 63, 140, 0.22); }
+  .athletes-video-btn .play-ic {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(255, 255, 255, 0.22);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-    transition: transform 0.15s ease;
+    flex-shrink: 0;
   }
-  .athletes-video:active .athletes-video-play { transform: translate(-50%, -50%) scale(0.92); }
-  .athletes-video-play svg { width: 23px; height: 23px; fill: var(--usana-blue); margin-left: 3px; }
-  .athletes-video-label {
-    position: absolute;
-    left: 16px;
-    bottom: 13px;
-    color: #fff;
-    font-size: 12.5px;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-    line-height: 1.3;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
-  }
+  .athletes-video-btn .play-ic svg { width: 14px; height: 14px; fill: #fff; margin-left: 2px; }
 
   /* 브랜드 영상 라이트박스 모달 */
   .video-modal {
@@ -1141,22 +1115,24 @@
   }
   .video-modal-close {
     position: absolute;
-    top: -46px;
-    right: 0;
-    width: 38px;
-    height: 38px;
+    top: 9px;
+    right: 9px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 16, 32, 0.6);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     color: #fff;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    z-index: 3;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
   }
   .video-modal-close:active { transform: scale(0.92); }
 
@@ -2006,12 +1982,12 @@
         매일의 컨디션을 만드는 영양을 세계 정상급 선수들이 USANA에서 찾습니다.
       </p>
 
-      <button type="button" class="athletes-video" onclick="openVideoModal('EkSnSpsQUfE')" aria-label="브랜드 영상 재생">
-        <img class="athletes-video-thumb" src="assets/athletes-video-thumb.jpg" alt="세계가 선택한 브랜드 USANA 영상" loading="lazy" />
-        <span class="athletes-video-overlay"></span>
-        <span class="athletes-video-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="athletes-video-label">영상으로 만나는 USANA</span>
-      </button>
+      <div class="athletes-video-cta">
+        <button type="button" class="athletes-video-btn" onclick="openVideoModal('EkSnSpsQUfE')">
+          <span class="play-ic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+          영상으로 만나는 USANA
+        </button>
+      </div>
     </div>
   </section>
 
