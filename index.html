@@ -1044,6 +1044,122 @@
     font-weight: 600;
   }
 
+  /* 브랜드 영상 카드 (클릭 → 라이트박스) */
+  .athletes-video {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-top: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    line-height: 0;
+    background: #0d1730;
+    box-shadow: 0 14px 32px rgba(31, 63, 140, 0.22);
+    aspect-ratio: 16 / 9;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .athletes-video-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .athletes-video:hover .athletes-video-thumb { transform: scale(1.04); }
+  .athletes-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(13, 23, 48, 0.05) 0%, rgba(13, 23, 48, 0.58) 100%);
+  }
+  .athletes-video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.94);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: transform 0.15s ease;
+  }
+  .athletes-video:active .athletes-video-play { transform: translate(-50%, -50%) scale(0.92); }
+  .athletes-video-play svg { width: 23px; height: 23px; fill: var(--usana-blue); margin-left: 3px; }
+  .athletes-video-label {
+    position: absolute;
+    left: 16px;
+    bottom: 13px;
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+  }
+
+  /* 브랜드 영상 라이트박스 모달 */
+  .video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(8, 14, 30, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+  .video-modal.open { display: flex; }
+  .video-modal-inner {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    animation: imgModalIn 0.25s ease;
+  }
+  .video-modal-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+  }
+  .video-modal-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .video-modal-close {
+    position: absolute;
+    top: -46px;
+    right: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .video-modal-close:active { transform: scale(0.92); }
+
   /* ==================== AUDIENCE (USANA brand) ==================== */
   .audience {
     background: var(--cream);
@@ -1889,6 +2005,13 @@
         몸이 곧 자산인 프로 선수에게 필요한 건 <strong>약이 아닌 영양</strong>.<br/>
         매일의 컨디션을 만드는 영양을 세계 정상급 선수들이 USANA에서 찾습니다.
       </p>
+
+      <button type="button" class="athletes-video" onclick="openVideoModal('EkSnSpsQUfE')" aria-label="브랜드 영상 재생">
+        <img class="athletes-video-thumb" src="assets/athletes-video-thumb.jpg" alt="세계가 선택한 브랜드 USANA 영상" loading="lazy" />
+        <span class="athletes-video-overlay"></span>
+        <span class="athletes-video-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="athletes-video-label">영상으로 만나는 USANA</span>
+      </button>
     </div>
   </section>
 
@@ -2053,6 +2176,14 @@
     </div>
   </div>
 
+  <!-- ==================== 브랜드 영상 모달 ==================== -->
+  <div class="video-modal" id="videoModal" onclick="if(event.target===this)closeVideoModal()">
+    <div class="video-modal-inner">
+      <button type="button" class="video-modal-close" aria-label="닫기" onclick="closeVideoModal()">×</button>
+      <div class="video-modal-frame" id="videoModalFrame"></div>
+    </div>
+  </div>
+
   <!-- ==================== 유사나 알아보기 갤러리 모달 ==================== -->
   <div class="verify-modal" id="verifyModal" onclick="if(event.target===this)closeVerifyModal()">
     <div class="verify-sheet">
@@ -2151,6 +2282,24 @@
   }
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && verifyModal.classList.contains('open')) closeVerifyModal();
+  });
+
+  // 브랜드 영상 모달 (유튜브 facade — 클릭 시에만 iframe 로드, 닫으면 제거해 재생 정지)
+  const videoModal = document.getElementById('videoModal');
+  const videoModalFrame = document.getElementById('videoModalFrame');
+  function openVideoModal(id) {
+    videoModalFrame.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id +
+      '?autoplay=1&rel=0&playsinline=1" title="USANA 브랜드 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    videoModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVideoModal() {
+    videoModal.classList.remove('open');
+    videoModalFrame.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && videoModal.classList.contains('open')) closeVideoModal();
   });
 
   // 제작 문의 팝업
