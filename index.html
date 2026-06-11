@@ -1677,6 +1677,121 @@
   .stagger.show > *:nth-child(5) { transition-delay: 0.37s; }
   .stagger.show > *:nth-child(6) { transition-delay: 0.45s; }
   .stagger.show > *:nth-child(n+7) { transition-delay: 0.52s; }
+
+  /* ============================================================
+     데스크톱(PC) 와이드 2단 레이아웃 — min-width 1024px에서만 적용
+     (모바일/태블릿 좁은 화면은 기존 그대로 유지)
+     ============================================================ */
+  @media (min-width: 1024px) {
+    body { max-width: 1120px; }
+
+    /* 섹션 공통 — 여백·타이포 확대 */
+    section { padding: 86px 72px; }
+    .why { padding: 88px 72px; }
+    .audience { padding: 88px 72px; }
+    .contact { padding: 86px 72px 64px; }
+    .footer-bar { padding: 46px 72px; }
+    .section-title { font-size: 34px; letter-spacing: -1.2px; line-height: 1.32; }
+    .section-desc { font-size: 15.5px; }
+    .section-label { font-size: 12px; margin-bottom: 14px; }
+
+    /* ---------- HERO : 사진 | 텍스트 2단 ---------- */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 560px;
+      align-items: stretch;
+    }
+    .hero-photo { max-height: none; height: 100%; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+    .hero-wave { display: none; }
+    .hero-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 56px;
+    }
+    .hero-headline-line { font-size: 58px; }
+    .hero-sub { font-size: 17px; }
+    .hero-greeting { font-size: 14.5px; }
+
+    /* ---------- ABOUT : 소개 | 인용구 2단 ---------- */
+    .about > .reveal {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-rows: auto auto auto;
+      column-gap: 60px;
+      align-items: start;
+    }
+    .about .section-label { grid-column: 1; grid-row: 1; }
+    .about .section-title { grid-column: 1; grid-row: 2; }
+    .about .section-desc  { grid-column: 1; grid-row: 3; }
+    .about-quote { grid-column: 2; grid-row: 1 / 4; align-self: center; margin-top: 0; }
+
+    /* ---------- CONNECT : 카톡 풀폭 + 타일 4열 ---------- */
+    .connect .channel-grid { display: flex; flex-flow: row wrap; gap: 16px; }
+    .connect .channel-featured { flex: 0 0 100%; }
+    .connect .channel-row { flex: 1 1 calc(50% - 8px); min-width: 0; }
+
+    /* ---------- ABOUT USANA : 소개/인용 | 3약속 2단 ---------- */
+    .about-usana > .reveal {
+      display: grid;
+      grid-template-columns: 1fr 0.92fr;
+      grid-template-rows: auto auto auto auto auto;
+      column-gap: 60px;
+    }
+    .about-usana .section-label    { grid-column: 1; grid-row: 1; }
+    .about-usana .section-title    { grid-column: 1; grid-row: 2; }
+    .about-usana .usana-intro      { grid-column: 1; grid-row: 3; }
+    .about-usana .usana-note       { grid-column: 1; grid-row: 4; }
+    .about-usana .usana-quote-wrap { grid-column: 1; grid-row: 5; }
+    .about-usana .usana-pillars    { grid-column: 2; grid-row: 1 / 6; align-self: center; }
+
+    /* ---------- WHY USANA : 중앙 정렬·확대, 차별점 3열 ---------- */
+    .why > .reveal { max-width: 880px; margin: 0 auto; }
+    .why-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
+    .why-point { flex-direction: column; align-items: flex-start; gap: 12px; position: relative; }
+    .why-point-view { position: absolute; top: 0; right: 0; }
+
+    /* ---------- ATHLETES : 포스터 | 태그·문구·영상 2단 ---------- */
+    .athletes > .reveal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto auto auto;
+      column-gap: 52px;
+    }
+    .athletes .section-label { grid-column: 1 / -1; grid-row: 1; }
+    .athletes .section-title { grid-column: 1 / -1; grid-row: 2; }
+    .athletes-poster-wrap { grid-column: 1; grid-row: 3 / 6; margin-top: 10px; align-self: center; }
+    .athletes-tags     { grid-column: 2; grid-row: 3; align-self: end; margin-top: 10px; }
+    .athletes-out-desc { grid-column: 2; grid-row: 4; }
+    .athletes-video-cta{ grid-column: 2; grid-row: 5; text-align: left; align-self: start; margin-top: 6px; }
+
+    /* ---------- AUDIENCE : 체크리스트 2열 ---------- */
+    .audience-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .audience-item:last-child { grid-column: 1 / -1; }
+
+    /* ---------- ORDER : 제품이미지 | 문구·CTA 2단 ---------- */
+    .order > .reveal {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-rows: auto auto auto auto auto auto;
+      column-gap: 58px;
+      align-items: center;
+    }
+    .order .section-label { grid-column: 2; grid-row: 1; align-self: end; }
+    .order-title          { grid-column: 2; grid-row: 2; }
+    .order-sub            { grid-column: 2; grid-row: 3; }
+    .order-lineup         { grid-column: 1; grid-row: 1 / 7; align-self: center; margin: 0; }
+    .order-btn:not(.alt)  { grid-column: 2; grid-row: 4; }
+    .order-btn.alt        { grid-column: 2; grid-row: 5; }
+    .order-note           { grid-column: 2; grid-row: 6; }
+
+    /* ---------- CONTACT : 2열 (주소는 풀폭) ---------- */
+    .contact > .reveal { max-width: 920px; margin: 0 auto; }
+    .contact-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-item-top { grid-column: 1 / -1; }
+  }
 </style>
 </head>
 <body>
