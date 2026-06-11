@@ -1628,6 +1628,11 @@
     justify-content: center;
     color: #fff;
     transition: transform 0.15s ease;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
   }
   .usana-pillar-play:active { transform: scale(0.9); }
   .usana-pillar-play svg {
@@ -1810,9 +1815,9 @@
             <div class="usana-pillar-label">FOUNDED · 1992</div>
             <div class="usana-pillar-title">
               미생물학자가 세운 회사
-              <a href="https://youtu.be/LhEdT_-j1qQ?si=lqS4lJSg_67S-M2A" target="_blank" rel="noopener" class="usana-pillar-play" aria-label="유튜브 영상 재생">
+              <button type="button" onclick="openVideoModal('LhEdT_-j1qQ')" class="usana-pillar-play" aria-label="영상 재생">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -1822,9 +1827,9 @@
             <div class="usana-pillar-label">QUALITY · GMP</div>
             <div class="usana-pillar-title">
               미국 자체 시설 직접 생산
-              <a href="https://www.youtube.com/watch?si=E_IaQddFZadwqB1U&v=cbKiKlA_iZo&feature=youtu.be" target="_blank" rel="noopener" class="usana-pillar-play" aria-label="유튜브 영상 재생">
+              <button type="button" onclick="openVideoModal('cbKiKlA_iZo')" class="usana-pillar-play" aria-label="영상 재생">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -1834,9 +1839,9 @@
             <div class="usana-pillar-label">GUARANTEED</div>
             <div class="usana-pillar-title">
               기술력으로 효과 보장
-              <a href="https://www.youtube.com/watch?v=zvdB32NhX4I" target="_blank" rel="noopener" class="usana-pillar-play" aria-label="유튜브 영상 재생">
+              <button type="button" onclick="openVideoModal('zvdB32NhX4I')" class="usana-pillar-play" aria-label="영상 재생">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </a>
+              </button>
             </div>
           </div>
         </div>
