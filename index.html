@@ -895,18 +895,20 @@
     flex-shrink: 1;
   }
   .why-cert-name {
-    font-size: 15px;
+    font-size: clamp(13px, 4vw, 15px);
     font-weight: 800;
     color: var(--white);
     letter-spacing: 0.5px;
     margin-bottom: 2px;
     line-height: 1.1;
+    white-space: nowrap;
   }
   .why-cert-desc {
-    font-size: 13px;
+    font-size: clamp(10px, 3.1vw, 13px);
     color: rgba(255, 255, 255, 0.70);
     font-weight: 500;
     line-height: 1.3;
+    white-space: nowrap;
   }
   .why-cert-divider { display: none; }
 
@@ -1607,7 +1609,7 @@
 
       <div class="about-quote">
         <p class="about-quote-text">유사나가 하는 모든 것은 당신이 삶을 사랑하고<br/>사랑하는 삶을 살도록 도와주는 것입니다.<br/>이제, 당신의 차례입니다. 그 곁에서 함께 하겠습니다.</p>
-        <div class="about-quote-sig">서혜미 드림</div>
+        <div class="about-quote-sig">건강코치 서혜미 드림</div>
       </div>
     </div>
   </section>
