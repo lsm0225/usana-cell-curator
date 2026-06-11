@@ -2229,6 +2229,25 @@
 
   document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
 
+  // ===== 팝업 뒤로가기 처리 — 안드로이드/브라우저 back 시 페이지 이탈 대신 팝업만 닫기 =====
+  let _modalCloser = null;
+  function modalPushState(closer) {
+    _modalCloser = closer;
+    history.pushState({ _modal: true }, '');
+  }
+  function modalPopCleanup(viaBack) {
+    _modalCloser = null;
+    // UI(닫기버튼·배경·ESC)로 닫을 땐 push해둔 히스토리 항목을 정리
+    if (!viaBack && history.state && history.state._modal) history.back();
+  }
+  window.addEventListener('popstate', () => {
+    if (_modalCloser) {
+      const fn = _modalCloser;
+      _modalCloser = null;
+      fn(true);   // 뒤로가기로 닫힘 → 추가 history.back() 안 함
+    }
+  });
+
   // 이미지 팝업 모달
   const imgModal = document.getElementById('imgModal');
   const imgModalImg = document.getElementById('imgModalImg');
@@ -2241,10 +2260,12 @@
     imgModalImg.onload = () => imgModal.classList.remove('loading');
     imgModalImg.src = src;
     if (imgModalImg.complete) imgModal.classList.remove('loading');
+    modalPushState(closeImgModal);
   }
-  function closeImgModal() {
+  function closeImgModal(viaBack) {
     imgModal.classList.remove('open');
     document.body.style.overflow = '';
+    modalPopCleanup(viaBack);
   }
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && imgModal.classList.contains('open')) closeImgModal();
@@ -2255,11 +2276,13 @@
   function openVerifyModal() {
     verifyModal.classList.add('open');
     document.body.style.overflow = 'hidden';
+    modalPushState(closeVerifyModal);
   }
-  function closeVerifyModal() {
+  function closeVerifyModal(viaBack) {
     verifyModal.classList.remove('open');
     document.body.style.overflow = '';
     verifyModal.querySelectorAll('video').forEach(v => v.pause());
+    modalPopCleanup(viaBack);
   }
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && verifyModal.classList.contains('open')) closeVerifyModal();
@@ -2273,11 +2296,13 @@
       '?autoplay=1&rel=0&playsinline=1" title="USANA 브랜드 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     videoModal.classList.add('open');
     document.body.style.overflow = 'hidden';
+    modalPushState(closeVideoModal);
   }
-  function closeVideoModal() {
+  function closeVideoModal(viaBack) {
     videoModal.classList.remove('open');
     videoModalFrame.innerHTML = '';
     document.body.style.overflow = '';
+    modalPopCleanup(viaBack);
   }
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && videoModal.classList.contains('open')) closeVideoModal();
@@ -2288,10 +2313,12 @@
   function openMakerModal() {
     makerModal.classList.add('open');
     document.body.style.overflow = 'hidden';
+    modalPushState(closeMakerModal);
   }
-  function closeMakerModal() {
+  function closeMakerModal(viaBack) {
     makerModal.classList.remove('open');
     document.body.style.overflow = '';
+    modalPopCleanup(viaBack);
   }
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && makerModal.classList.contains('open')) closeMakerModal();
