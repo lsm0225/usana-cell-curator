@@ -2,3 +2,5 @@
 *.log
 .vscode/
 .idea/
+_curator-variants.html
+_shot.html
