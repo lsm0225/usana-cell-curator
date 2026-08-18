@@ -531,35 +531,54 @@
   .series-cta a.ig svg { color: #DD2A7B; }
   .series-cta a.yt svg { color: #FF0000; }
 
-  /* ==================== WHY CURATOR (대구 한 쌍) ==================== */
+  /* ==================== WHY CURATOR (마커 하이라이트) ==================== */
   .curator {
     background: var(--white);
-    padding: 62px 24px 60px;
+    padding: 58px 24px 56px;
   }
-  .curator .section-label { color: var(--honey-deep); margin-bottom: 20px; }
+  .curator .section-label { color: var(--honey-deep); margin-bottom: 22px; }
+  .curator-quote {
+    border-left: 3px solid var(--honey);
+    padding-left: 20px;
+  }
+  .curator-mark {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    line-height: 0.55;
+    color: var(--honey);
+    opacity: 0.5;
+    margin-bottom: 16px;
+  }
   .curator-stmt {
-    font-size: 27px;
+    font-size: 24px;
     font-weight: 800;
-    letter-spacing: -1.1px;
-    line-height: 1.45;
+    letter-spacing: -1px;
+    line-height: 1.5;
     color: var(--gray);
   }
   .curator-stmt.hit {
-    color: var(--honey-deep);
-    margin-top: 6px;
+    color: var(--ink);
+    margin-top: 8px;
   }
-  .curator-rule {
-    width: 38px;
-    height: 2px;
-    background: var(--honey);
-    margin: 28px 0 22px;
+  /* 형광펜을 그은 듯한 하이라이트 (줄바꿈돼도 각 줄에 그어지도록 clone) */
+  .curator-hl {
+    padding: 0 2px;
+    background: linear-gradient(180deg,
+      transparent 52%,
+      rgba(224, 184, 90, 0.55) 52%,
+      rgba(224, 184, 90, 0.55) 96%,
+      transparent 96%);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
   .curator-tail {
+    margin-top: 26px;
+    margin-bottom: 22px;
     font-size: 14.5px;
     line-height: 1.75;
     color: var(--gray);
     letter-spacing: -0.3px;
-    margin-bottom: 24px;
   }
   .curator-tail strong { color: var(--ink); font-weight: 800; }
   .curator-sig {
@@ -2196,13 +2215,14 @@
     .about .section-desc  { grid-column: 1; grid-row: 3; }
     .about-quote { grid-column: 2; grid-row: 1 / 4; align-self: center; margin-top: 0; }
 
-    /* ---------- WHY CURATOR : 대구 한 쌍 확대 ---------- */
-    .curator { padding: 104px 72px; }
-    .curator > .reveal { max-width: 720px; margin: 0 auto; text-align: center; }
-    .curator-stmt { font-size: 46px; letter-spacing: -2px; line-height: 1.35; }
-    .curator-stmt.hit { margin-top: 10px; }
-    .curator-rule { width: 52px; height: 3px; margin: 40px auto 28px; }
-    .curator-tail { font-size: 17px; margin-bottom: 30px; }
+    /* ---------- WHY CURATOR : 인용 블록 확대 (좌측정렬 유지) ---------- */
+    .curator { padding: 100px 72px; }
+    .curator > .reveal { max-width: 620px; margin: 0 auto; }
+    .curator-quote { border-left-width: 4px; padding-left: 34px; }
+    .curator-mark { font-size: 78px; margin-bottom: 22px; }
+    .curator-stmt { font-size: 42px; letter-spacing: -1.8px; line-height: 1.4; }
+    .curator-stmt.hit { margin-top: 12px; }
+    .curator-tail { font-size: 16.5px; margin-top: 36px; margin-bottom: 28px; }
     .curator-sig { font-size: 13px; }
 
     /* ---------- CELL CURATION : 중앙 정렬 + 플로우 2열 ---------- */
@@ -2506,13 +2526,17 @@
     </div>
   </section>
 
-  <!-- ==================== WHY CURATOR (대구 한 쌍) ==================== -->
+  <!-- ==================== WHY CURATOR (마커 하이라이트) ==================== -->
   <section class="curator" id="curator">
     <div class="reveal">
       <div class="section-label">WHY CURATOR</div>
-      <p class="curator-stmt">정보를 주는 사람은<br/>많습니다.</p>
-      <p class="curator-stmt hit">골라주는 사람은<br/>드뭅니다.</p>
-      <div class="curator-rule"></div>
+
+      <div class="curator-quote">
+        <span class="curator-mark">&ldquo;</span>
+        <p class="curator-stmt">정보를 주는 사람은<br/>많습니다.</p>
+        <p class="curator-stmt hit"><span class="curator-hl">골라주는 사람은<br/>드뭅니다.</span></p>
+      </div>
+
       <p class="curator-tail">
         좋은 걸 다 권하지 않습니다.<br/>
         <strong>지금 당신에게 필요한 것만</strong> 골라 드립니다.
