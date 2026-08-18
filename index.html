@@ -411,6 +411,15 @@
     background: rgba(255, 255, 255, 0.06);
     text-align: center;
   }
+  .curation-ask-pre {
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.62);
+    letter-spacing: -0.2px;
+    padding-bottom: 14px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
   .curation-ask-q {
     font-size: 18px;
     font-weight: 800;
@@ -512,6 +521,195 @@
   .series-cta a svg { width: 15px; height: 15px; flex-shrink: 0; }
   .series-cta a.ig svg { color: #DD2A7B; }
   .series-cta a.yt svg { color: #FF0000; }
+
+  /* ==================== WHY CURATOR (큐레이터란) ==================== */
+  .curator {
+    background: var(--cream-warm);
+    padding: 54px 24px 56px;
+  }
+  .curator .section-title em { color: var(--honey-deep); font-style: normal; }
+
+  /* 큐레이터의 4가지 동사 */
+  .curator-verbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 22px;
+  }
+  .curator-verb {
+    padding: 14px 6px 12px;
+    border-radius: 12px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+  .curator-verb-ko {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.4px;
+    margin-bottom: 4px;
+  }
+  .curator-verb-en {
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    color: var(--honey-deep);
+  }
+  .curator-verbs-note {
+    margin-top: 12px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--gray);
+    letter-spacing: -0.2px;
+  }
+  .curator-verbs-note strong { color: var(--wood-deep); font-weight: 700; }
+
+  /* 연구자 vs 조력자 대비 */
+  .curator-contrast {
+    margin-top: 26px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--white);
+    overflow: hidden;
+  }
+  .curator-contrast-row {
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+    padding: 16px 17px;
+  }
+  .curator-contrast-row + .curator-contrast-row { border-top: 1px solid var(--line); }
+  .curator-contrast-row.is-no { background: rgba(138, 129, 116, 0.06); }
+  .curator-contrast-mark {
+    flex-shrink: 0;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: 1px;
+  }
+  .is-no .curator-contrast-mark { background: rgba(138, 129, 116, 0.18); color: var(--gray); }
+  .is-yes .curator-contrast-mark { background: var(--honey); color: var(--white); }
+  .curator-contrast-text {
+    font-size: 14px;
+    line-height: 1.62;
+    letter-spacing: -0.35px;
+    color: var(--gray);
+  }
+  .is-yes .curator-contrast-text { color: var(--ink); font-weight: 700; }
+  .is-yes .curator-contrast-text strong { color: var(--honey-deep); }
+
+  /* 세계관 5단계 다이어그램 */
+  .curator-map {
+    margin-top: 28px;
+    padding: 22px 18px 20px;
+    border-radius: 16px;
+    background: var(--usana-blue);
+  }
+  .curator-map-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--usana-cyan);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .curator-map-node {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.82);
+    letter-spacing: -0.3px;
+    padding: 9px 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.07);
+  }
+  .curator-map-node.is-me {
+    background: var(--honey);
+    color: var(--white);
+    font-weight: 800;
+    font-size: 14.5px;
+    box-shadow: 0 6px 18px rgba(200, 148, 30, 0.32);
+  }
+  .curator-map-node.is-me small {
+    display: block;
+    margin-top: 3px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.88);
+  }
+  .curator-map-arrow {
+    display: block;
+    margin: 6px auto;
+    width: 1px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Curation / Curator 관계 */
+  .curator-marks {
+    display: grid;
+    gap: 10px;
+    margin-top: 26px;
+  }
+  .curator-mark {
+    padding: 16px 17px 15px;
+    border-radius: 14px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--honey);
+  }
+  .curator-mark-name {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.2px;
+    margin-bottom: 5px;
+  }
+  .curator-mark-desc {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--gray);
+    letter-spacing: -0.2px;
+  }
+  .curator-marks-sum {
+    margin-top: 12px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--wood-deep);
+    letter-spacing: -0.2px;
+    text-align: center;
+  }
+  .curator-marks-sum strong { color: var(--honey-deep); font-weight: 800; }
+
+  /* ABOUT — 18초 자기소개 */
+  .about-intro {
+    margin-top: 22px;
+    padding: 20px 20px 18px;
+    border-radius: 16px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+  }
+  .about-intro-label {
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--honey-deep);
+    margin-bottom: 10px;
+  }
+  .about-intro-text {
+    font-size: 14.5px;
+    line-height: 1.78;
+    color: var(--ink);
+    letter-spacing: -0.4px;
+  }
+  .about-intro-text strong { font-weight: 800; color: var(--wood-deep); }
 
   .connect {
     background: var(--usana-blue-light);
@@ -2139,6 +2337,26 @@
     .about .section-desc  { grid-column: 1; grid-row: 3; }
     .about-quote { grid-column: 2; grid-row: 1 / 4; align-self: center; margin-top: 0; }
 
+    /* ---------- WHY CURATOR : 중앙 정렬 + 관계 2열 ---------- */
+    .curator > .reveal { max-width: 900px; margin: 0 auto; }
+    .curator .section-desc { max-width: 680px; }
+    .curator-verbs { gap: 14px; margin-top: 28px; }
+    .curator-verb { padding: 22px 10px 18px; border-radius: 14px; }
+    .curator-verb-ko { font-size: 18px; }
+    .curator-verb-en { font-size: 10px; }
+    .curator-verbs-note { font-size: 14px; margin-top: 16px; }
+    .curator-contrast { margin-top: 32px; }
+    .curator-contrast-row { padding: 20px 24px; }
+    .curator-contrast-text { font-size: 15.5px; }
+    .curator-map { margin-top: 34px; padding: 30px 24px 28px; }
+    .curator-map-node { font-size: 15.5px; padding: 11px 12px; max-width: 420px; margin: 0 auto; }
+    .curator-map-node.is-me { font-size: 16.5px; }
+    .curator-marks { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .curator-mark { padding: 22px 22px 20px; }
+    .curator-marks-sum { font-size: 13.5px; margin-top: 16px; }
+    .about-intro { padding: 26px 26px 24px; }
+    .about-intro-text { font-size: 15.5px; }
+
     /* ---------- CELL CURATION : 중앙 정렬 + 플로우 2열 ---------- */
     .curation > .reveal { max-width: 900px; margin: 0 auto; }
     .curation .section-desc { max-width: 640px; }
@@ -2380,10 +2598,83 @@
         건강은 치료가 아니라, 세포를 이해하는 것에서 시작됩니다.
       </p>
 
+      <div class="about-intro">
+        <div class="about-intro-label">INTRODUCTION · 18SEC</div>
+        <p class="about-intro-text">
+          안녕하세요. 저는 <strong>Cell Curator 서혜영</strong>입니다.
+          저는 몸의 증상이 아니라 <strong>세포가 보내는 신호와 이야기를 큐레이팅</strong>하여
+          건강한 삶의 방향을 함께 찾아드립니다.
+          건강은 치료가 아니라, <strong>내 몸을 이해하는 순간부터</strong> 시작됩니다.
+        </p>
+      </div>
+
       <div class="about-quote">
         <p class="about-quote-text">세포의 신호를 읽고,<br/>건강한 삶을 큐레이팅합니다.<br/>이제, 당신의 차례입니다.<br/>그 곁에서 함께 하겠습니다.</p>
         <div class="about-quote-sig">Cell Curator 서혜영 드림</div>
       </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY CURATOR (큐레이터란) ==================== -->
+  <section class="curator" id="curator">
+    <div class="reveal">
+      <div class="section-label">WHY CURATOR</div>
+      <h2 class="section-title">왜 <em>큐레이터</em>일까요?</h2>
+      <p class="section-desc">
+        큐레이터는 <strong>선별하고, 해석하고, 연결해 새로운 경험을 만드는 사람</strong>입니다.
+        정보가 넘치는 시대에는 많이 아는 사람보다,
+        <strong>정보를 해석해 의미를 만들어주는 사람</strong>이 필요합니다.
+      </p>
+
+      <div class="curator-verbs stagger">
+        <div class="curator-verb"><div class="curator-verb-ko">선별</div><div class="curator-verb-en">SELECT</div></div>
+        <div class="curator-verb"><div class="curator-verb-ko">해석</div><div class="curator-verb-en">INTERPRET</div></div>
+        <div class="curator-verb"><div class="curator-verb-ko">연결</div><div class="curator-verb-en">CONNECT</div></div>
+        <div class="curator-verb"><div class="curator-verb-ko">경험</div><div class="curator-verb-en">CREATE</div></div>
+      </div>
+      <p class="curator-verbs-note">
+        미술관의 큐레이터가 수많은 작품 중 의미 있는 것을 골라 맥락을 만들어주듯,
+        <strong>건강에도 해석해주는 사람이 필요합니다.</strong>
+      </p>
+
+      <div class="curator-contrast">
+        <div class="curator-contrast-row is-no">
+          <span class="curator-contrast-mark">&times;</span>
+          <p class="curator-contrast-text">세포를 <b>연구하는</b> 사람이 아닙니다.</p>
+        </div>
+        <div class="curator-contrast-row is-yes">
+          <span class="curator-contrast-mark">&check;</span>
+          <p class="curator-contrast-text">세포가 보내는 신호를 <strong>해석하고, 삶에 적용하도록 돕는</strong> 사람입니다.</p>
+        </div>
+      </div>
+
+      <div class="curator-map">
+        <div class="curator-map-label">CELL CURATION&trade; MAP</div>
+        <div class="curator-map-node">세포의 신호</div>
+        <span class="curator-map-arrow"></span>
+        <div class="curator-map-node is-me">Cell Curator 서혜영<small>신호와 이해 사이, 해석하는 사람</small></div>
+        <span class="curator-map-arrow"></span>
+        <div class="curator-map-node">몸의 이해</div>
+        <span class="curator-map-arrow"></span>
+        <div class="curator-map-node">셀프케어</div>
+        <span class="curator-map-arrow"></span>
+        <div class="curator-map-node">삶의 변화</div>
+      </div>
+
+      <div class="curator-marks stagger">
+        <div class="curator-mark">
+          <div class="curator-mark-name">CELL CURATION&trade;</div>
+          <p class="curator-mark-desc">서혜영만의 건강 철학과 방법론. 신호를 읽고 해석해 실천으로 옮기는 하나의 시스템입니다.</p>
+        </div>
+        <div class="curator-mark">
+          <div class="curator-mark-name">CELL CURATOR&trade;</div>
+          <p class="curator-mark-desc">그 방법론을 실천하는 브랜드 역할. 서혜영은 이 시스템을 만든 사람입니다.</p>
+        </div>
+      </div>
+      <p class="curator-marks-sum">
+        방법론이 먼저, 사람이 그 다음입니다.<br/>
+        <strong>Cell Curation은 시스템이고, Cell Curator 서혜영은 그 시스템의 창시자입니다.</strong>
+      </p>
     </div>
   </section>
 
@@ -2433,8 +2724,9 @@
       </ol>
 
       <div class="curation-ask">
+        <p class="curation-ask-pre">대부분의 전문가는 &ldquo;무엇을 먹어야 합니다&rdquo;라고 말합니다.<br/>Cell Curator는 이렇게 질문합니다.</p>
         <p class="curation-ask-q">&ldquo;당신의 세포는 지금<br/>무엇을 원하고 있을까요?&rdquo;</p>
-        <div class="curation-ask-by">CELL CURATOR &middot; 서혜영</div>
+        <div class="curation-ask-by">CELL CURATOR&trade; &middot; 서혜영</div>
       </div>
     </div>
   </section>
@@ -2458,7 +2750,7 @@
         </article>
         <article class="series-card">
           <div class="series-card-en">Curator&rsquo;s Pick</div>
-          <div class="series-card-title">오늘의 세포 습관</div>
+          <div class="series-card-title">오늘 꼭 실천해야 할<br/>세포 습관</div>
           <p class="series-card-desc">지금 바로 실천할 셀프케어 하나를 골라드립니다.</p>
         </article>
         <article class="series-card">
@@ -2896,7 +3188,7 @@
   <section class="footer-bar">
     <div class="footer">
       <div class="footer-logo"><img src="assets/usana-logo-white.png" alt="USANA" /></div>
-      <div class="footer-en">BRAND PARTNER · SINCE 1992</div>
+      <div class="footer-en">CELL CURATOR™ 서혜영 · BRAND PARTNER</div>
       <div class="footer-copy">© USANA Brand Partner. ALL RIGHTS RESERVED.</div>
       <button type="button" class="footer-cta" onclick="openMakerModal()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.86 19.86 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
