@@ -426,6 +426,93 @@
     color: var(--usana-cyan);
   }
 
+  /* ==================== CELL CURATION CONTENTS (콘텐츠 시리즈) ==================== */
+  .series {
+    background: var(--white);
+    padding: 54px 24px 56px;
+  }
+  .series .section-title em { color: var(--usana-blue); font-style: normal; }
+  .series-issue {
+    display: inline-block;
+    margin: 4px 0 0;
+    padding: 7px 14px;
+    border-radius: 100px;
+    background: var(--cream-warm);
+    border: 1px solid var(--line);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--wood-deep);
+    letter-spacing: -0.2px;
+  }
+  .series-issue b {
+    font-weight: 800;
+    color: var(--honey-deep);
+    letter-spacing: 0.04em;
+    margin-right: 6px;
+  }
+  .series-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .series-card {
+    padding: 17px 15px 16px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--cream);
+  }
+  .series-card-en {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--honey-deep);
+    margin-bottom: 7px;
+  }
+  .series-card-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.4px;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .series-card-desc {
+    font-size: 12.5px;
+    line-height: 1.62;
+    color: var(--gray);
+    letter-spacing: -0.2px;
+  }
+  .series-cta {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .series-cta a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 0;
+    padding: 13px 8px;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    background: var(--white);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    text-decoration: none;
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  }
+  .series-cta a:active { transform: scale(0.98); }
+  .series-cta a:hover { background: var(--cream-warm); border-color: var(--honey); }
+  .series-cta a svg { width: 15px; height: 15px; flex-shrink: 0; }
+  .series-cta a.ig svg { color: #DD2A7B; }
+  .series-cta a.yt svg { color: #FF0000; }
+
   .connect {
     background: var(--usana-blue-light);
   }
@@ -2067,6 +2154,15 @@
     .curation-ask { margin-top: 40px; padding: 30px 26px 26px; }
     .curation-ask-q { font-size: 22px; }
 
+    /* ---------- CELL CURATION CONTENTS : 4열 ---------- */
+    .series > .reveal { max-width: 980px; margin: 0 auto; }
+    .series .section-desc { max-width: 620px; }
+    .series-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+    .series-card { padding: 24px 20px 22px; border-radius: 16px; }
+    .series-card-title { font-size: 16px; }
+    .series-card-desc { font-size: 13.5px; }
+    .series-cta { max-width: 540px; margin-top: 26px; gap: 14px; }
+
     /* ---------- CONNECT : 카톡 풀폭 + 타일 4열 ---------- */
     .connect .channel-grid { display: flex; flex-flow: row wrap; gap: 16px; }
     .connect .channel-featured { flex: 0 0 100%; }
@@ -2339,6 +2435,47 @@
       <div class="curation-ask">
         <p class="curation-ask-q">&ldquo;당신의 세포는 지금<br/>무엇을 원하고 있을까요?&rdquo;</p>
         <div class="curation-ask-by">CELL CURATOR &middot; 서혜영</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CELL CURATION CONTENTS (콘텐츠 시리즈) ==================== -->
+  <section class="series" id="series">
+    <div class="reveal">
+      <div class="section-label">CELL CURATION&trade; CONTENTS</div>
+      <h2 class="section-title">매일, <em>세포의 이야기</em>를<br/>기록합니다</h2>
+      <p class="section-desc">
+        네 가지 시선으로 세포가 보내는 신호를 풀어 전해드립니다.
+        채널에서 이어지는 큐레이션을 만나보세요.
+      </p>
+      <div class="series-issue"><b>CELL CURATION #001</b>오늘 세포는 무엇을 말하고 있을까요?</div>
+
+      <div class="series-grid stagger">
+        <article class="series-card">
+          <div class="series-card-en">Cell Note</div>
+          <div class="series-card-title">오늘의 세포 노트</div>
+          <p class="series-card-desc">하루 한 장, 세포가 보내는 신호를 짧게 기록합니다.</p>
+        </article>
+        <article class="series-card">
+          <div class="series-card-en">Curator&rsquo;s Pick</div>
+          <div class="series-card-title">오늘의 세포 습관</div>
+          <p class="series-card-desc">지금 바로 실천할 셀프케어 하나를 골라드립니다.</p>
+        </article>
+        <article class="series-card">
+          <div class="series-card-en">Cell Decode</div>
+          <div class="series-card-title">몸의 신호를 해독합니다</div>
+          <p class="series-card-desc">피로·수면·갱년기, 증상 뒤에 숨은 의미를 풀어봅니다.</p>
+        </article>
+        <article class="series-card">
+          <div class="series-card-en">Ask the Cell</div>
+          <div class="series-card-title">세포에게 물었습니다</div>
+          <p class="series-card-desc">자주 받는 질문에 세포의 언어로 답해드립니다.</p>
+        </article>
+      </div>
+
+      <div class="series-cta">
+        <a href="https://www.instagram.com/dreamwork324" target="_blank" rel="noopener" class="ig"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58 0 4.85.07 1.17.06 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.06 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.06-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85c.06-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.39C1.34 2.69.93 3.36.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.13.67.67 1.34 1.09 2.13 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.39.67-.67 1.09-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 105.84 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zM18.41 4.15a1.44 1.44 0 11-1.44 1.44 1.44 1.44 0 011.44-1.44z"/></svg>인스타그램에서 보기</a>
+        <a href="https://www.youtube.com/@리본맘유사나" target="_blank" rel="noopener" class="yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>유튜브에서 보기</a>
       </div>
     </div>
   </section>
