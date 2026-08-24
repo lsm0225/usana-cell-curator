@@ -1725,26 +1725,61 @@
     word-break: keep-all;
   }
 
-  /* 무첨가 배지 */
+  /* 무첨가 — 알약 대신 가로 헤어라인 스펙 블록 */
   .celavive-free {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 16px;
+    margin-top: 22px;
+    padding: 15px 0 14px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .celavive-free-label {
+    margin-bottom: 13px;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    color: var(--honey-deep);
+  }
+  .celavive-free-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px 12px;
+    margin: 0;
     padding: 0;
     list-style: none;
   }
-  .celavive-free li {
-    padding: 6px 11px;
-    border: 1px solid var(--line);
-    border-radius: 100px;
-    background: var(--usana-blue-light);
-    font-size: 11.5px;
+  .celavive-free-list li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
     font-weight: 700;
-    color: var(--wood-deep);
-    letter-spacing: -0.2px;
+    color: var(--ink);
+    letter-spacing: -0.4px;
   }
-  .celavive-free li b { color: var(--honey-deep); font-weight: 800; }
+  .celavive-free-list svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    color: var(--honey);
+  }
+  .celavive-free-note {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 13px 0 0;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--gray);
+    letter-spacing: -0.3px;
+  }
+  .celavive-free-note svg {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+    color: var(--usana-blue);
+  }
 
   /* 독점 성분 3카드 */
   .celavive-ing {
@@ -2587,7 +2622,10 @@
     .celavive-formula        { grid-column: 2; grid-row: 3; }
     .celavive-lead           { grid-column: 2; grid-row: 4; font-size: 15.5px; }
     .celavive-fig            { grid-column: 1; grid-row: 1 / 6; margin: 0; align-self: start; }
-    .celavive-free           { grid-column: 2; grid-row: 5; align-self: end; margin-top: 22px; margin-bottom: 4px; }
+    .celavive-free           { grid-column: 2; grid-row: 5; align-self: end; margin-top: 26px; margin-bottom: 6px; padding: 18px 0 16px; }
+    .celavive-free-list      { gap: 13px 16px; }
+    .celavive-free-list li   { font-size: 14px; }
+    .celavive-free-note      { font-size: 13px; }
     .celavive-ing            { grid-column: 1 / -1; grid-row: 6; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
     .celavive-ing-item       { padding: 22px 20px 20px; }
     .celavive-routine        { grid-column: 1 / -1; grid-row: 7; justify-content: center; gap: 18px; margin-top: 16px; padding: 18px; }
@@ -3163,12 +3201,16 @@
         <figcaption>세포 수준에서 접근하는 유사나의 스킨케어 라인</figcaption>
       </figure>
 
-      <ul class="celavive-free">
-        <li>파라벤 <b>FREE</b></li>
-        <li>포름알데하이드 <b>FREE</b></li>
-        <li>합성 오일 <b>FREE</b></li>
-        <li>알레르기 테스트 완료</li>
-      </ul>
+      <div class="celavive-free">
+        <div class="celavive-free-label">FREE FROM</div>
+        <ul class="celavive-free-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8" stroke-linecap="round"/></svg>파라벤</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8" stroke-linecap="round"/></svg>포름알데하이드</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8" stroke-linecap="round"/></svg>합성 오일</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8" stroke-linecap="round"/></svg>기타 유해성분</li>
+        </ul>
+        <p class="celavive-free-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>알레르기 테스트 완료</p>
+      </div>
 
       <div class="celavive-ing stagger">
         <article class="celavive-ing-item">
