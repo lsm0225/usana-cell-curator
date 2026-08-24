@@ -7,3 +7,6 @@ _shot.html
 _probe.html
 _curator-visual.html
 _mobile.html
+
+# wrangler 로컬 캐시
+.wrangler/
