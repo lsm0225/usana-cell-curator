@@ -1666,20 +1666,22 @@
   .celavive .section-title em { color: var(--usana-blue); font-style: normal; }
 
   /* CELL + ALIVE 이름 공식 */
+  /* 공식은 어떤 화면폭에서도 한 줄 유지 — 기준 폰트만 유동, 나머지는 em 배수 */
   .celavive-formula {
     display: flex;
     align-items: baseline;
-    flex-wrap: wrap;
-    gap: 7px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 0.58em;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--line);
-    font-size: 12px;
+    font-size: clamp(8.6px, 2.72vw, 12px);
     color: var(--gray);
     letter-spacing: -0.2px;
   }
   .celavive-formula b {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
+    font-size: 1.67em;
     font-weight: 600;
     letter-spacing: 0.06em;
     color: var(--ink);
@@ -1692,7 +1694,7 @@
   .celavive-formula em {
     font-family: 'Cormorant Garamond', serif;
     font-style: normal;
-    font-size: 23px;
+    font-size: 1.92em;
     font-weight: 600;
     letter-spacing: 0.08em;
     color: var(--usana-blue-deep);
@@ -1765,6 +1767,7 @@
   .celavive-free-note {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 7px;
     margin: 13px 0 0;
     padding-top: 12px;
@@ -1773,6 +1776,33 @@
     font-weight: 700;
     color: var(--gray);
     letter-spacing: -0.3px;
+  }
+  /* 글자 위를 빛이 천천히 한 번 훑고 지나감 (background-clip: text) */
+  @supports (-webkit-background-clip: text) or (background-clip: text) {
+    .celavive-free-note .sweep {
+      background-image: linear-gradient(100deg,
+        var(--gray) 0%, var(--gray) 38%,
+        var(--honey-light) 46%, var(--honey) 50%, var(--honey-light) 54%,
+        var(--gray) 62%, var(--gray) 100%);
+      background-size: 300% 100%;
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+    .reveal.show .celavive-free-note .sweep {
+      animation: celaviveTextSweep 9s cubic-bezier(0.4, 0, 0.2, 1) 0.8s infinite;
+    }
+  }
+  @keyframes celaviveTextSweep {
+    0%,  6%  { background-position: 100% 0; }
+    44%      { background-position: 0% 0; }
+    100%     { background-position: 0% 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .celavive-free-note .sweep { animation: none; }
   }
   .celavive-free-note svg {
     width: 14px;
@@ -1926,10 +1956,11 @@
 
   /* 자세히 보기 */
   .celavive-more {
-    display: inline-flex;
+    display: flex;
+    width: fit-content;
     align-items: center;
     gap: 7px;
-    margin-top: 18px;
+    margin: 24px auto 0;
     padding: 11px 18px;
     border: 1.4px solid var(--usana-blue);
     border-radius: 100px;
@@ -2654,7 +2685,7 @@
     }
     .celavive .section-label { grid-column: 2; grid-row: 1; }
     .celavive .section-title { grid-column: 2; grid-row: 2; font-size: 34px; }
-    .celavive-formula        { grid-column: 2; grid-row: 3; }
+    .celavive-formula        { grid-column: 2; grid-row: 3; font-size: 13px; }
     .celavive-lead           { grid-column: 2; grid-row: 4; font-size: 15.5px; }
     .celavive-fig            { grid-column: 1; grid-row: 1 / 6; margin: 0; align-self: start; }
     .celavive-free           { grid-column: 2; grid-row: 5; align-self: end; margin-top: 26px; margin-bottom: 6px; padding: 18px 0 16px; }
@@ -3254,7 +3285,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8" stroke-linecap="round"/></svg>합성 오일</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8" stroke-linecap="round"/></svg>기타 유해성분</li>
         </ul>
-        <p class="celavive-free-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>알레르기 테스트 완료</p>
+        <p class="celavive-free-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span class="sweep">알레르기 테스트 완료</span></p>
       </div>
 
       <div class="celavive-ing">
