@@ -532,27 +532,43 @@
     opacity: 0.5;
     margin-bottom: 16px;
   }
+  /* 어떤 폭에서도 문장당 한 줄 유지 */
+  .curator-br { display: none; }
   .curator-stmt {
-    font-size: 24px;
+    font-size: clamp(17px, 5.9vw, 26px);
     font-weight: 800;
     letter-spacing: -1px;
     line-height: 1.5;
     color: var(--gray);
+    white-space: nowrap;
   }
   .curator-stmt.hit {
     color: var(--ink);
     margin-top: 8px;
   }
   /* 형광펜을 그은 듯한 하이라이트 (줄바꿈돼도 각 줄에 그어지도록 clone) */
+  /* 처음엔 회색 음영, 화면에 들어오면 왼쪽부터 골드가 차오름 */
   .curator-hl {
-    padding: 0 2px;
-    background: linear-gradient(180deg,
-      transparent 52%,
-      rgba(224, 184, 90, 0.55) 52%,
-      rgba(224, 184, 90, 0.55) 96%,
-      transparent 96%);
+    padding: 3px 9px 5px;
+    border-radius: 4px;
+    background-image: linear-gradient(90deg,
+      var(--honey-soft) 0%, var(--honey-soft) 50%,
+      rgba(42, 33, 24, 0.10) 50%, rgba(42, 33, 24, 0.10) 100%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    background-repeat: no-repeat;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
+  }
+  .reveal.show .curator-hl {
+    animation: curatorFill 1s cubic-bezier(0.33, 0, 0.2, 1) 0.35s forwards;
+  }
+  @keyframes curatorFill {
+    to { background-position: 0% 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .curator-hl { background-position: 0% 0; }
+    .reveal.show .curator-hl { animation: none; }
   }
   .curator-tail {
     margin-top: 26px;
@@ -2543,7 +2559,8 @@
     .curator > .reveal { max-width: 620px; margin: 0 auto; }
     .curator-quote { border-left-width: 4px; padding-left: 34px; }
     .curator-mark { font-size: 78px; margin-bottom: 22px; }
-    .curator-stmt { font-size: 42px; letter-spacing: -1.8px; line-height: 1.4; }
+    .curator-stmt { font-size: 40px; letter-spacing: -2px; line-height: 1.45; }
+    .curator-hl { padding: 4px 12px 7px; border-radius: 5px; }
     .curator-stmt.hit { margin-top: 12px; }
     .curator-tail { font-size: 16.5px; margin-top: 36px; margin-bottom: 28px; }
     .curator-sig { font-size: 13px; }
@@ -2570,7 +2587,7 @@
     .series-card { padding: 24px 20px 22px; border-radius: 16px; }
     .series-card-title { font-size: 16px; }
     .series-card-desc { font-size: 13.5px; }
-    .series-cta { max-width: 540px; margin-top: 26px; gap: 14px; }
+    .series-cta { max-width: 540px; margin: 30px auto 0; gap: 14px; }   /* 980px 컨테이너 안에서 가운데 */
 
     /* ---------- CONNECT : 카톡 풀폭 + 타일 4열 ---------- */
     .connect .channel-grid { display: flex; flex-flow: row wrap; gap: 16px; }
@@ -2896,8 +2913,8 @@
 
       <div class="curator-quote">
         <span class="curator-mark">&ldquo;</span>
-        <p class="curator-stmt">정보를 주는 사람은<br/>많습니다.</p>
-        <p class="curator-stmt hit"><span class="curator-hl">골라주는 사람은<br/>드뭅니다.</span></p>
+        <p class="curator-stmt">정보를 주는 사람은 <br class="curator-br"/>많습니다.</p>
+        <p class="curator-stmt hit"><span class="curator-hl">골라주는 사람은 <br class="curator-br"/>드뭅니다.</span></p>
       </div>
 
       <p class="curator-tail">
