@@ -1795,13 +1795,13 @@
     }
     .reveal.show .celavive-free-note .sweep {
       /* 훑는 속도는 그대로, 시작 전 죽은 구간을 더 잘라내고 쉬는 시간을 1초로 */
-      animation: celaviveTextSweep 3.9s linear 0.6s infinite;
+      animation: celaviveTextSweep 3.3s linear 0.4s infinite;
     }
   }
   @keyframes celaviveTextSweep {
     0%   { background-position: 90% 0; }  /* 글자 왼쪽 끝에 빛이 막 닿는 지점 */
-    74%  { background-position: 5% 0; }   /* 2.9초간 훑고 오른쪽으로 빠짐 */
-    100% { background-position: 5% 0; }   /* 1초 정지 후 반복 */
+    88%  { background-position: 5% 0; }   /* 2.9초간 훑고 오른쪽으로 빠짐 */
+    100% { background-position: 5% 0; }   /* 0.4초만 쉬고 바로 반복 */
   }
   @media (prefers-reduced-motion: reduce) {
     .celavive-free-note .sweep { animation: none; }
