@@ -1781,35 +1781,49 @@
     color: var(--usana-blue);
   }
 
-  /* 독점 성분 3카드 */
-  .celavive-ing {
-    display: grid;
-    gap: 10px;
-    margin-top: 26px;
+  /* 독점 성분 — 박스 없이 헤어라인으로 나눈 스펙 리스트 */
+  .celavive-ing { margin-top: 28px; }
+  .celavive-ing-label {
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    color: var(--honey-deep);
+    margin-bottom: 4px;
   }
   .celavive-ing-item {
-    padding: 16px 16px 15px;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    background: var(--cream);
+    padding: 16px 0 15px;
+    border-top: 1px solid var(--line);
+  }
+  .celavive-ing-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
   }
   .celavive-ing-en {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
+    font-size: 23px;
     font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--honey-deep);
-    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .celavive-ing-tag {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--usana-blue);
+    white-space: nowrap;
   }
   .celavive-ing-ko {
-    margin-top: 2px;
-    font-size: 14px;
+    margin-top: 4px;
+    font-size: 13px;
     font-weight: 800;
-    color: var(--ink);
+    color: var(--wood-deep);
     letter-spacing: -0.4px;
   }
   .celavive-ing-desc {
-    margin-top: 7px;
+    margin-top: 8px;
     font-size: 12.5px;
     line-height: 1.65;
     color: var(--gray);
@@ -2626,8 +2640,13 @@
     .celavive-free-list      { gap: 13px 16px; }
     .celavive-free-list li   { font-size: 14px; }
     .celavive-free-note      { font-size: 13px; }
-    .celavive-ing            { grid-column: 1 / -1; grid-row: 6; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
-    .celavive-ing-item       { padding: 22px 20px 20px; }
+    .celavive-ing            { grid-column: 1 / -1; grid-row: 6; margin-top: 46px; }
+    .celavive-ing-label      { margin-bottom: 0; }
+    .celavive-ing-list       { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .celavive-ing-item       { padding: 22px 30px 6px 0; }
+    .celavive-ing-item + .celavive-ing-item { border-left: 1px solid var(--line); padding-left: 30px; }
+    .celavive-ing-en         { font-size: 26px; }
+    .celavive-ing-desc       { font-size: 13px; }
     .celavive-routine        { grid-column: 1 / -1; grid-row: 7; justify-content: center; gap: 18px; margin-top: 16px; padding: 18px; }
     .celavive-routine span   { font-size: 14px; }
     .celavive-post           { grid-column: 1 / -1; grid-row: 8; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 20px; padding: 22px 24px; }
@@ -3191,7 +3210,6 @@
       </div>
 
       <p class="celavive-lead">
-        피부 세포에 생기를 더한다는 뜻입니다.<br/>
         <strong>안에서 채운 영양이 밖으로 드러나도록</strong>,<br/>
         바르는 단계까지 함께 큐레이팅합니다.
       </p>
@@ -3212,22 +3230,34 @@
         <p class="celavive-free-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>알레르기 테스트 완료</p>
       </div>
 
-      <div class="celavive-ing stagger">
-        <article class="celavive-ing-item">
-          <div class="celavive-ing-en">Olivol24</div>
-          <div class="celavive-ing-ko">올리볼24 &middot; 항산화</div>
-          <p class="celavive-ing-desc">유사나의 독자적인 올리브 오일 추출 방식에서 얻은 올리볼의 강력한 항산화 효과는 피부결을 부드럽게 하며 오래도록 지속되는 보습 효과를 제공합니다.</p>
-        </article>
-        <article class="celavive-ing-item">
-          <div class="celavive-ing-en">BioPeptide&#8209;CS</div>
-          <div class="celavive-ing-ko">바이오펩타이드-CS &middot; 펩타이드</div>
-          <p class="celavive-ing-desc">피부 내 콜라겐, 엘라스틴, 히알루론산 등 피부에 필수적인 과정을 활성화시켜 주며, 특히 피부 장벽 체계의 손실을 막아 피부 본연의 기능을 되찾도록 도와 줍니다.</p>
-        </article>
-        <article class="celavive-ing-item">
-          <div class="celavive-ing-en">Superfood Complex</div>
-          <div class="celavive-ing-ko">슈퍼푸드 컴플렉스</div>
-          <p class="celavive-ing-desc">흰목이버섯추출물, 동충하초추출물 등의 자연 유래 식물 성분 및 항산화 영양소 블렌드를 담았습니다.</p>
-        </article>
+      <div class="celavive-ing">
+        <div class="celavive-ing-label">EXCLUSIVE &middot; 독점 성분</div>
+        <div class="celavive-ing-list stagger">
+          <article class="celavive-ing-item">
+            <div class="celavive-ing-head">
+              <span class="celavive-ing-en">Olivol24</span>
+              <span class="celavive-ing-tag">ANTIOXIDANT</span>
+            </div>
+            <div class="celavive-ing-ko">올리볼24</div>
+            <p class="celavive-ing-desc">유사나의 독자적인 올리브 오일 추출 방식에서 얻은 올리볼의 강력한 항산화 효과는 피부결을 부드럽게 하며 오래도록 지속되는 보습 효과를 제공합니다.</p>
+          </article>
+          <article class="celavive-ing-item">
+            <div class="celavive-ing-head">
+              <span class="celavive-ing-en">BioPeptide&#8209;CS</span>
+              <span class="celavive-ing-tag">PEPTIDE</span>
+            </div>
+            <div class="celavive-ing-ko">바이오펩타이드-CS</div>
+            <p class="celavive-ing-desc">피부 내 콜라겐, 엘라스틴, 히알루론산 등 피부에 필수적인 과정을 활성화시켜 주며, 특히 피부 장벽 체계의 손실을 막아 피부 본연의 기능을 되찾도록 도와 줍니다.</p>
+          </article>
+          <article class="celavive-ing-item">
+            <div class="celavive-ing-head">
+              <span class="celavive-ing-en">Superfood Complex</span>
+              <span class="celavive-ing-tag">BOTANICAL</span>
+            </div>
+            <div class="celavive-ing-ko">슈퍼푸드 컴플렉스</div>
+            <p class="celavive-ing-desc">흰목이버섯추출물, 동충하초추출물 등의 자연 유래 식물 성분 및 항산화 영양소 블렌드를 담았습니다.</p>
+          </article>
+        </div>
       </div>
 
       <div class="celavive-routine">
