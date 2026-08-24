@@ -1604,7 +1604,7 @@
 
   /* ==================== AUDIENCE (USANA brand) ==================== */
   .audience {
-    background: var(--cream);
+    background: var(--white);
     padding: 48px 24px 56px;
   }
   .audience .section-label { color: var(--usana-blue); }
@@ -1658,7 +1658,7 @@
 
   /* ==================== CELAVIVE (스킨케어) ==================== */
   .celavive {
-    background: var(--white);
+    background: var(--cream);
     padding: 52px 24px 58px;
   }
   .celavive .section-label { color: var(--usana-blue); }
@@ -1794,14 +1794,14 @@
       -webkit-text-fill-color: transparent;
     }
     .reveal.show .celavive-free-note .sweep {
-      /* 빛이 글자를 지나는 속도는 그대로, 죽은 구간을 잘라내 3.1초 훑고 2초 쉼 */
-      animation: celaviveTextSweep 5.1s linear 0.8s infinite;
+      /* 훑는 속도는 그대로, 시작 전 죽은 구간을 더 잘라내고 쉬는 시간을 1초로 */
+      animation: celaviveTextSweep 3.9s linear 0.6s infinite;
     }
   }
   @keyframes celaviveTextSweep {
-    0%   { background-position: 95% 0; }  /* 글자 왼쪽 바로 밖 */
-    60%  { background-position: 5% 0; }   /* 3.1초간 훑고 오른쪽으로 빠짐 */
-    100% { background-position: 5% 0; }   /* 2초 정지 후 반복 */
+    0%   { background-position: 90% 0; }  /* 글자 왼쪽 끝에 빛이 막 닿는 지점 */
+    74%  { background-position: 5% 0; }   /* 2.9초간 훑고 오른쪽으로 빠짐 */
+    100% { background-position: 5% 0; }   /* 1초 정지 후 반복 */
   }
   @media (prefers-reduced-motion: reduce) {
     .celavive-free-note .sweep { animation: none; }
@@ -2961,45 +2961,6 @@
     </div>
   </section>
 
-  <!-- ==================== CELL CURATION CONTENTS (콘텐츠 시리즈) ==================== -->
-  <section class="series" id="series">
-    <div class="reveal">
-      <div class="section-label">CELL CURATION&trade; CONTENTS</div>
-      <h2 class="section-title">매일, <em>세포의 이야기</em>를<br/>기록합니다</h2>
-      <p class="section-desc">
-        네 가지 시선으로 세포가 보내는 신호를 풀어 전해드립니다.
-        채널에서 이어지는 큐레이션을 만나보세요.
-      </p>
-      <div class="series-grid stagger">
-        <article class="series-card">
-          <div class="series-card-en">Cell Note</div>
-          <div class="series-card-title">오늘의 세포 노트</div>
-          <p class="series-card-desc">하루 한 장, 세포가 보내는 신호를 짧게 기록합니다.</p>
-        </article>
-        <article class="series-card">
-          <div class="series-card-en">Curator&rsquo;s Pick</div>
-          <div class="series-card-title">오늘 꼭 실천해야 할<br/>세포 습관</div>
-          <p class="series-card-desc">지금 바로 실천할 셀프케어 하나를 골라드립니다.</p>
-        </article>
-        <article class="series-card">
-          <div class="series-card-en">Cell Decode</div>
-          <div class="series-card-title">몸의 신호를 해독합니다</div>
-          <p class="series-card-desc">피로·수면·갱년기, 증상 뒤에 숨은 의미를 풀어봅니다.</p>
-        </article>
-        <article class="series-card">
-          <div class="series-card-en">Ask the Cell</div>
-          <div class="series-card-title">세포에게 물었습니다</div>
-          <p class="series-card-desc">자주 받는 질문에 세포의 언어로 답해드립니다.</p>
-        </article>
-      </div>
-
-      <div class="series-cta">
-        <a href="https://www.instagram.com/usana_queen" target="_blank" rel="noopener" class="ig"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58 0 4.85.07 1.17.06 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.06 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.06-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85c.06-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.39C1.34 2.69.93 3.36.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.13.67.67 1.34 1.09 2.13 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.39.67-.67 1.09-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 105.84 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zM18.41 4.15a1.44 1.44 0 11-1.44 1.44 1.44 1.44 0 011.44-1.44z"/></svg>인스타그램에서 보기</a>
-        <a href="https://www.youtube.com/@리본맘유사나" target="_blank" rel="noopener" class="yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>유튜브에서 보기</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ==================== ABOUT USANA ==================== -->
   <section class="about-usana">
     <div class="reveal">
@@ -3239,46 +3200,6 @@
     </div>
   </section>
 
-  <!-- ==================== AUDIENCE ==================== -->
-  <section class="audience">
-    <div class="reveal">
-      <div class="section-label">FOR YOU</div>
-      <h2 class="section-title">이런 분들께 <em>추천</em></h2>
-      <p class="audience-sub">당신의 세포는 지금 무엇을 원하고 있을까요?</p>
-
-      <div class="audience-list stagger">
-        <div class="audience-item">
-          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <p class="audience-text">병원약은 평생 드시는데… <strong>영양은 왜 거르시나요?</strong></p>
-        </div>
-        <div class="audience-item">
-          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <p class="audience-text">운동은 열심히 하는데, <strong>회복과 영양</strong>까지 챙기고 계신가요?</p>
-        </div>
-        <div class="audience-item">
-          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <p class="audience-text">굶는 다이어트 말고, <strong>건강하게 빠지는 몸의 밸런스</strong>를 경험해보세요.</p>
-        </div>
-        <div class="audience-item">
-          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <p class="audience-text">우리 아이, 배는 부른데 영양은 충분할까요? <strong>‘먹는 양’보다 ‘영양의 질’</strong>을 봐주세요.</p>
-        </div>
-        <div class="audience-item">
-          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <p class="audience-text">오늘의 피로를 당연하게 여기지 마세요. <strong>몸이 보내는 작은 SOS</strong>일 수 있습니다.</p>
-        </div>
-        <div class="audience-item">
-          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <p class="audience-text">건강은 아플 때가 아니라, <strong>좋을 때 지키는 것</strong>입니다.</p>
-        </div>
-        <div class="audience-item">
-          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <p class="audience-text">피부가 예민해지고 결이 달라졌다면, <strong>겉이 아니라 세포부터</strong> 살펴야 할 때입니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ==================== CELAVIVE (스킨케어) ==================== -->
   <section class="celavive" id="celavive">
     <div class="reveal">
@@ -3370,6 +3291,46 @@
     </div>
   </section>
 
+  <!-- ==================== AUDIENCE ==================== -->
+  <section class="audience">
+    <div class="reveal">
+      <div class="section-label">FOR YOU</div>
+      <h2 class="section-title">이런 분들께 <em>추천</em></h2>
+      <p class="audience-sub">당신의 세포는 지금 무엇을 원하고 있을까요?</p>
+
+      <div class="audience-list stagger">
+        <div class="audience-item">
+          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <p class="audience-text">병원약은 평생 드시는데… <strong>영양은 왜 거르시나요?</strong></p>
+        </div>
+        <div class="audience-item">
+          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <p class="audience-text">운동은 열심히 하는데, <strong>회복과 영양</strong>까지 챙기고 계신가요?</p>
+        </div>
+        <div class="audience-item">
+          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <p class="audience-text">굶는 다이어트 말고, <strong>건강하게 빠지는 몸의 밸런스</strong>를 경험해보세요.</p>
+        </div>
+        <div class="audience-item">
+          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <p class="audience-text">우리 아이, 배는 부른데 영양은 충분할까요? <strong>‘먹는 양’보다 ‘영양의 질’</strong>을 봐주세요.</p>
+        </div>
+        <div class="audience-item">
+          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <p class="audience-text">오늘의 피로를 당연하게 여기지 마세요. <strong>몸이 보내는 작은 SOS</strong>일 수 있습니다.</p>
+        </div>
+        <div class="audience-item">
+          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <p class="audience-text">건강은 아플 때가 아니라, <strong>좋을 때 지키는 것</strong>입니다.</p>
+        </div>
+        <div class="audience-item">
+          <span class="audience-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <p class="audience-text">피부가 예민해지고 결이 달라졌다면, <strong>겉이 아니라 세포부터</strong> 살펴야 할 때입니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== ORDER (CTA) ==================== -->
   <section class="order">
     <div class="reveal">
@@ -3397,6 +3358,45 @@
       <p class="order-note">
         <strong>잠깐!</strong> 오픈마켓·중고거래 구매는 피해주세요. <strong style="color:#D64545;">건강과 직결되는 영양제는 안전성을 기반으로 정식 채널 구매를 권장드립니다.</strong>
       </p>
+    </div>
+  </section>
+
+  <!-- ==================== CELL CURATION CONTENTS (콘텐츠 시리즈) ==================== -->
+  <section class="series" id="series">
+    <div class="reveal">
+      <div class="section-label">CELL CURATION&trade; CONTENTS</div>
+      <h2 class="section-title">매일, <em>세포의 이야기</em>를<br/>기록합니다</h2>
+      <p class="section-desc">
+        네 가지 시선으로 세포가 보내는 신호를 풀어 전해드립니다.
+        채널에서 이어지는 큐레이션을 만나보세요.
+      </p>
+      <div class="series-grid stagger">
+        <article class="series-card">
+          <div class="series-card-en">Cell Note</div>
+          <div class="series-card-title">오늘의 세포 노트</div>
+          <p class="series-card-desc">하루 한 장, 세포가 보내는 신호를 짧게 기록합니다.</p>
+        </article>
+        <article class="series-card">
+          <div class="series-card-en">Curator&rsquo;s Pick</div>
+          <div class="series-card-title">오늘 꼭 실천해야 할<br/>세포 습관</div>
+          <p class="series-card-desc">지금 바로 실천할 셀프케어 하나를 골라드립니다.</p>
+        </article>
+        <article class="series-card">
+          <div class="series-card-en">Cell Decode</div>
+          <div class="series-card-title">몸의 신호를 해독합니다</div>
+          <p class="series-card-desc">피로·수면·갱년기, 증상 뒤에 숨은 의미를 풀어봅니다.</p>
+        </article>
+        <article class="series-card">
+          <div class="series-card-en">Ask the Cell</div>
+          <div class="series-card-title">세포에게 물었습니다</div>
+          <p class="series-card-desc">자주 받는 질문에 세포의 언어로 답해드립니다.</p>
+        </article>
+      </div>
+
+      <div class="series-cta">
+        <a href="https://www.instagram.com/usana_queen" target="_blank" rel="noopener" class="ig"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58 0 4.85.07 1.17.06 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.06 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.06-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85c.06-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.39C1.34 2.69.93 3.36.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.13.67.67 1.34 1.09 2.13 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.39.67-.67 1.09-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 105.84 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zM18.41 4.15a1.44 1.44 0 11-1.44 1.44 1.44 1.44 0 011.44-1.44z"/></svg>인스타그램에서 보기</a>
+        <a href="https://www.youtube.com/@리본맘유사나" target="_blank" rel="noopener" class="yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>유튜브에서 보기</a>
+      </div>
     </div>
   </section>
 
