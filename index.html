@@ -1139,6 +1139,30 @@
     line-height: 1.35;
     margin-bottom: 14px;
   }
+  /* 제3기관 검증 — 자료 사진이 없는 항목이라 **헤어라인 리스트**로 둔다(박스를 만들지 않는다) */
+  .verify-list { margin: 0 0 26px; padding: 0; list-style: none; }
+  .verify-list li { padding: 13px 0 12px; border-top: 1px solid var(--line); }
+  .verify-list li:last-child { border-bottom: 1px solid var(--line); }
+  .verify-vt {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.4px;
+  }
+  .verify-vt em {
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--usana-blue);
+  }
+  /* ⚠️ max-width 가 없으면 PC 에서 한 줄이 90자까지 늘어나 줄 끝에서 다음 줄 머리를 놓친다 */
+  .verify-vd { max-width: 40em; margin-top: 4px; font-size: 12.5px; line-height: 1.68; color: var(--gray); }
+  .verify-vd b { font-weight: 700; color: var(--usana-blue-deep); }
   .verify-fig { margin: 0 0 26px; }
   .verify-fig:last-child { margin-bottom: 0; }
   .verify-fig img,
@@ -1670,6 +1694,200 @@
   .audience-text strong {
     font-weight: 700;
     color: var(--usana-blue);
+  }
+
+  /* ==================== MYHEALTHPAK (맞춤 영양) ====================
+     ATHLETES(흰색) ↔ CELAVIVE(크림) 사이. 배경은 --cream-warm 로 양쪽과 갈라 둔다.
+     ⚠️ 셀라비브와 맞닿아 있어 **같은 문법**을 쓴다 — 골드 소캡 라벨 + 상하 헤어라인.
+        박스·알약을 쓰지 않는다(셀라비브에서 세 번 반려된 그 규칙을 여기서도 지킨다). */
+  .mhp {
+    background: var(--cream-warm);
+    padding: 46px 24px 50px;
+  }
+  .mhp .section-label { color: var(--usana-blue); }
+  .mhp .section-title em { color: var(--usana-blue); font-style: normal; }
+
+  .mhp-new {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 11px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--usana-blue-deep);
+  }
+  .mhp-new::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--honey);
+    flex: 0 0 5px;
+  }
+  .mhp-lead {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--gray);
+    letter-spacing: -0.3px;
+    margin-bottom: 20px;
+  }
+  .mhp-lead strong { color: var(--ink); font-weight: 800; }
+
+  .mhp-photo {
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .mhp-photo img { width: 100%; display: block; }
+
+  /* 블록 — 라벨 + 상단 헤어라인 (마지막 블록만 아래 선을 닫는다) */
+  .mhp-block {
+    padding: 17px 0 15px;
+    border-top: 1px solid var(--line);
+  }
+  .mhp-block:last-of-type { border-bottom: 1px solid var(--line); }
+  .mhp-blabel {
+    margin-bottom: 4px;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    color: var(--honey-deep);
+  }
+  .mhp-btitle {
+    margin-bottom: 13px;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+  }
+
+  /* 건강 영역 — 칩을 쓰지 않고 가운뎃점으로 흘린다 */
+  /* ⚠️ 가운뎃점 구분자를 쓰면 줄이 바뀔 때 **점이 줄 머리로 내려온다**(390px에서 "· 활력").
+     구분은 여백으로만 준다 — 몇 개가 접히든 모양이 깨지지 않는다. */
+  .mhp-areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 17px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--usana-blue-deep);
+    letter-spacing: -0.3px;
+  }
+
+  /* 3단계 구성 */
+  .mhp-steps { display: flex; flex-direction: column; gap: 13px; }
+  .mhp-step { display: grid; grid-template-columns: 46px 1fr; gap: 11px; align-items: start; }
+  .mhp-step-n {
+    padding-top: 2px;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: var(--honey);
+  }
+  .mhp-step-t { font-size: 14px; font-weight: 800; color: var(--ink); letter-spacing: -0.4px; }
+  .mhp-step-d { margin-top: 2px; font-size: 12.5px; line-height: 1.6; color: var(--gray); }
+
+  /* 팩 목록 */
+  .mhp-group + .mhp-group { margin-top: 20px; }
+  .mhp-gtitle {
+    margin-bottom: 9px;
+    font-size: 12.5px;
+    font-weight: 800;
+    color: var(--usana-blue-deep);
+    letter-spacing: -0.3px;
+  }
+  .mhp-gtitle em { font-style: normal; font-weight: 600; color: var(--gray); }
+  .mhp-pack { padding: 14px 0 13px; border-top: 1px dashed var(--line); }
+  .mhp-pack:first-of-type { border-top: 0; padding-top: 2px; }
+  /* ⚠️ 가격은 넣지 않는다(대표님 지시) — 자주 바뀌고, 금액이 앞에 서면
+     「무엇이 나에게 맞는가」보다 「얼마인가」를 먼저 보게 된다. 금액은 상담에서 안내한다. */
+  .mhp-pack-h { display: flex; align-items: baseline; gap: 10px; }
+  .mhp-pack-n {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    min-width: 0;
+  }
+  /* 가격을 뺀 자리는 **설명 한 줄 + 실제 하루 구성 사진**이 받는다.
+     ⚠️ 설명을 길게 쓰면 여덟 개가 글 덩어리가 된다 — 한 줄로 못 박는다. */
+  .mhp-pack-d {
+    margin-top: 4px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--gray);
+    letter-spacing: -0.3px;
+  }
+  /* 하루 구성 — **원본의 알약 박스만** 쓰고 글자는 사이트 타이포로 다시 짠다.
+     ⚠️ 슬라이드를 통째로 얹으면 그쪽 폰트가 사이트와 따로 놀아 흰 박스가 떠 보인다(반려).
+     ⚠️ 알약 bbox 로 자르지 말 것 — 4알짜리 팩만 두 배로 커진다. 박스째 잘라 폭 440px 로 통일. */
+  .mhp-pack-img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px auto 0;
+    border-radius: 8px;
+  }
+  /* ⚠️ 가운뎃점을 ::before 로 넣지 말 것 — 줄이 바뀌면 점이 줄 머리로 내려온다.
+     구분은 gap 으로만 한다(건강 영역 목록에서 똑같이 겪음). */
+  .mhp-mix {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 15px;
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .mhp-mix li {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--usana-blue-deep);
+  }
+
+  /* 기초 구성 제품컷 */
+  .mhp-base {
+    display: block;
+    width: 100%;
+    max-width: 252px;
+    height: auto;
+    border-radius: 12px;
+    margin: 0 0 16px;
+  }
+
+  /* 주문 흐름 */
+  .mhp-flow { display: flex; flex-direction: column; gap: 15px; }
+  .mhp-fl { display: grid; grid-template-columns: 18px 1fr; gap: 11px; align-items: start; }
+  .mhp-fl-n {
+    width: 18px; height: 18px;
+    margin-top: 1px;
+    border-radius: 50%;
+    background: var(--usana-blue);
+    color: #fff;
+    font-size: 9.5px;
+    font-weight: 800;
+    line-height: 18px;
+    text-align: center;
+  }
+  /* ⚠️ 「제목 — 설명」을 한 줄에 붙이면 3·4번이 두 줄로 접히면서 끝 단어 하나만 떨어진다.
+     제목과 설명을 **2행으로 쌓아** 어느 길이에서도 같은 모양이 되게 한다(STEP 블록과 같은 구조). */
+  .mhp-fl-t { font-size: 13.5px; font-weight: 700; color: var(--ink); letter-spacing: -0.4px; }
+  .mhp-fl-d {
+    margin-top: 2px;
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--gray);
+    letter-spacing: -0.3px;
+  }
+
+  .mhp-note {
+    margin-top: 15px;
+    font-size: 11.5px;
+    line-height: 1.7;
+    color: var(--gray);
+    opacity: 0.85;
   }
 
   /* ==================== CELAVIVE (스킨케어) ==================== */
@@ -2762,6 +2980,44 @@
     .celavive-post-list .ko  { font-size: 13px; }
     .celavive-cta            { grid-column: 1 / -1; grid-row: 9; justify-self: center; }
 
+    /* ---------- MYHEALTHPAK : 머리글·사진 2단 + 팩 목록 2열 ---------- */
+    .mhp { padding: 74px 0 78px; }
+    .mhp > .reveal {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: 54px;
+      align-items: start;
+    }
+    .mhp .section-label,
+    .mhp .section-title,
+    .mhp-new,
+    .mhp-lead        { grid-column: 1; }
+    .mhp .section-title { font-size: 34px; }
+    .mhp-lead        { font-size: 16px; margin-bottom: 0; }
+    /* 사진은 오른쪽 칸에서 머리글 네 줄 높이에 걸친다 */
+    .mhp-photo       { grid-column: 2; grid-row: 1 / span 4; margin-bottom: 0; align-self: center; }
+    /* 블록은 두 칸을 가로지르되 내부를 2열로 — 세로로 길어지는 걸 막는다 */
+    .mhp-block       { grid-column: 1 / -1; padding: 24px 0 22px; }
+    .mhp-block:first-of-type { margin-top: 40px; }
+    .mhp-btitle      { font-size: 17px; }
+    .mhp-areas       { font-size: 14px; }
+    .mhp-steps       { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+    .mhp-packs-wrap  { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 46px; }
+    .mhp-pack-img    { max-width: 286px; }
+    /* 기초 제품컷은 STEP 석 줄 옆에 세운다 — 블록이 세로로 늘어나지 않게 */
+    .mhp-block-steps { display: grid; grid-template-columns: 236px minmax(0, 1fr); column-gap: 44px; align-items: start; }
+    .mhp-block-steps > .mhp-blabel,
+    .mhp-block-steps > .mhp-btitle { grid-column: 1 / -1; }
+    .mhp-base        { grid-column: 1; max-width: 236px; margin: 0; }
+    .mhp-block-steps > .mhp-steps  { grid-column: 2; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 32px; }
+    .mhp-group + .mhp-group { margin-top: 0; }
+    .mhp-flow        { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+                       grid-template-rows: repeat(3, auto); grid-auto-flow: column; gap: 13px 40px; }
+    .mhp-note        { grid-column: 1 / -1; margin-top: 18px; }
+
     /* ---------- ORDER : 제품이미지 | 문구·CTA 2단 ---------- */
     .order > .reveal {
       display: grid;
@@ -3228,6 +3484,189 @@
     </div>
   </section>
 
+  <!-- ==================== MYHEALTHPAK (맞춤 영양) ==================== -->
+  <section class="mhp">
+    <div class="reveal">
+      <div class="section-label">USANA MYHEALTHPAK</div>
+      <h2 class="section-title">같은 영양제를<br/>모두가 먹어야 할까요</h2>
+      <div class="mhp-new">2026년 10월 18일 정식 출시</div>
+      <p class="mhp-lead">나이도, 생활 습관도, 걱정되는 곳도 사람마다 다릅니다.<br/>
+        <strong>마이헬스팩</strong>은 필요한 것만 골라 <strong>하루 한 팩</strong>에 담는<br/>
+        맞춤형 건강기능식품입니다.</p>
+
+      <div class="mhp-photo">
+        <img src="assets/myhealthpak-hero.jpg?v=1" alt="마이헬스팩 — 하루치 영양을 한 포에 담은 맞춤형 건강기능식품" loading="lazy" />
+      </div>
+
+      <div class="mhp-block">
+        <div class="mhp-blabel">WHAT YOU CHOOSE</div>
+        <div class="mhp-btitle">내게 필요한 건강 영역을 고릅니다</div>
+        <div class="mhp-areas">
+          <span>면역</span><span>간</span><span>눈</span><span>뼈 · 관절</span><span>심혈관</span>
+          <span>장</span><span>항산화</span><span>체중</span><span>활력</span>
+        </div>
+      </div>
+
+      <div class="mhp-block mhp-block-steps">
+        <div class="mhp-blabel">HOW IT WORKS</div>
+        <div class="mhp-btitle">기본은 탄탄하게, 필요한 건 하나 더</div>
+        <img class="mhp-base" src="assets/myhealthpak-base.jpg?v=1" alt="헬스팩과 바이오메가 — 기초 영양의 출발점" loading="lazy" />
+        <div class="mhp-steps">
+          <div class="mhp-step">
+            <div class="mhp-step-n">STEP 1</div>
+            <div>
+              <div class="mhp-step-t">헬스팩 + 바이오메가</div>
+              <div class="mhp-step-d">누구에게나 필요한 기초 영양의 출발점입니다.</div>
+            </div>
+          </div>
+          <div class="mhp-step">
+            <div class="mhp-step-n">STEP 2</div>
+            <div>
+              <div class="mhp-step-t">프리미엄 헬스팩 · 4종</div>
+              <div class="mhp-step-d">기초 구성에 관심 영역 제품 한 가지를 더합니다.</div>
+            </div>
+          </div>
+          <div class="mhp-step">
+            <div class="mhp-step-n">STEP 3</div>
+            <div>
+              <div class="mhp-step-t">옵티마이저 헬스팩 · 4종</div>
+              <div class="mhp-step-d">한 가지 목표에 맞춰 집중해서 묶은 구성입니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mhp-block">
+        <div class="mhp-blabel">8 PACKS</div>
+        <div class="mhp-btitle">지금 고를 수 있는 여덟 가지</div>
+
+        <div class="mhp-packs-wrap">
+        <div class="mhp-group">
+          <div class="mhp-gtitle">프리미엄 헬스팩 <em>— 기초 구성 + 추가 제품 1종</em></div>
+          <div class="mhp-pack">
+            <div class="mhp-pack-h"><div class="mhp-pack-n">에너지 부스터 팩</div></div>
+            <div class="mhp-pack-d">아침이 무겁고, 오후가 되면 집중이 흐트러질 때</div>
+            <img class="mhp-pack-img" src="assets/pak-energy.jpg" alt="에너지 부스터 팩 하루 섭취 알약" loading="lazy" />
+            <ul class="mhp-mix">
+              <li>비타에이오</li>
+              <li>코어 미네랄</li>
+              <li>마그네칼 D</li>
+              <li>인셀리전스 플러스</li>
+              <li>바이오메가</li>
+              <li>프로후라바놀 C300</li>
+            </ul>
+          </div>
+          <div class="mhp-pack">
+            <div class="mhp-pack-h"><div class="mhp-pack-n">간 건강 팩</div></div>
+            <div class="mhp-pack-d">회식과 야근이 잦아 몸의 균형이 먼저 무너질 때</div>
+            <img class="mhp-pack-img" src="assets/pak-liver.jpg" alt="간 건강 팩 하루 섭취 알약" loading="lazy" />
+            <ul class="mhp-mix">
+              <li>비타에이오</li>
+              <li>코어 미네랄</li>
+              <li>마그네칼 D</li>
+              <li>인셀리전스 플러스</li>
+              <li>바이오메가</li>
+              <li>헤파실 플러스</li>
+            </ul>
+          </div>
+          <div class="mhp-pack">
+            <div class="mhp-pack-h"><div class="mhp-pack-n">눈 건강 팩</div></div>
+            <div class="mhp-pack-d">하루 대부분을 화면 앞에서 보낼 때</div>
+            <img class="mhp-pack-img" src="assets/pak-eye.jpg" alt="눈 건강 팩 하루 섭취 알약" loading="lazy" />
+            <ul class="mhp-mix">
+              <li>비타에이오</li>
+              <li>코어 미네랄</li>
+              <li>마그네칼 D</li>
+              <li>인셀리전스 플러스</li>
+              <li>바이오메가</li>
+              <li>비전엑스 디에스</li>
+            </ul>
+          </div>
+          <div class="mhp-pack">
+            <div class="mhp-pack-h"><div class="mhp-pack-n">혈압 건강 팩</div></div>
+            <div class="mhp-pack-d">건강검진 결과지가 신경 쓰이기 시작할 때</div>
+            <img class="mhp-pack-img" src="assets/pak-bp.jpg" alt="혈압 건강 팩 하루 섭취 알약" loading="lazy" />
+            <ul class="mhp-mix">
+              <li>비타에이오</li>
+              <li>코어 미네랄</li>
+              <li>마그네칼 D</li>
+              <li>인셀리전스 플러스</li>
+              <li>바이오메가</li>
+              <li>코퀴논 30</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mhp-group">
+          <div class="mhp-gtitle">옵티마이저 헬스팩 <em>— 목표에 맞춘 집중 조합</em></div>
+          <div class="mhp-pack">
+            <div class="mhp-pack-h"><div class="mhp-pack-n">베스트 옵티마이저 팩</div></div>
+            <div class="mhp-pack-d">한 가지만 고르기 어려울 때 — 간 · 혈압 · 활력을 한 팩에</div>
+            <img class="mhp-pack-img" src="assets/pak-best.jpg" alt="베스트 옵티마이저 팩 하루 섭취 알약" loading="lazy" />
+            <ul class="mhp-mix">
+              <li>바이오메가</li>
+              <li>헤파실 플러스</li>
+              <li>코퀴논 30</li>
+              <li>프로후라바놀 C300 플러스</li>
+            </ul>
+          </div>
+          <div class="mhp-pack">
+            <div class="mhp-pack-h"><div class="mhp-pack-n">면역 건강 팩</div></div>
+            <div class="mhp-pack-d">환절기마다 컨디션이 먼저 흔들릴 때</div>
+            <img class="mhp-pack-img" src="assets/pak-immune.jpg" alt="면역 건강 팩 하루 섭취 알약" loading="lazy" />
+            <ul class="mhp-mix">
+              <li>알로엔즈 플러스</li>
+              <li>프로후라바놀 C300 플러스</li>
+              <li>프로글루카뮨</li>
+            </ul>
+          </div>
+          <div class="mhp-pack">
+            <div class="mhp-pack-h"><div class="mhp-pack-n">체지방 클린 팩</div></div>
+            <div class="mhp-pack-d">체중보다 체지방과 속이 먼저 신경 쓰일 때</div>
+            <img class="mhp-pack-img" src="assets/pak-slim.jpg" alt="체지방 클린 팩 하루 섭취 알약" loading="lazy" />
+            <ul class="mhp-mix">
+              <li>알로엔즈 플러스</li>
+              <li>헤파실 플러스</li>
+              <li>메타볼리즘 플러스</li>
+            </ul>
+          </div>
+          <div class="mhp-pack">
+            <div class="mhp-pack-h"><div class="mhp-pack-n">뼈 · 관절 건강 팩</div></div>
+            <div class="mhp-pack-d">계단을 오르내릴 때 전보다 조심스러워졌다면</div>
+            <img class="mhp-pack-img" src="assets/pak-bone.jpg" alt="뼈 · 관절 팩 하루 섭취 알약" loading="lazy" />
+            <ul class="mhp-mix">
+              <li>바이오메가</li>
+              <li>프로코사 글루코사민</li>
+              <li>마그네칼 D</li>
+              <li>비타민 D</li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="mhp-block">
+        <div class="mhp-blabel">ORDER FLOW</div>
+        <div class="mhp-btitle">상담부터 배송까지</div>
+        <div class="mhp-flow">
+          <div class="mhp-fl"><div class="mhp-fl-n">1</div>
+            <div><div class="mhp-fl-t">상담</div><div class="mhp-fl-d">건강 고민과 생활 습관을 먼저 듣습니다</div></div></div>
+          <div class="mhp-fl"><div class="mhp-fl-n">2</div>
+            <div><div class="mhp-fl-t">팩 선택</div><div class="mhp-fl-d">유사나 허브에서 맞는 팩을 고릅니다</div></div></div>
+          <div class="mhp-fl"><div class="mhp-fl-n">3</div>
+            <div><div class="mhp-fl-t">영양사 1:1 상담</div><div class="mhp-fl-d">제품 적합성을 한 번 더 확인합니다</div></div></div>
+          <div class="mhp-fl"><div class="mhp-fl-n">4</div>
+            <div><div class="mhp-fl-t">제조 · 출고</div><div class="mhp-fl-d">주문 후 제조해 영업일 3일 이내 발송</div></div></div>
+          <div class="mhp-fl"><div class="mhp-fl-n">5</div>
+            <div><div class="mhp-fl-t">정기배송</div><div class="mhp-fl-d">할인 혜택과 함께 루틴을 이어 갑니다</div></div></div>
+        </div>
+      </div>
+
+      <p class="mhp-note">구성과 섭취량은 상담 결과에 따라 달라집니다.
+        가격과 자세한 구성은 상담 때 안내해 드리며, 주문 전 전문 영양사 상담을 한 번 더 거칩니다.</p>
+    </div>
+  </section>
+
   <!-- ==================== CELAVIVE (스킨케어) ==================== -->
   <section class="celavive" id="celavive">
     <div class="reveal">
@@ -3571,12 +4010,38 @@
       <div class="verify-body">
 
         <div class="verify-group">
+          <div class="verify-group-label">THIRD-PARTY VERIFIED</div>
+          <div class="verify-group-title">스스로 말하지 않고<br/>바깥에서 검증받은 것들</div>
+          <ul class="verify-list">
+            <li>
+              <div class="verify-vt">컨슈머랩 <em>ConsumerLab</em></div>
+              <div class="verify-vd">시중 영양제의 <b>실제 함량과 라벨 표기가 맞는지</b> 직접 검사하는 미국의 독립 품질 테스트 기관입니다. 유사나는 인증을 받았고, 직접판매 브랜드 부문에서 <b>6년 연속 소비자 만족도 1위</b>로 선정됐습니다.</div>
+            </li>
+            <li>
+              <div class="verify-vt">호주 TGA 인증 <em>Therapeutic Goods Administration</em></div>
+              <div class="verify-vd">호주 정부의 의약품 품질 관리 기준입니다. 세계에서 가장 까다로운 축에 들고, 유사나 제조시설이 이 기준을 통과했습니다.</div>
+            </li>
+            <li>
+              <div class="verify-vt">NSF · USP GMP 인증</div>
+              <div class="verify-vd">원료 관리부터 제조 · 위생 · 품질 유지까지 <b>의약품 수준의 제조 관리 기준</b>입니다. 유사나는 자체 제조시설을 운영하며 두 기관의 인증을 모두 받았습니다.</div>
+            </li>
+            <li>
+              <div class="verify-vt">PDR · CPS 등재</div>
+              <div class="verify-vd">PDR은 미국 의사와 약사가 처방 근거로 보는 편람이고, CPS는 캐나다 보건부가 승인한 표준 지침서입니다. 유사나 제품이 <b>두 전문 자료에 모두 등재</b>돼 있습니다.</div>
+            </li>
+            <li>
+              <div class="verify-vt">알버트 아인슈타인상 <em>생명과학 부문</em></div>
+              <div class="verify-vd">창립자 <b>마이런 웬츠 박사</b>가 세포 연구와 면역학 분야의 공로로 받은 상입니다.</div>
+            </li>
+          </ul>
+        </div>
+        <div class="verify-group">
           <div class="verify-group-label">GLOBAL EVALUATION</div>
           <div class="verify-group-title">세계가 평가한 영양제 1위</div>
           <div class="verify-figs">
           <figure class="verify-fig">
             <img src="assets/verify-nutrisearch-best.jpg" alt="가장 사랑받는 최고의 뉴트리션 종합영양제" loading="lazy" />
-            <figcaption>가장 사랑받는 최고의 뉴트리션 종합영양제 — 독성 없이 효능 높은 제품 <strong>1위</strong><br/><span class="verify-cap-sub">NutriSearch Platinum+</span></figcaption>
+            <figcaption>북미 <strong>1,600여 개</strong> 제품을 같은 잣대로 비교해 <strong>플래티넘+</strong> 등급<br/><span class="verify-cap-sub">NutriSearch 종합 비교 가이드 · 잠재적 독성 항목 최저치</span></figcaption>
           </figure>
           <figure class="verify-fig">
             <img src="assets/verify-nutrisearch-books.jpg" alt="20년간 전 세계 영양제를 평가해 온 전문 서적" loading="lazy" />
